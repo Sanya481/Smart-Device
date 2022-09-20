@@ -1,0 +1,76 @@
+.approval {
+  margin-bottom: 23px;
+
+  @include tablet-version-range {
+    margin-bottom: 30px;
+  }
+
+  @include mobile-version-range {
+    margin-bottom: 23px;
+  }
+}
+
+.approval label {
+  display: inline-block;
+  position: relative;
+  padding: 3px 0 3px 23px;
+  font-size: 10px;
+  line-height: 13px;
+  max-width: 275px;
+  vertical-align: middle;
+  cursor: pointer;
+  transition: $trans-default;
+
+  @include tablet-version-range {
+    max-width: 303px;
+  }
+
+  @include vp-320 {
+    max-width: 180px;
+    padding: 3px 0 3px 28px;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: $color-alice-blue;
+
+    @include vp-320 {
+      left: 2px;
+      top: 46%;
+    }
+  }
+
+  &:active {
+    color: $color-aqua;
+  }
+}
+
+.approval input:checked + label::after {
+  content: "";
+  position: absolute;
+  background-image: url("../img/svg/check-mark-modal.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  left: 3px;
+  width: 12px;
+  height: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  @include vp-320 {
+    left: 4px;
+  }
+}
+
+@include effects-off {
+  .approval input:hover + label,
+  .approval input:focus + label {
+    color: $color-turquoise-blue;
+  }
+}

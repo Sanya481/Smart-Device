@@ -1,0 +1,115 @@
+.callback {
+  max-width: 403px;
+  background-color: $color-tangaroa;
+  color: $color-alice-blue;
+  padding: 45px 50px 50px 50px;
+  box-shadow: 0 4px 45px $color-tangaroa-opacity-2;
+
+  @include vp-320 {
+    width: 290px;
+    padding: 40px 30px;
+  }
+}
+
+.callback__form p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  margin: 0;
+  margin-bottom: 27px;
+
+  @include vp-320 {
+    line-height: 25px;
+    text-align: center;
+    margin: 0 0 28px;
+    margin-top: -4px;
+  }
+}
+
+.callback__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 14px;
+
+  @include vp-768 {
+    margin: 0 0 24px;
+  }
+
+  @include vp-320 {
+    margin-bottom: 15px;
+  }
+}
+
+.callback__form button {
+  font-family: $ff-placeholder;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 21px;
+  width: 100%;
+  background-color: $color-alice-blue;
+  border: none;
+  margin: 0;
+  padding: 11px 40px 10px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  user-select: none;
+
+  @include effects-off {
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 40px 40px $color-turquoise-blue inset;
+    }
+
+    &:disabled {
+      cursor: auto;
+      background-color: $color-alice-blue;
+    }
+  }
+
+  &:active {
+    background-color: $color-dodger-blue;
+  }
+
+  &:disabled {
+    cursor: auto;
+    background-color: $color-alice-blue;
+  }
+}
+
+/* ============ callback__item */
+
+.callback__item {
+  margin-bottom: 20px;
+  user-select: none;
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.callback__item input {
+  font-family: $ff-placeholder;
+  font-size: 14px;
+  line-height: 21px;
+  width: 100%;
+  color: $color-default-black;
+  padding: 11px 50px 11px 16px;
+  border: none;
+  background-color: $color-alice-blue;
+
+  @include effects-off {
+    &:hover,
+    &:focus {
+      outline: 2px solid $color-blue;
+    }
+  }
+
+  &:active {
+    outline: 2px solid $color-blue;
+  }
+}
+
+.callback__item input::placeholder {
+  color: $color-tangaroa-opacity;
+}
