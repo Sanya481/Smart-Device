@@ -1,16 +1,16 @@
-import {Modals} from './modals';
+import {callbacks} from './callbacks';
 
-let modals;
+let callbacks;
 
 // Здесь реализован пример открытия модалки через колбэк закрытия
-// const openModalInCloseCallback = (name, context = this) => {
+// const opencallbackInCloseCallback = (name, context = this) => {
 //   context._enableScrolling = false;
 //   context._setSettings('default');
-//   modals.open(name);
+//   callbacks.open(name);
 // };
 
 // closeCallback() {
-//   openModalInCloseCallback('modal-5');
+//   opencallbackInCloseCallback('callback-5');
 // },
 
 const settings = {
@@ -26,16 +26,16 @@ const settings = {
   },
 };
 
-const initModals = () => {
-  const modalElements = document.querySelectorAll('.modal');
-  modalElements.forEach((el) => {
+const initcallbacks = () => {
+  const callbackElements = document.querySelectorAll('.callback');
+  callbackElements.forEach((el) => {
     setTimeout(() => {
-      el.classList.remove('modal--preload');
+      el.classList.remove('callback--preload');
     }, 100);
   });
-  modals = new Modals(settings);
-  // Используйте в разработке экспортируемую переменную modals, window сделан для бэкэнда
-  window.modals = modals;
+  callbacks = new callbacks(settings);
+  // Используйте в разработке экспортируемую переменную callbacks, window сделан для бэкэнда
+  window.callbacks = callbacks;
 };
 
-export {modals, initModals};
+export {callbacks, initcallbacks};
