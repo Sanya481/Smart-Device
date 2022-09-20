@@ -5,28 +5,22 @@
 
 .callback__container {
   padding: 170px 350px 250px;
+}
 
-  // position: relative;
-  // display: flex;
-  // justify-content: end;
+.callback__wrapper {
+  display: flex;
+  justify-content: end;
+
+  background-image: url("../img/decorative/paper-airplane-3d.png");
+  background-repeat: no-repeat;
+  background-position: left center;
 }
 
 /* callback__block */
 
 .callback__block {
   max-width: 585px;
-  // position: relative;
-
-  // &::before {
-  //   position: absolute;
-  //   content: "";
-  //   background-image: url("../img/decorative/paper-airplane-3d.png");
-  //   background-repeat: no-repeat;
-  //   background-position: 0 0;
-  //   width: 510px;
-  //   height: 285px;
-  //   left: 0;
-  // }
+  margin-right: 12px;
 }
 
 .callback__block>p {
@@ -93,6 +87,10 @@
   font-size: 16px;
   line-height: 22px;
   color: $color-default-white;
+}
+
+.callback__item textarea {
+  max-height: 155px;
 }
 
 .callback__item--name {
