@@ -1,60 +1,9 @@
 .advantages {
-  background-image: url("../img/background/advantages-background.png");
-  background-color: $color-solitude;
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: cover;
 
-  @include retina {
-    background-image: url("../img/background/advantages-background@2x.png");
-  }
-
-  @include vp-768 {
-    min-height: 588px;
-    background-image: url("../img/background/advantages-background-tablet.png");
-
-    @include retina {
-      background-image: url("../img/background/advantages-background-tablet@2x.png");
-    }
-  }
-
-  @include vp-320 {
-    background-image: url("../img/background/advantages-background-mobile.png");
-
-    @include retina {
-      background-image: url("../img/background/advantages-background-mobile@2x.png");
-    }
-  }
 }
 
 .advantages__container {
-  padding: 112px 20px 120px;
-
-  @include tablet-version-range {
-    padding: 90px 45px 100px;
-  }
-}
-
-.advantages h2 {
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 42px;
-  text-align: center;
-  margin: 0 0 51px 0;
-
-  @include tablet-version-range {
-    font-size: 26px;
-    line-height: 39px;
-    margin: 0;
-    margin-bottom: 49px;
-  }
-
-  @include mobile-version-range {
-    font-size: 24px;
-    line-height: 36px;
-    margin-top: -8px;
-    margin-bottom: 31px;
-  }
+  margin: 120px auto;
 }
 
 /* ============ advantages__list */
@@ -65,186 +14,80 @@
   list-style: none;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(206px, 1fr));
-  gap: 40px;
-
-  @include tablet-version-range {
-    gap: 30px;
-  }
-
-  @include mobile-version-range {
-    display: block;
-  }
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
 }
 
 /* ============ advantages__item */
 
 .advantages__item {
+  position: relative;
   display: flex;
   flex-direction: column;
-  background-color: $color-alice-blue;
-  padding: 30px 30px 50px 30px;
-  min-height: 241px;
+  border: 1px solid $color-whisper;
+  padding: 40px 45px 35px;
+  cursor: pointer;
 
-  @include mobile-version-range {
-    margin-bottom: 31px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  &::before {
+    position: absolute;
+    content: "";
+    width: 5px;
+    height: 100%;
+    background-color: $color-deep-sky-blue;
+    left: 0;
+    top: 0;
+    transition: width $trans-800;
   }
 }
 
 .advantages__item h3 {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
+  font-family: $ff-placeholder-second;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 34px;
+  color: $color-deep-sky-blue;
   margin: 0;
-  margin-bottom: 20px;
-
-  @include tablet-version-range {
-    line-height: 25px;
-  }
-
-  @include mobile-version-range {
-    max-width: 190px;
-  }
+  margin-bottom: 15px;
+  transition: color $trans-800;
 }
 
 .advantages__item p {
-  font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
+  color: $color-black-pearl;
   margin: 0;
+  transition: color $trans-800;
 }
 
 .advantages__item a {
+  display: inline-block;
+  vertical-align: middle;
+  width: 35px;
+  height: 35px;
   order: -1;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .advantages__item svg {
+  fill: $color-deep-sky-blue;
   width: 100%;
   height: 100%;
+  transition: fill $trans-800;
 }
 
-/* Отдельные стили для каждого пункта(блока преимуществ), чтобы попасть в Pixel perfect */
-
-//advantages__item--cruise-ship
-
-.advantages__item--cruise-ship {
-  padding: 28px 30px 28px;
-
-  @include tablet-version-range {
-    padding: 30px 15px 20px 20px;
-  }
-
-  @include mobile-version-range {
-    padding: 24px 15px 19px 20px;
-  }
+/* Эффект при наведении на карточку с преимуществами */
+.advantages__item:hover::before {
+  width: 100%;
 }
 
-.advantages__item--cruise-ship h3 {
-  margin: 0 0 8px;
-
-  @include mobile-version-range {
-    margin: 0 0 6px;
-  }
+.advantages__item:hover h3,
+.advantages__item:hover p {
+  position: relative;
+  z-index: 2;
+  color: $alice-blue;
 }
 
-.advantages__item--cruise-ship a {
-  width: 27px;
-  height: 32px;
-  margin-bottom: 19px;
-
-  @include tablet-version-range {
-    width: 21px;
-    height: 26px;
-    margin-bottom: 20px;
-    margin-top: -4px;
-  }
-
-  @include mobile-version-range {
-    width: 21px;
-    height: 26px;
-    margin-bottom: 18px;
-  }
-}
-
-//advantages__item--all-inclusive
-
-.advantages__item--all-inclusive {
-  padding: 32px 30px 21px;
-
-  @include tablet-version-range {
-    padding: 30px 15px 20px 20px;
-  }
-
-  @include mobile-version-range {
-    padding: 30px 15px 18px 20px;
-  }
-}
-
-.advantages__item--all-inclusive h3 {
-  margin: 0 0 8px;
-}
-
-.advantages__item--all-inclusive a {
-  width: 38px;
-  height: 21px;
-
-  @include tablet-version-range {
-    width: 33px;
-    height: 19px;
-    margin-bottom: 22px;
-  }
-
-  @include mobile-version-range {
-    width: 33px;
-    height: 19px;
-    margin-bottom: 20px;
-  }
-}
-
-//advantages__item--zodiac-excursions
-
-.advantages__item--zodiac-excursions {
-  padding: 36px 30px 26px;
-
-  @include tablet-version-range {
-    padding: 30px 17px 20px 20px;
-  }
-
-  @include mobile-version-range {
-    padding: 30px 17px 18px 20px;
-  }
-}
-
-.advantages__item--zodiac-excursions h3 {
-  margin: 0 0 1px;
-
-  @include tablet-version-range {
-    margin: 0 0 8px;
-  }
-
-  @include mobile-version-range {
-    margin: 0 0 8px;
-  }
-}
-
-.advantages__item--zodiac-excursions a {
-  width: 42px;
-  height: 15px;
-  margin-bottom: 35px;
-
-  @include tablet-version-range {
-    width: 38px;
-    height: 13px;
-    margin-bottom: 28px;
-  }
-
-  @include mobile-version-range {
-    width: 38px;
-    height: 13px;
-    margin-bottom: 26px;
-  }
+.advantages__item:hover svg {
+  position: relative;
+  z-index: 2;
+  fill: $alice-blue;
 }
