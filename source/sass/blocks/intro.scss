@@ -1,105 +1,114 @@
 .intro {
-  color: $color-alice-blue;
-  background-image: url("../img/background/intro-background.jpg");
-  background-color: $deep-sky-blue;
+  color: $alice-blue;
+  background-image: url("../img/background/intro-background.png");
+  background-color: $color-tangaroa;
   background-repeat: no-repeat;
   background-position: 0 0;
   background-size: cover;
-  filter: $intro-filter-bcg;
+  min-height: 760px;
+  margin-top: 103px;
+  // filter: $intro-filter-bcg;
 
-  @include retina {
-    background-image: url("../img/background/intro-background@2x.jpg");
-  }
+  // @include retina {
+  //   background-image: url("../img/background/intro-background@2x.jpg");
+  // }
 
-  @include tablet-version-range {
-    background-image: url("../img/background/intro-background-tablet.jpg");
-    filter: none;
+  // @include tablet-version-range {
+  //   background-image: url("../img/background/intro-background-tablet.jpg");
+  //   filter: none;
 
-    @include retina {
-      background-image: url("../img/background/intro-background-tablet@2x.jpg");
-    }
-  }
+  //   @include retina {
+  //     background-image: url("../img/background/intro-background-tablet@2x.jpg");
+  //   }
+  // }
 
-  @include mobile-version-range {
-    background-image: url("../img/background/intro-background-mobile.jpg");
-    filter: none;
+  // @include mobile-version-range {
+  //   background-image: url("../img/background/intro-background-mobile.jpg");
+  //   filter: none;
 
-    @include retina {
-      background-image: url("../img/background/intro-background-mobile@2x.jpg");
-    }
-  }
+  //   @include retina {
+  //     background-image: url("../img/background/intro-background-mobile@2x.jpg");
+  //   }
+  // }
 }
 
-.intro__container {
-  display: flex;
-  align-items: center;
-  min-height: 650px;
 
-  @include tablet-version-range {
-    min-height: 638px;
-  }
 
-  @include mobile-version-range {
-    min-height: 500px;
-  }
-}
+// .intro__container {
+//   display: flex;
+//   align-items: center;
+//   min-height: 650px;
 
-/* ============ intro__block */
+//   @include tablet-version-range {
+//     min-height: 638px;
+//   }
+
+//   @include mobile-version-range {
+//     min-height: 500px;
+//   }
+// }
+
+// /* ============ intro__block */
 
 .intro__block {
-  margin-left: 96px;
-
-  @include tablet-version-range {
-    margin-left: 0;
-  }
-
-  @include mobile-version-range {
-    transition: opacity 0.6s ease;
-    margin-left: 0;
-  }
+  padding-top: 202px;
+  margin-left: 126px;
 }
 
 
-.intro__block.text-opacity {
-  opacity: 0;
-}
+// .intro__block.text-opacity {
+//   opacity: 0;
+// }
 
 .intro__block h1 {
-  font-size: 54px;
+  font-family: $ff-placeholder-second;
   font-weight: 700;
-  line-height: 55px;
-  max-width: 1000px;
-  text-shadow: 0 4px 4px $color-black-opacity-1;
+  font-size: 80px;
+  line-height: 94px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
   margin: 0;
-  margin-bottom: 16px;
-
-  @include tablet-version-range {
-    font-size: 50px;
-    line-height: 40px;
-    margin: 0 0 22px;
-  }
-
-  @include mobile-version-range {
-    font-size: 36px;
-    line-height: 45px;
-    margin-bottom: 10px;
-  }
+  margin-bottom: 40px;
 }
 
 .intro__block p {
-  font-size: 20px;
-  line-height: 24px;
-  max-width: 900px;
-  text-shadow: 0 4px 4px $color-black-opacity-1;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 34px;
+  max-width: 685px;
   margin: 0;
+  margin-bottom: 40px;
+}
 
-  @include tablet-version-range {
-    font-size: 18px;
-    line-height: 22px;
+.intro__block a {
+  display: inline-block;
+  vertical-align: middle;
+  font-family: $ff-placeholder-second;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 21px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $alice-blue;
+  background-color: $color-deep-sky-blue;
+  border-radius: 3px;
+  padding: 15px 25px;
+  transition: background-color $trans-default;
+
+  @include effects-off {
+
+    &:hover,
+    &:focus {
+      background-color: $color-dark-slate-blue;
+    }
+
+    &:active {
+      background-color: $color-blue;
+    }
   }
 
-  @include mobile-version-range {
-    font-size: 16px;
-    max-width: 210px;
+  &:active {
+    background-color: $color-blue;
   }
 }
