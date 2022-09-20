@@ -1,0 +1,67 @@
+.directions__container {
+  padding: 116px 20px 120px;
+
+  @include mobile-version-range {
+    padding: 58px 15px 65px;
+  }
+}
+
+.directions h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 27px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 56px;
+
+  @include tablet-version-range {
+    font-size: 26px;
+    line-height: 39px;
+    margin-top: -10px;
+    margin-bottom: 49px;
+  }
+
+  @include mobile-version-range {
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 30px;
+  }
+}
+
+/* ============ directions__list */
+
+.directions__list {
+  list-style: none;
+  padding: 0;
+
+  display: grid;
+  margin: 0 15px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  @include tablet-version-range {
+    grid-template-columns: repeat(auto-fill, 309px);
+    justify-content: center;
+  }
+
+  @include mobile-version-range {
+    grid-template-columns: repeat(auto-fill, 270px);
+    justify-content: center;
+    margin: 0 10px;
+    column-gap: 30px;
+    row-gap: 0;
+  }
+}
+
+.directions__item {
+  position: relative;
+  cursor: pointer;
+
+  @include mobile-version-range {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

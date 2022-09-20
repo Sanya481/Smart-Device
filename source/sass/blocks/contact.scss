@@ -1,0 +1,153 @@
+.contact__container {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 30px;
+  flex-wrap: nowrap;
+
+  @include vp-768 {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  @include vp-320 {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.contact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============ contact__map */
+
+.contact__map {
+  line-height: 0;
+  max-width: 560px;
+  height: 306px;
+  flex-grow: 1;
+  flex-shrink: 0;
+
+  @include tablet-version-range {
+    display: inline-block;
+    vertical-align: middle;
+    width: 324px;
+    height: 335px;
+    margin: 0 auto;
+  }
+
+  @include mobile-version-range {
+    max-width: 290px;
+    height: 316px;
+  }
+}
+
+.contact__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* ============ contact__text */
+
+.contact__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+
+  @include vp-768 {
+    max-width: 324px;
+  }
+
+  @include vp-320 {
+    display: block;
+    margin-bottom: 33px;
+    order: -1;
+  }
+}
+
+.contact__text p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 27px;
+  margin: 3px 0 30px;
+
+  @include tablet-version-range {
+    margin: 4px 0 23px;
+  }
+
+  @include mobile-version-range {
+    margin: -6px 0 23px;
+  }
+}
+
+/* ============ contact__item  */
+
+.contact__item {
+  margin-bottom: 16px;
+
+  @include vp-768 {
+    margin-bottom: 16px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.contact__link {
+  position: relative;
+  padding: 3px 0 3px 28px;
+  display: inline-block;
+  vertical-align: middle;
+  transition: letter-spacing 0.4s ease-in-out;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 18px;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    @include tablet-version-range {
+      top: 33%;
+      transform: translateY(-33%);
+    }
+
+    @include mobile-version-range {
+      top: 41%;
+    }
+  }
+
+  &--address::before {
+    background-image: url("../img/svg/address-marker.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 22px;
+  }
+
+  &--phone::before {
+    background-image: url("../img/svg/phone-icon.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 18px;
+  }
+
+  @include effects-off {
+    &:hover,
+    &:focus {
+      color: $color-dodger-blue;
+      letter-spacing: 0.3px;
+    }
+  }
+
+  &:active {
+    color: $color-blue;
+  }
+}

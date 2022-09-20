@@ -1,0 +1,55 @@
+@mixin retina {
+  @media (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+// Desktop first
+
+@mixin vp-1024 {
+  @media (max-width: $vp-1023) {
+    @content;
+  }
+}
+
+// Медиа-запрос для отключения hover/focus эффектов на планшетной/мобильной версии
+@mixin effects-off {
+  @media (min-width: $vp-1024) {
+    @content;
+  }
+}
+
+@mixin vp-768 {
+  @media (max-width: $vp-767) {
+    @content;
+  }
+}
+
+@mixin vp-767 {
+  @media (min-width: $vp-320) and (max-width: $vp-767) {
+    @content;
+  }
+}
+
+@mixin vp-600 {
+  @media (max-width: $vp-600) {
+    @content;
+  }
+}
+
+@mixin vp-320 {
+  @media (max-width: $vp-320) {
+    @content;
+  }
+}
+
+@mixin desktop-version {
+  @media (min-width: $vp-1024) {
+    @content;
+  }
+}
+
+// ---------------------------------
+
+// не нужно добавлять свои миксины для ресета списков, обнуления кнопок и прочие
+// этим вы усложняете работу команды, проверку вашего кода и будущую поддержку проекта
