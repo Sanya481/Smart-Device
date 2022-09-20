@@ -1,0 +1,88 @@
+.catalog {
+  background-color: $color-black-pearl;
+  color: $color-default-white;
+}
+
+.catalog__container {
+  padding: 0 350px 140px;
+}
+
+.catalog__container h2 {
+  font-family: $ff-placeholder-second;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 51px;
+  margin: 0;
+  margin-bottom: 50px;
+  padding-top: 70px;
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+}
+
+.product a {
+  position: relative;
+  display: block;
+  width: 350px;
+  height: 650px;
+  color: $color-default-white;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(4, 24, 39);
+    opacity: 0.5;
+    transition: opacity $trans-default;
+  }
+}
+
+.product h3 {
+  position: absolute;
+  max-width: 215px;
+  margin: 0;
+  top: 35px;
+  left: 35px;
+}
+
+.product img {
+  background-color: $color-silver;
+}
+
+.product__icon {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-color: $color-deep-sky-blue;
+  border-radius: 3px 0px 0px 0px;
+  bottom: 0;
+  right: 0;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background-image: url("../img/decorative/arrow.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    height: 10px;
+    width: 7px;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Эффект при наведении на карточку товара */
+.product a:hover::before {
+  opacity: 0;
+}

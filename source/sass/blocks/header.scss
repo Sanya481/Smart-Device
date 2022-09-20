@@ -108,20 +108,22 @@
 
 .header__button {
   font-family: $ff-placeholder-second;
-  font-size: 14px;
   font-weight: 700;
+  font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.05em;
+  text-align: center;
   text-transform: uppercase;
   background-color: transparent;
   color: $alice-blue;
-  border: 1px solid $alice-blue;
   border-radius: 3px;
+  cursor: pointer;
+
+  transition: background-color $trans-default;
+  border: 1px solid $alice-blue;
   margin: 0;
   padding: 11px 16px;
   margin-right: 60px;
-  cursor: pointer;
-  transition: background-color $trans-default;
 
   @include effects-off {
 

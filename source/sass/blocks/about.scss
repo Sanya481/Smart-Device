@@ -1,97 +1,81 @@
 .about__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-  align-items: start;
-
-  @include tablet-version-range {
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-    padding: 100px 45px 90px;
-  }
-
-  @include mobile-version-range {
-    display: block;
-    padding: 58px 15px 65px 15px;
-  }
-}
-
-/* ============ about__info */
-
-.about__info {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  padding-right: 30px;
 
-  @include tablet-version-range {
-    padding-right: 0;
-  }
-
-  @include mobile-version-range {
-    margin-bottom: 33px;
-    padding-right: 0;
-  }
-}
-
-.about__info h3 {
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 42px;
-  margin: 0;
-  margin-bottom: 24px;
-
-  @include tablet-version-range {
-    font-size: 26px;
-    line-height: 36px;
-    max-width: 220px;
-    margin-top: -9px;
-    margin-bottom: 16px;
-  }
-
-  @include mobile-version-range {
-    font-size: 24px;
-    line-height: 34px;
-    max-width: 210px;
-    margin: 0 0 15px;
-  }
-}
-
-.about__info p {
-  margin: 0;
+  margin: 0 auto 100px;
 }
 
 /* ============ about__picture */
 
 .about__picture {
-  max-width: 560px;
-  // max-height: 301px;
-
-  @include tablet-version-range {
-    margin: 0 auto;
-    max-width: 324px;
-    // max-height: 264px;
-  }
-
-  @include mobile-version-range {
-    margin: 0 auto;
-    // max-height: 186px;
-  }
+  flex-shrink: 0;
+  margin-right: 100px;
 }
 
 .about__picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: $white-to-right-top;
+  width: 150px;
+  height: 320px;
+  // object-fit: cover;
+}
 
-  @include tablet-version-range {
-    min-height: 264px;
+/* ============ about__info */
+
+.about__info {
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-self: center;
+  // padding-right: 30px;
+  color: $color-black-pearl;
+}
+
+.about__info h2 {
+  font-family: $ff-placeholder-second;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.about__info p {
+  line-height: 22px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.about__info button {
+  font-family: $ff-placeholder-second;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 3px;
+  color: $color-deep-sky-blue;
+  cursor: pointer;
+
+  border: 1px solid $color-deep-sky-blue;
+  padding: 14px 30px;
+  transition: background-color $trans-default, color $trans-default;
+
+  @include effects-off {
+
+    &:hover,
+    &:focus {
+      background-color: $color-deep-sky-blue;
+      color: $alice-blue;
+    }
+
+    &:active {
+      background-color: $color-blue;
+      color: $alice-blue;
+    }
   }
 
-  @include mobile-version-range {
-    min-height: 186px;
+  &:active {
+    background-color: $color-blue;
+    color: $alice-blue;
   }
 }

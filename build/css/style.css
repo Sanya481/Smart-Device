@@ -801,22 +801,23 @@ main {
 
 .header__button {
   font-family: "Roboto Condensed", "Arial", sans-serif;
-  font-size: 14px;
   font-weight: 700;
+  font-size: 14px;
   line-height: 16px;
   letter-spacing: 0.05em;
+  text-align: center;
   text-transform: uppercase;
   background-color: transparent;
   color: #F2F5F6;
-  border: 1px solid #F2F5F6;
   border-radius: 3px;
-  margin: 0;
-  padding: 11px 16px;
-  margin-right: 60px;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
+  border: 1px solid #F2F5F6;
+  margin: 0;
+  padding: 11px 16px;
+  margin-right: 60px;
 }
 
 .header__button:active {
@@ -832,6 +833,7 @@ main {
   background-size: cover;
   min-height: 760px;
   margin-top: 103px;
+  margin-bottom: 120px;
 }
 
 .intro__block {
@@ -883,7 +885,7 @@ main {
 }
 
 .advantages__container {
-  margin: 120px auto;
+  margin: 0 auto 120px;
 }
 
 /* ============ advantages__list */
@@ -989,6 +991,166 @@ main {
   fill: #F2F5F6;
 }
 
+.about__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto 100px;
+}
+
+/* ============ about__picture */
+
+.about__picture {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  margin-right: 100px;
+}
+
+.about__picture img {
+  width: 150px;
+  height: 320px;
+}
+
+/* ============ about__info */
+
+.about__info {
+  color: #041827;
+}
+
+.about__info h2 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.about__info p {
+  line-height: 22px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.about__info button {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 3px;
+  color: #00B2FF;
+  cursor: pointer;
+  border: 1px solid #00B2FF;
+  padding: 14px 30px;
+  -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+  -o-transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about__info button:active {
+  background-color: #1600ff;
+  color: #F2F5F6;
+}
+
+.catalog {
+  background-color: #041827;
+  color: #ffffff;
+}
+
+.catalog__container {
+  padding: 0 350px 140px;
+}
+
+.catalog__container h2 {
+  font-family: "Roboto Condensed", "Arial", sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 51px;
+  margin: 0;
+  margin-bottom: 50px;
+  padding-top: 70px;
+}
+
+.catalog__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 30px;
+}
+
+.product a {
+  position: relative;
+  display: block;
+  width: 350px;
+  height: 650px;
+  color: #ffffff;
+}
+
+.product a::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #041827;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.3s ease;
+  -o-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+
+.product h3 {
+  position: absolute;
+  max-width: 215px;
+  margin: 0;
+  top: 35px;
+  left: 35px;
+}
+
+.product img {
+  background-color: #C4C4C4;
+}
+
+.product__icon {
+  position: absolute;
+  content: "";
+  width: 60px;
+  height: 60px;
+  background-color: #00B2FF;
+  border-radius: 3px 0px 0px 0px;
+  bottom: 0;
+  right: 0;
+}
+
+.product__icon::after {
+  position: absolute;
+  content: "";
+  background-image: url("../img/decorative/arrow.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 10px;
+  width: 7px;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* Эффект при наведении на карточку товара */
+
+.product a:hover::before {
+  opacity: 0;
+}
+
 /* @media (hover: hover), screen and (min-width: 0\0) {
   &:hover,
   &:focus {
@@ -1029,6 +1191,17 @@ main {
 
   .intro__block a:active {
     background-color: #1600ff;
+  }
+
+  .about__info button:hover,
+  .about__info button:focus {
+    background-color: #00B2FF;
+    color: #F2F5F6;
+  }
+
+  .about__info button:active {
+    background-color: #1600ff;
+    color: #F2F5F6;
   }
 }
 
