@@ -231,134 +231,116 @@
       </div> <!-- callback__container -->
     </section>
 
-
-    <!-- <section class="booking" id="booking">
-      <div class="booking__container container">
-        <div class="booking__info">
-          <h2>Раннее бронирование</h2>
-          <p>Забронируйте тур за&nbsp;3&nbsp;-&nbsp;6&nbsp;месяцев
-            до&nbsp;даты выезда и&nbsp;сэкономьте до 50%</p>
-        </div>
-        <div class="booking__callback callback">
-          <form class="callback__form" method="post" action="https://echo.htmlacademy.ru">
-            <p>Оставьте заявку и&nbsp;мы&nbsp;свяжемся с вами в&nbsp;ближайшее время</p>
-            <ul class="callback__list">
-              <li class="callback__item">
-                <label>
-                  <input type="text" name="user-name" placeholder="Имя" required>
-                </label>
-              </li>
-              <li class="callback__item">
-                <label>
-                  <input type="number" name="user-phone" placeholder="Телефон" required>
-                </label>
-              </li>
-              <li class="callback__item">
-                <label>
-                  <input type="email" name="user-email" placeholder="Email" required>
-                </label>
-              </li>
-            </ul>
-            <div class="callback__approval approval">
-              <input class="visually-hidden" type="checkbox" id="user-data" name="user-email" required>
-              <label for="user-data">Я согласен на обработку моих персональных
-                данных</label>
-            </div>
-            <button type="submit" value="Оставить заявку">Оставить заявку</button>
-          </form>
-        </div>
-      </div>
-    </section> -->
-
-    <!-- <section class="contact" id="contact">
-      <div class="contact__container container">
-        <h2 class="visually-hidden">Контакты фирмы и местоположение на карте</h2>
-        <div class="contact__map">
-          <h3 class="visually-hidden">Интерактивная карта с указанием точного местоположения фирмы</h3>
-          <iframe class="contact__iframe"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.6036253003197!2d30.320858716194987!3d59.938719169054025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca145cc1%3A0x42b32648d8238007!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LzgsINCh0LDQvdC60YIt0J_QtdGC0LXRgNCx0YPRgNCzLCAxOTExODY!5e0!3m2!1sru!2sru!4v1658467072756!5m2!1sru!2sru" title="Интерактивная карта с указанием точного местоположения фирмы"></iframe>
-        </div>
-        <div class="contact__text">
-          <p>
-            У вас ещё остались вопросы или сомнения?
-            Приезжайте к&nbsp;нам в&nbsp;офис и мы вам все расскажем.
-          </p>
-          <ul class="contact__list">
-            <li class="contact__item">
-              <a href="https://yandex.ru/maps/-/CCUNz2cR1D" class="contact__link contact__link--address">г. Санкт
-                Петербург, ул.&nbsp;Большая&nbsp;Конюшенная, 19/8</a>
-            </li>
-            <li class="contact__item">
-              <a class="contact__link contact__link--phone" href="tel:+78002000000">8-800-200-00-00</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section> -->
-
   </main>
 
   <footer class="footer">
-    <!-- <div class="footer__container container">
+    <h2 class="visually-hidden">Подвал сайта с социальными сетями, навигацией по сайту и контактами</h2>
+    <div class="footer__container container">
 
-      <a href="#header" class="footer__logo logo">
-        <span class="visually-hidden">Логотип сайта: Эскиз заснеженной горы в миниатюре</span>
-        <svg class="logo__icon" width="100%" height="100%">
-          <use xlink:href="img/sprite/sprite.svg#logo"></use>
-        </svg>
-      </a>
+      <div class="first-row">
+        <div class="footer__logo logo">
+          <a class="logo__image">
+            <svg class="logo__icon" width="100%" height="100%">
+              <use xlink:href="img/sprite/sprite.svg#logo"></use>
+            </svg>
+          </a>
+          <div class="logo__text">
+            <p>Smart Device</p>
+            <span>умные технологии</span>
+          </div>
+        </div>
 
-      <nav class="footer__nav nav">
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a href="#advantages">Преимущества</a>
+        <ul class="footer__social social">
+          <li class="social__item">
+            <a href="#" class="social__link">
+              <span class="visually-hidden">Мы в Одноклассниках</span>
+
+              <svg class="social__icon" width="100%" height="100%">
+                <use xlink:href="img/sprite/sprite.svg#classmates"></use>
+              </svg>
+
+            </a>
           </li>
-          <li class="nav__item">
-            <a href="#directions">Направления</a>
+          <li class="social__item">
+            <a href="#" class="social__link">
+              <span class="visually-hidden">Мы в Вконтакте</span>
+
+              <svg class="social__icon" width="100%" height="100%">
+                <use xlink:href="img/sprite/sprite.svg#vkontakte"></use>
+              </svg>
+
+            </a>
           </li>
-          <li class="nav__item">
-            <a href="#booking">Ближайшие круизы</a>
-          </li>
-          <li class="nav__item">
-            <a href="#contact">Контакты</a>
+          <li class="social__item">
+            <a href="#" class="social__link social__link--pinterest">
+              <span class="visually-hidden">Мы в Пинтерест</span>
+
+              <svg class="social__icon" width="100%" height="100%">
+                <use xlink:href="img/sprite/sprite.svg#pinterest"></use>
+              </svg>
+
+            </a>
           </li>
         </ul>
-      </nav>
 
-      <ul class="footer__social social">
-        <li class="social__item">
-          <a href="#" class="social__link social__link--facebook">
-            <span class="visually-hidden">Мы в Фейсбуке</span>
+      </div>
 
-            <svg class="social__icon" width="100%" height="100%">
-              <use xlink:href="img/sprite/sprite.svg#facebook-icon"></use>
-            </svg>
+      <div class="second-row">
 
-          </a>
-        </li>
-        <li class="social__item">
-          <a href="#" class="social__link social__link--instagram">
-            <span class="visually-hidden">Мы в Инстаграме</span>
+        <nav class="footer__nav nav">
+          <h3>Разделы сайта</h3>
 
-            <svg class="social__icon" width="100%" height="100%">
-              <use xlink:href="img/sprite/sprite.svg#instagram-icon"></use>
-            </svg>
+          <div class="nav__rows">
+            <ul class="nav__list nav__list--first">
+              <li class="nav__item">
+                <a href="#">О&nbsp;Компаниии</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Продукты</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Производство печатных плат</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Монтаж печатных плат</a>
+              </li>
+            </ul>
+            <ul class="nav__list nav__list--second">
+              <li class="nav__item">
+                <a href="#">Комплектующие</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Доставка</a>
+              </li>
+              <li class="nav__item">
+                <a href="#">Контакты</a>
+              </li>
+            </ul>
+          </div>
 
-          </a>
-        </li>
-        <li class="social__item">
-          <a href="#" class="social__link social__link--twitter">
-            <span class="visually-hidden">Мы в Твиттере</span>
+        </nav>
 
-            <svg class="social__icon" width="100%" height="100%">
-              <use xlink:href="img/sprite/sprite.svg#twitter-icon"></use>
-            </svg>
+        <div class="footer__contact contact">
+          <h3>Наш офис</h3>
+          <ul class="contact__list">
+            <li class="contact__item">
+              <a href="https://yandex.ru/maps/-/CCUV6HALDD">г.&nbsp;Мытищи, Олимпийский проспект, д.10</a>
+            </li>
+            <li class="contact__item">
+              <a href="tel:+74955894050">+7&nbsp;(495)&nbsp;589-40-50</a>
+            </li>
+            <li class="contact__item">
+              <a href="tel:+79253895829">+7&nbsp;(925)&nbsp;389-58-29</a>
+            </li>
+            <li class="contact__item">
+              <a href="tel:+79253647813">+7&nbsp;(925)&nbsp;364-78-13</a>
+            </li>
+          </ul>
+        </div>
 
-          </a>
-        </li>
-      </ul>
+      </div>
 
-    </div> -->
+    </div>
   </footer>
 
   <script src="js/main.min.js"></script>

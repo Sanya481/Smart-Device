@@ -1,14 +1,14 @@
 import {ScrollLock} from '../../utils/scroll-lock';
 import {FocusLock} from '../../utils/focus-lock';
 
-export class callbacks {
+export class Modals {
   constructor(settings = {}) {
     this._scrollLock = new ScrollLock();
     this._focusLock = new FocusLock();
 
-    this._callbackOpenElements = document.querySelectorAll('[data-open-callback]');
-    this._openedcallbackElement = null;
-    this._callbackName = null;
+    this._modalOpenElements = document.querySelectorAll('[data-open-modal]');
+    this._openedModalElement = null;
+    this._modalName = null;
     this._enableScrolling = true;
     this._settingKey = 'default';
 
@@ -24,13 +24,13 @@ export class callbacks {
 
     this._documentKeydownHandler = this._documentKeydownHandler.bind(this);
     this._documentClickHandler = this._documentClickHandler.bind(this);
-    this._callbackClickHandler = this._callbackClickHandler.bind(this);
+    this._modalClickHandler = this._modalClickHandler.bind(this);
 
     this._init();
   }
 
   _init() {
-    if (this._callbackOpenElements.length) {
+    if (this._modalOpenElements.length) {
       document.addEventListener('click', this._documentClickHandler);
     }
   }
@@ -71,15 +71,15 @@ export class callbacks {
   _documentClickHandler(evt) {
     const target = evt.target;
 
-    if (!target.closest('[data-open-callback]')) {
+    if (!target.closest('[data-open-modal]')) {
       return;
     }
 
     evt.preventDefault();
 
-    this._callbackName = target.closest('[data-open-callback]').dataset.opencallback;
+    this._modalName = target.closest('[data-open-modal]').dataset.openModal;
 
-    if (!this._callbackName) {
+    if (!this._modalName) {
       return;
     }
 
@@ -91,41 +91,41 @@ export class callbacks {
 
     if (isEscKey) {
       evt.preventDefault();
-      this.close(document.querySelector('.callback.is-active').dataset.callback);
+      this.close(document.querySelector('.modal.is-active').dataset.modal);
     }
   }
 
-  _callbackClickHandler(evt) {
+  _modalClickHandler(evt) {
     const target = evt.target;
 
-    if (!target.closest('[data-close-callback]')) {
+    if (!target.closest('[data-close-modal]')) {
       return;
     }
 
-    this.close(target.closest('[data-callback]').dataset.callback);
+    this.close(target.closest('[data-modal]').dataset.modal);
   }
 
-  _addListeners(callback) {
-    callback.addEventListener('click', this._callbackClickHandler);
+  _addListeners(modal) {
+    modal.addEventListener('click', this._modalClickHandler);
     document.addEventListener('keydown', this._documentKeydownHandler);
   }
 
-  _removeListeners(callback) {
-    callback.removeEventListener('click', this._callbackClickHandler);
+  _removeListeners(modal) {
+    modal.removeEventListener('click', this._modalClickHandler);
     document.removeEventListener('keydown', this._documentKeydownHandler);
   }
 
-  _stopInteractive(callback) {
+  _stopInteractive(modal) {
     if (this._stopPlay) {
-      callback.querySelectorAll('video, audio').forEach((el) => el.pause());
-      callback.querySelectorAll('[data-iframe]').forEach((el) => {
+      modal.querySelectorAll('video, audio').forEach((el) => el.pause());
+      modal.querySelectorAll('[data-iframe]').forEach((el) => {
         el.querySelector('iframe').contentWindow.postMessage('{"event": "command", "func": "pauseVideo", "args": ""}', '*');
       });
     }
   }
 
-  _autoPlay(callback) {
-    callback.querySelectorAll('[data-iframe]').forEach((el) => {
+  _autoPlay(modal) {
+    modal.querySelectorAll('[data-iframe]').forEach((el) => {
       const autoPlay = el.closest('[data-auto-play]');
       if (autoPlay) {
         el.querySelector('iframe').contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
@@ -133,26 +133,26 @@ export class callbacks {
     });
   }
 
-  open(callbackName = this._callbackName) {
-    const callback = document.querySelector(`[data-callback="${callbackName}"]`);
+  open(modalName = this._modalName) {
+    const modal = document.querySelector(`[data-modal="${modalName}"]`);
 
-    if (!callback || callback.classList.contains('is-active')) {
+    if (!modal || modal.classList.contains('is-active')) {
       return;
     }
 
     document.removeEventListener('click', this._documentClickHandler);
 
-    this._openedcallbackElement = document.querySelector('.callback.is-active');
+    this._openedModalElement = document.querySelector('.modal.is-active');
 
-    if (this._openedcallbackElement) {
+    if (this._openedModalElement) {
       this._enableScrolling = false;
-      this.close(this._openedcallbackElement.dataset.callback);
+      this.close(this._openedModalElement.dataset.modal);
     }
 
-    this._setSettings(callbackName);
-    callback.classList.add('is-active');
+    this._setSettings(modalName);
+    modal.classList.add('is-active');
 
-    if (!this._openedcallbackElement) {
+    if (!this._openedModalElement) {
       this._scrollLock.disableScrolling();
     }
 
@@ -161,21 +161,21 @@ export class callbacks {
     }
 
     if (this._lockFocus) {
-      this._focusLock.lock('.callback.is-active', this._startFocus);
+      this._focusLock.lock('.modal.is-active', this._startFocus);
     }
 
     setTimeout(() => {
-      this._addListeners(callback);
-      this._autoPlay(callback);
+      this._addListeners(modal);
+      this._autoPlay(modal);
       document.addEventListener('click', this._documentClickHandler);
     }, this._eventTimeout);
   }
 
-  close(callbackName = this._callbackName) {
-    const callback = document.querySelector(`[data-callback="${callbackName}"]`);
+  close(modalName = this._modalName) {
+    const modal = document.querySelector(`[data-modal="${modalName}"]`);
     document.removeEventListener('click', this._documentClickHandler);
 
-    if (!callback || !callback.classList.contains('is-active')) {
+    if (!modal || !modal.classList.contains('is-active')) {
       return;
     }
 
@@ -183,9 +183,9 @@ export class callbacks {
       this._focusLock.unlock(this._focusBack);
     }
 
-    callback.classList.remove('is-active');
-    this._removeListeners(callback);
-    this._stopInteractive(callback);
+    modal.classList.remove('is-active');
+    this._removeListeners(modal);
+    this._stopInteractive(modal);
 
     if (this._closeCallback) {
       this._closeCallback();

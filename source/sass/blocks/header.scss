@@ -16,7 +16,7 @@
 
 /* Header__logo */
 
-.header__logo {
+.logo {
   display: flex;
 }
 
@@ -38,6 +38,7 @@
   font-size: 25px;
   font-weight: 700;
   line-height: 29px;
+  color: $alice-blue;
   margin: 0;
   padding: 0;
 }
@@ -92,7 +93,6 @@
   }
 
   @include effects-off {
-
     &:hover,
     &:focus {
       color: $color-deep-sky-blue;
@@ -126,7 +126,6 @@
   margin-right: 60px;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       background-color: $color-deep-sky-blue;

@@ -1,125 +1,112 @@
 .footer {
-  background-color: $color-tangaroa;
-  color: $color-alice-blue;
+  background-color: $color-black-pearl;
+  color: $color-transparent-opacity-2;
 }
 
 .footer__container {
-  display: grid;
-  grid-template-columns: min-content 1fr minmax(min-content, 108px);
-  align-items: center;
-  padding: 50px 20px;
-
-  @include tablet-version-range {
-    grid-template-columns: min-content 1fr minmax(min-content, 85px);
-    padding: 50px 45px;
-  }
-
-  @include mobile-version-range {
-    display: block;
-    padding: 40px 15px;
-  }
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 350px 55px;
 }
 
 /* ============ footer__logo */
 
-/* Основные стили по стилизации в файле logo.scss */
 .footer__logo {
-  @include mobile-version-range {
-    margin: 2px 0 18px;
-  }
+  margin-bottom: 30px;
 }
 
 @include effects-off {
-  .footer__logo .logo__icon:hover,
-  .footer__logo .logo__icon:focus {
-    fill: $color-aqua;
-  }
+  // .footer__logo .logo__icon:hover,
+  // .footer__logo .logo__icon:focus {
+  //   fill: $color-aqua;
+  // }
 
-  .footer__logo .logo__icon:active {
-    fill: $color-dodger-blue;
-  }
+  // .footer__logo .logo__icon:active {
+  //   fill: $color-dodger-blue;
+  // }
 }
 
 .footer__logo .logo__icon:active {
-  fill: $color-dodger-blue;
+  // fill: $color-dodger-blue;
+}
+
+/* ============= row */
+
+.second-row {
+  display: flex;
 }
 
 /* ============ footer__nav */
 
 .footer__nav {
-  margin-right: 20px;
-
-  @include mobile-version-range {
-    margin: 2px 0 23px;
-  }
+  max-width: 410px;
+  margin-right: 125px;
 }
 
-.footer__nav .nav__list {
+.footer__contact {
+  max-width: 350px;
+}
+
+.nav h3,
+.contact h3 {
+  font-family: $ff-placeholder-second;
+  font-size: 15px;
+  line-height: 16px;
+  color: $color-default-white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin: 0;
+  margin-bottom: 20px;
+}
 
-  @include vp-768 {
-    display: block;
+.nav__rows {
+  display: flex;
+}
+
+.nav__list,
+.contact__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact__list {
+  margin-right: 30px;
+}
+
+.nav__list--first {
+  margin-right: 30px;
+}
+
+.nav__item,
+.contact__item {
+  margin-bottom: 10px;
+
+  &:last-child {
+    margin-bottom: 0;
   }
 }
 
-.footer__nav .nav__item {
-  margin: -1px 35px 10px 0;
-
-  @include tablet-version-range {
-    margin: -10px 15px 6px 0;
-  }
-
-  @include mobile-version-range {
-    margin: 0 0 8px 0;
-
-    &:last-child {
-      margin: 0 0 0 0;
-    }
-  }
-}
-
-.footer__nav a {
-  position: relative;
-  color: $color-alice-blue;
+.nav__item a,
+.contact__item a {
+  line-height: 22px;
+  color: $color-transparent-opacity-2;
   padding: 5px 0;
+  transition: color $trans-default;
 
   @include effects-off {
-    &::after {
-      content: "";
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: -3px;
-      width: 0;
-      height: 2px;
-      background-color: $color-perano;
-      transition: width $trans-600;
+    &:hover,
+    &:focus {
+      color: $color-deep-sky-blue;
     }
 
-    &:hover::after,
-    &:focus::after {
-      content: "";
-      width: 100%;
-      left: 0;
-      background-color: $color-default-white;
+    &:active {
+      color: $color-dodger-blue;
     }
   }
 
   &:active {
-    color: $color-turquoise-blue;
-  }
-
-  @include tablet-version-range {
-    font-size: 12px;
-    line-height: 15px;
-    padding: 10px 10px 10px 0;
-    color: $color-alice-blue;
-  }
-
-  @include mobile-version-range {
-    font-size: 12px;
-    line-height: 15px;
-    padding: 10px 10px 10px 0;
-    color: $color-alice-blue;
+    color: $color-dodger-blue;
   }
 }
+
