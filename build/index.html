@@ -14,7 +14,7 @@
 
 <body class="page-body">
 
-  <header class="header">
+  <header class="header" id="header">
     <div class="header__container container">
 
       <div class="header__logo logo">
@@ -41,7 +41,7 @@
         </ul>
       </div>
 
-      <button type="button" class="header__button">Заказать звонок</button>
+      <button type="button" class="header__button" id="header__button">Заказать звонок</button>
 
     </div>
   </header>
@@ -105,7 +105,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="about__container container">
         <div class="about__picture">
           <picture>
@@ -125,7 +125,7 @@
             Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
             РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
             светотехники России.</p>
-          <p style="display: none;">Smart Device - это команда профессионалов. Через нас прошло более 1 000 000
+          <p id="more-info" style="display: none;">Smart Device - это команда профессионалов. Через нас прошло более 1 000 000
             клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14
             офисов по всей стране и 20 городов присутствия.
             Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
@@ -204,7 +204,7 @@
                 </li>
                 <li class="callback__item callback__item--phone">
                   <label>
-                    <input type="number" name="user-phone" placeholder="Телефон" required>
+                    <input type="tel" name="user-phone" placeholder="Телефон" maxlength="10" required>
                   </label>
                 </li>
                 <li class="callback__item callback__item--textarea">
@@ -342,6 +342,48 @@
 
     </div>
   </footer>
+
+  <section class="callback callback-modal" id="callback-modal">
+    <h2 class="visually-hidden">Модальное окно с формой для обратной связи</h2>
+    <div class="callback__block callback-modal__block">
+      <p>Закажите звонок</p>
+      <span>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</span>
+      <form class="callback-modal__form form" action="https://echo.htmlacademy.ru" method="post">
+
+        <ul class="form__list">
+          <li class="callback__item callback__item--name">
+            <label>
+              <input type="text" name="user-name" placeholder="Имя" required>
+            </label>
+          </li>
+          <li class="callback__item callback__item--phone">
+            <label>
+              <input type="tel" name="user-phone" placeholder="Телефон" maxlength="10" required>
+            </label>
+          </li>
+          <li class="callback__item callback__item--textarea">
+            <label>
+              <textarea name="user-question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
+            </label>
+          </li>
+        </ul>
+
+        <div class="callback-modal__confirmation approval">
+          <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
+
+          <div class="callback-modal__approval">
+            <input class="visually-hidden" type="checkbox" id="user-personal-data" name="user-email" required>
+            <label for="user-personal-data">Я согласен на обработку персональных
+              данных</label>
+          </div>
+        </div>
+
+        <button type="button" class="callback-modal__btn-close" id="callback-modal__btn-close">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+      </form>
+    </div>
+  </section>
 
   <script src="js/main.min.js"></script>
 </body>

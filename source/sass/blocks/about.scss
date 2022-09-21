@@ -61,7 +61,6 @@
   transition: background-color $trans-default, color $trans-default;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       background-color: $color-deep-sky-blue;

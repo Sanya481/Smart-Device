@@ -648,7 +648,7 @@ main {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: rgba(0, 43, 102, 0.5);
+  background: rgba(3, 16, 27, 0.7);
 }
 
 .container {
@@ -691,6 +691,10 @@ main {
   background: -o-linear-gradient(top, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
   background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
   z-index: 10;
+}
+
+.header.hiding {
+  z-index: -1;
 }
 
 .header__container {
@@ -1131,6 +1135,9 @@ main {
   border-radius: 3px 0px 0px 0px;
   bottom: 0;
   right: 0;
+  -webkit-transition: width 0.6s ease;
+  -o-transition: width 0.6s ease;
+  transition: width 0.6s ease;
 }
 
 .product__icon::after {
@@ -1155,106 +1162,8 @@ main {
   opacity: 0;
 }
 
-.callback-email {
-  top: auto;
-  bottom: 180px;
-  width: 760px;
-  padding: 63px 100px 84px 100px;
-}
-
-.callback-item {
-  width: 360px;
-  margin-top: 0;
-}
-
-.callback-item label {
-  display: block;
-  margin-bottom: 9px;
-}
-
-.callback-form {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 400px 360px;
-  grid-template-columns: 400px 360px;
-  grid-template-areas: "name email" "textarea textarea";
-}
-
-.callback-item__name {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: name;
-  margin-bottom: 34px;
-}
-
-.form__list > .callback-item__name {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
-.callback-item__email {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: email;
-}
-
-.callback-item__textarea {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: textarea;
-  margin-bottom: 47px;
-  width: 760px;
-}
-
-.form__list > .callback-item__textarea {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-}
-
-.callback-item__textarea textarea {
-  width: 727px;
-  padding: 16px;
-  height: 82px;
-  border: 2px solid var(--basic-extra-light-grey);
-}
-
-.textarea-title {
-  margin: 0;
-  margin-bottom: 9px;
-}
-
-.callback-form input[type="text"],
-.callback-form input[type="email"] {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18px;
-  color: var(--basic-grey);
-  border: 2px solid var(--basic-extra-light-grey);
-  width: 360px;
-  padding: 10px 20px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.callback h2 {
-  font-size: 45px;
-  line-height: 52px;
-  margin: 0;
-  margin-bottom: 37px;
-}
-
-.callback-item input:hover {
-  border: 2px solid var(--basic-extra-light-dark);
-}
-
-.callback-item input:focus {
-  border: 2px solid var(--basic-black);
-}
-
-.callback-item input:invalid {
-  border: 2px solid var(--basic-red);
+.product a:hover .product__icon {
+  width: 100%;
 }
 
 .callback {
@@ -1403,11 +1312,6 @@ main {
   grid-area: name;
 }
 
-.form__list > .callback__item--name {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
 .callback__item--phone {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
@@ -1415,16 +1319,10 @@ main {
 }
 
 .callback__item--textarea {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-area: textarea;
-}
-
-.form__list > .callback__item--textarea {
   -ms-grid-row: 3;
   -ms-grid-column: 1;
   -ms-grid-column-span: 3;
+  grid-area: textarea;
 }
 
 .callback__button {
@@ -1647,6 +1545,161 @@ main {
 
 .social__icon:active {
   fill: #2e80fd;
+}
+
+.callback-modal {
+  display: none;
+  /* Делаем по центру модальное окно  */
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  top: 146px;
+  margin: auto;
+  width: 500px;
+  z-index: 10;
+  padding: 40px;
+  border-radius: 3px;
+}
+
+/* Реализация открытия модального окна */
+
+.callback-modal.show {
+  display: block;
+  -webkit-animation: bounce 0.6s;
+  animation: bounce 0.6s;
+}
+
+.callback-modal .callback-modal__block {
+  margin: 0;
+}
+
+.callback-modal__block span {
+  max-width: 380px;
+  margin-bottom: 40px;
+}
+
+/* callback-modal__form */
+
+.callback-modal__form .form__list {
+  display: block;
+  margin: 0 0 25px;
+}
+
+.callback-modal__form .callback__item {
+  margin-bottom: 20px;
+}
+
+.callback-modal__form .callback__item:last-child {
+  margin-bottom: 0;
+}
+
+/* callback-modal__confirmation */
+
+.callback-modal__confirmation {
+  display: block;
+}
+
+.callback-modal__confirmation .callback__button {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px;
+}
+
+/* callback-modal__approval */
+
+.callback-modal__approval label {
+  max-width: 395px;
+}
+
+.callback-modal__approval label:active {
+  color: #7b0eff;
+  opacity: 1;
+}
+
+/* callback-modal__btn-close */
+
+.callback-modal__btn-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.callback-modal__btn-close::before,
+.callback-modal__btn-close::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  top: 20px;
+  right: 10px;
+}
+
+.callback-modal__btn-close::after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.callback-modal__btn-close::before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+/* Modal-login Animations */
+
+/* Анимация для открытия модального окна */
+
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  90% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0% {
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  70% {
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  90% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
 }
 
 /* @media (hover: hover), screen and (min-width: 0\0) {
