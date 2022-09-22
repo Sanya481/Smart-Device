@@ -32,11 +32,24 @@
       <div class="header__contact callback-contact">
         <ul class="callback-contact__list">
           <li class="callback-contact__item">
-            <a class="callback-contact__link callback-contact__link--mail" href="mailto:info@sd.ru">info@sd.ru</a>
+
+            <a class="callback-contact__link callback-contact__link--mail" href="mailto:info@sd.ru">
+              <svg width="21" height="20">
+                <use xlink:href="img/sprite/sprite.svg#mail-icon"></use>
+              </svg>
+              <span>info@sd.ru</span>
+            </a>
+
           </li>
           <li class="callback-contact__item">
-            <a class="callback-contact__link callback-contact__link--phone"
-              href="tel:+74950005252">+7&nbsp;(495)&nbsp;000&nbsp;52&nbsp;52</a>
+
+            <a class="callback-contact__link callback-contact__link--phone" href="tel:+74950005252">
+              <svg width="21" height="20">
+                <use xlink:href="img/sprite/sprite.svg#phone-icon"></use>
+              </svg>
+              <span>+7&nbsp;(495)&nbsp;000&nbsp;52&nbsp;52</span>
+            </a>
+
           </li>
         </ul>
       </div>
@@ -125,12 +138,14 @@
             Печатные платы и комплектующие Service Devices применяются на предприятиях Российских Железных Дорог (РЖД),
             РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
             светотехники России.</p>
-          <p id="more-info" style="display: none;">Smart Device - это команда профессионалов. Через нас прошло более 1
-            000 000
-            клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14
-            офисов по всей стране и 20 городов присутствия.
-            Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
-            Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
+          <div class="about__more-info" id="about__more-info">
+            <p>Smart Device - это команда профессионалов. Через нас прошло более 1
+              000 000
+              клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14
+              офисов по всей стране и 20 городов присутствия.
+              Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
+              Использование инновационных технологий помогает экономить деньги и время наших клиентов</p>
+          </div>
           <button type="button" id="about__button">Подробнее</button>
         </div>
       </div>
@@ -343,6 +358,8 @@
 
     </div>
   </footer>
+
+  <!-- Модальное окно с формой обратной связи -->
 
   <section class="callback callback-modal" id="callback-modal">
     <h2 class="visually-hidden">Модальное окно с формой для обратной связи</h2>

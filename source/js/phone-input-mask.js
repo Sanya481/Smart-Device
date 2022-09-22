@@ -7,6 +7,9 @@ const phoneInputs = Array.from(document.querySelectorAll('input[data-tel-input]'
 /* /\D/g - глобальное регулярное выражение. Ищет все символы, которые не являются числами и удаляет их */
 const regExp = /\D/g;
 
+/* Функция проверяет, что нажали кнопку Backspace */
+const isBackspaceKey = (evt) => evt.key === 'Backspace';
+
 /**
  * @description Функция обрезает все символы кроме чисел
  * @param {text} input - символы вводимые пользователем в поле ввода
@@ -17,10 +20,10 @@ const getInputNumbersValue = function (input) {
 };
 
 // Функция запрета вставки не числовых значений в поле ввода
-const onPhonePaste = function (e) {
-  const input = e.target;
+const onPhonePaste = function (evt) {
+  const input = evt.target;
   const inputNumbersValue = getInputNumbersValue(input);
-  const pasted = e.clipboardData || window.Clipboard;
+  const pasted = evt.clipboardData || window.Clipboard;
   if (pasted) {
     const pastedText = pasted.getData('Text');
     if (regExp.test(pastedText)) {
@@ -31,8 +34,8 @@ const onPhonePaste = function (e) {
 };
 
 // Функция созданя маски ввода номера телефона
-const onPhoneInput = (e) => {
-  const input = e.target;
+const onPhoneInput = (evt) => {
+  const input = evt.target;
   // Положение курсора
   const selectionStart = input.selectionStart;
   let inputNumbersValue = getInputNumbersValue(input);
@@ -45,7 +48,7 @@ const onPhoneInput = (e) => {
   }
   /* Проверяем положение курсора. Если в середине строки пользователь удаляет и  хочет поменять значение, то даем возможность редактирования без перекидывания курсора в конец строки */
   if (input.value.length !== selectionStart) {
-    if (e.data && regExp.test(e.data)) {
+    if (evt.data && regExp.test(evt.data)) {
       input.value = inputNumbersValue;
     }
     return;
@@ -78,10 +81,10 @@ const onPhoneInput = (e) => {
 };
 
 // Функция исправляет баг при удалении символов
-const onPhoneKeyDown = function (e) {
-  const inputValue = e.target.value.replace(regExp, '');
-  if (e.key === 'Backspace' && inputValue.length === 1) {
-    e.target.value = '';
+const onPhoneKeyDown = function (evt) {
+  const inputValue = evt.target.value.replace(regExp, '');
+  if (isBackspaceKey(evt) && inputValue.length === 1) {
+    evt.target.value = '';
   }
 };
 

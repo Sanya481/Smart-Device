@@ -6,13 +6,18 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
-  padding: 50px 350px 55px;
+  padding: 50px 5px 55px;
 }
 
 /* ============ footer__logo */
 
 .footer__logo {
+  min-width: 215px;
   margin-bottom: 30px;
+}
+
+.footer__logo .logo__text {
+  margin-top: 5px;
 }
 
 @include effects-off {
@@ -26,25 +31,22 @@
   // }
 }
 
-.footer__logo .logo__icon:active {
-  // fill: $color-dodger-blue;
-}
-
 /* ============= row */
 
 .second-row {
   display: flex;
+  margin-top: 6px;
 }
 
 /* ============ footer__nav */
 
 .footer__nav {
-  max-width: 410px;
-  margin-right: 125px;
+  max-width: 470px;
+  margin-right: 129px;
 }
 
 .footer__contact {
-  max-width: 350px;
+  max-width: 345px;
 }
 
 .nav h3,
@@ -74,13 +76,17 @@
   margin-right: 30px;
 }
 
+.nav__list {
+  max-width: 220px;
+}
+
 .nav__list--first {
-  margin-right: 30px;
+  margin-right: 26px;
 }
 
 .nav__item,
 .contact__item {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 
   &:last-child {
     margin-bottom: 0;
@@ -95,6 +101,7 @@
   transition: color $trans-default;
 
   @include effects-off {
+
     &:hover,
     &:focus {
       color: $color-deep-sky-blue;
@@ -109,4 +116,3 @@
     color: $color-dodger-blue;
   }
 }
-

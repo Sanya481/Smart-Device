@@ -4,7 +4,7 @@
 }
 
 .callback__container {
-  padding: 170px 350px 250px;
+  padding: 170px 5px 248px;
 }
 
 .callback__wrapper {
@@ -21,6 +21,7 @@
 .callback__block {
   max-width: 585px;
   margin-right: 12px;
+  margin-top: -5px;
 }
 
 .callback__block>p {
@@ -28,8 +29,7 @@
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
-  margin: 0;
-  margin-bottom: 15px;
+  margin: 0 0 12px 5px;
 }
 
 .callback__block span {
@@ -37,9 +37,14 @@
   vertical-align: middle;
   line-height: 22px;
   margin-bottom: 35px;
+  margin-left: 9px;
 }
 
 /* callback__form */
+
+.callback__form {
+  margin-left: 9px;
+}
 
 .form__list {
   list-style: none;
@@ -53,7 +58,7 @@
   grid-template-areas:
     'name phone'
     'textarea textarea';
-  margin-bottom: 35px;
+  margin: 0 0 25px;
 }
 
 .callback__item {
@@ -91,6 +96,7 @@
 
 .callback__item textarea {
   max-height: 155px;
+  padding: 22px 15px 15px 15px;
 }
 
 .callback__item--name {
@@ -108,8 +114,8 @@
 .callback__button {
   font-family: $ff-placeholder-second;
   font-weight: 700;
-  font-size: 14px;
-  line-height: 16px;
+  font-size: 16px;
+  line-height: 23px;
   letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;
@@ -119,7 +125,7 @@
   cursor: pointer;
 
   width: 265px;
-  padding: 15px 25px;
+  padding: 13px 32px;
   background-color: $color-black-pearl-2;
   border: none;
   flex-shrink: 0;
