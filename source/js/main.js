@@ -2,6 +2,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import './more-information.js';
 import './modal-callback.js';
+import './phone-input-mask.js';
 
 // ---------------------------------
 
