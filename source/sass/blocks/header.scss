@@ -12,6 +12,10 @@
     width: auto;
     z-index: auto;
   }
+
+  @include vp-768 {
+    min-height: 70px;
+  }
 }
 
 .header.hiding {
@@ -26,6 +30,10 @@
 
   @include vp-1024 {
     margin-top: 20px;
+  }
+
+  @include vp-768 {
+    margin-top: 10px;
   }
 }
 
@@ -43,10 +51,17 @@
   margin-right: 15px;
 }
 
+.header__logo .logo__image {
+  @include vp-768 {
+    width: 35px;
+    height: 35px;
+    margin-right: 0;
+  }
+}
+
 .logo__text {
   display: flex;
   flex-direction: column;
-
   margin-top: 7px;
 }
 
@@ -69,6 +84,10 @@
   opacity: 0.7;
 }
 
+.header__logo .logo__text {
+  display: none;
+}
+
 /* Callback-contact */
 
 .callback-contact__list {
@@ -84,6 +103,10 @@
   @include vp-1024 {
     max-width: 220px;
     gap: 20px;
+  }
+
+  @include vp-768 {
+    margin: 0 10px 0 0;
   }
 }
 

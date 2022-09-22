@@ -7,6 +7,15 @@
   display: flex;
   justify-content: space-between;
   padding: 50px 5px 55px;
+
+  @include vp-1024 {
+    display: block;
+    padding: 50px 5px 65px 5px;
+  }
+
+  @include vp-768 {
+    padding: 35px 5px;
+  }
 }
 
 /* ============ footer__logo */
@@ -14,6 +23,14 @@
 .footer__logo {
   min-width: 215px;
   margin-bottom: 30px;
+
+  @include vp-1024 {
+    margin: 0;
+  }
+
+  @include vp-768 {
+    margin: 0 0 15px 0;
+  }
 }
 
 .footer__logo .logo__text {
@@ -33,9 +50,33 @@
 
 /* ============= row */
 
+.first-row {
+  @include vp-1024 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  @include vp-768 {
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
+
 .second-row {
   display: flex;
   margin-top: 6px;
+
+  @include vp-1024 {
+    justify-content: space-between;
+    column-gap: 130px;
+    margin: 0;
+  }
+
+  @include vp-768 {
+    display: block;
+  }
 }
 
 /* ============ footer__nav */
@@ -43,6 +84,17 @@
 .footer__nav {
   max-width: 470px;
   margin-right: 129px;
+
+  @include vp-1024 {
+    max-width: 220px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  @include vp-768 {
+    max-width: 100%;
+    margin: 0 0 20px 0;
+  }
 }
 
 .footer__contact {
@@ -63,6 +115,10 @@
 
 .nav__rows {
   display: flex;
+
+  @include vp-1024 {
+    display: block;
+  }
 }
 
 .nav__list,
@@ -74,6 +130,10 @@
 
 .contact__list {
   margin-right: 30px;
+
+  @include vp-1024 {
+    margin: 0;
+  }
 }
 
 .nav__list {
@@ -82,6 +142,10 @@
 
 .nav__list--first {
   margin-right: 26px;
+
+  @include vp-1024 {
+    margin: 0 0 10px 0;
+  }
 }
 
 .nav__item,
@@ -114,5 +178,10 @@
 
   &:active {
     color: $color-dodger-blue;
+  }
+
+  @include vp-768 {
+    font-size: 14px;
+    line-height: 19px;
   }
 }

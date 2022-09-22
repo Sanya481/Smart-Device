@@ -732,6 +732,10 @@ main {
   opacity: 0.7;
 }
 
+.header__logo .logo__text {
+  display: none;
+}
+
 /* Callback-contact */
 
 .callback-contact__list {
@@ -1168,8 +1172,7 @@ main {
 
 .callback__block {
   max-width: 585px;
-  margin-right: 12px;
-  margin-top: -5px;
+  margin: -5px 12px 0 0;
 }
 
 .callback__block > p {
@@ -1184,8 +1187,7 @@ main {
   display: inline-block;
   vertical-align: middle;
   line-height: 22px;
-  margin-bottom: 35px;
-  margin-left: 9px;
+  margin: 0 0 35px 9px;
 }
 
 /* callback__form */
@@ -1870,11 +1872,257 @@ main {
     margin-bottom: 50px;
     padding-top: 60px;
   }
+
+  .callback__container {
+    padding: 50px 5px 125px 5px;
+  }
+
+  .callback__wrapper {
+    display: block;
+    background-image: none;
+  }
+
+  .callback__block {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .callback__block > p {
+    margin: 0 0 10px 0;
+  }
+
+  .callback__block span {
+    margin: 0 0 25px 0;
+  }
+
+  .callback__form {
+    margin: 0;
+  }
+
+  .form__list {
+    -ms-grid-columns: 320px 320px;
+    grid-template-columns: 320px 320px;
+    margin: 0 0 35px;
+  }
+
+  .footer__container {
+    display: block;
+    padding: 50px 5px 65px 5px;
+  }
+
+  .footer__logo {
+    margin: 0;
+  }
+
+  .first-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  .second-row {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-column-gap: 130px;
+    -moz-column-gap: 130px;
+    column-gap: 130px;
+    margin: 0;
+  }
+
+  .footer__nav {
+    max-width: 220px;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .nav__rows {
+    display: block;
+  }
+
+  .contact__list {
+    margin: 0;
+  }
+
+  .nav__list--first {
+    margin: 0 0 10px 0;
+  }
+
+  .footer__social.social {
+    margin: 0;
+  }
 }
 
 @media (max-width: 767px) {
   .container {
-    max-width: 767px;
-    padding: 0 25px;
+    max-width: 280px;
+    padding: 0 5px;
+  }
+
+  .header {
+    min-height: 70px;
+  }
+
+  .header__container {
+    margin-top: 10px;
+  }
+
+  .header__logo .logo__image {
+    width: 35px;
+    height: 35px;
+    margin-right: 0;
+  }
+
+  .callback-contact__list {
+    margin: 0 10px 0 0;
+  }
+
+  .intro {
+    min-height: 560px;
+    margin-bottom: 50px;
+  }
+
+  .intro__block {
+    padding-top: 80px;
+  }
+
+  .intro__block h1 {
+    font-size: 36px;
+    line-height: 42px;
+  }
+
+  .intro__block p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .intro__block a {
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+  }
+
+  .advantages__container {
+    margin: 0 auto 50px;
+  }
+
+  .advantages__list {
+    display: block;
+  }
+
+  .advantages__item {
+    min-height: 340px;
+    padding: 30px 30px 35px 30px;
+    margin-bottom: 30px;
+  }
+
+  .advantages__item:last-child {
+    margin-bottom: 0;
+  }
+
+  .advantages__item h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .advantages__item p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .advantages__item a {
+    width: 30px;
+    height: 30px;
+  }
+
+  .about__picture {
+    display: none;
+  }
+
+  .about__info h2 {
+    font-size: 28px;
+    line-height: 40px;
+  }
+
+  .about__info p {
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  .callback__container {
+    padding: 50px 5px 90px 5px;
+  }
+
+  .callback__block > p {
+    font-size: 30px;
+    line-height: 42px;
+    margin: 0 0 20px;
+  }
+
+  .callback__block span {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 0 40px;
+  }
+
+  .form__list {
+    display: block;
+    margin: 0 0 30px;
+  }
+
+  .callback__item {
+    margin: 0 0 20px 0;
+  }
+
+  .callback__item:last-child {
+    margin: 0 0 0 0;
+  }
+
+  .callback__button {
+    margin: 0 0 25px 0;
+  }
+
+  .callback__confirmation {
+    display: block;
+  }
+
+  .footer__container {
+    padding: 35px 5px;
+  }
+
+  .footer__logo {
+    margin: 0 0 15px 0;
+  }
+
+  .first-row {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+
+  .second-row {
+    display: block;
+  }
+
+  .footer__nav {
+    max-width: 100%;
+    margin: 0 0 20px 0;
+  }
+
+  .nav__item a,
+  .contact__item a {
+    font-size: 14px;
+    line-height: 19px;
   }
 }

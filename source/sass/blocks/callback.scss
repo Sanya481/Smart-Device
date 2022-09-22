@@ -5,6 +5,14 @@
 
 .callback__container {
   padding: 170px 5px 248px;
+
+  @include vp-1024 {
+    padding: 50px 5px 125px 5px;
+  }
+
+  @include vp-768 {
+    padding: 50px 5px 90px 5px;
+  }
 }
 
 .callback__wrapper {
@@ -14,14 +22,24 @@
   background-image: url("../img/decorative/paper-airplane-3d.png");
   background-repeat: no-repeat;
   background-position: left center;
+
+  @include vp-1024 {
+    display: block;
+    background-image: none;
+  }
+
 }
 
 /* callback__block */
 
 .callback__block {
   max-width: 585px;
-  margin-right: 12px;
-  margin-top: -5px;
+  margin: -5px 12px 0 0;
+
+  @include vp-1024 {
+    max-width: 100%;
+    margin: 0;
+  }
 }
 
 .callback__block>p {
@@ -30,20 +48,43 @@
   font-size: 36px;
   line-height: 51px;
   margin: 0 0 12px 5px;
+
+  @include vp-1024 {
+    margin: 0 0 10px 0;
+  }
+
+  @include vp-768 {
+    font-size: 30px;
+    line-height: 42px;
+    margin: 0 0 20px;
+  }
 }
 
 .callback__block span {
   display: inline-block;
   vertical-align: middle;
   line-height: 22px;
-  margin-bottom: 35px;
-  margin-left: 9px;
+  margin: 0 0 35px 9px;
+
+  @include vp-1024 {
+    margin: 0 0 25px 0;
+  }
+
+  @include vp-768 {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 0 40px;
+  }
 }
 
 /* callback__form */
 
 .callback__form {
   margin-left: 9px;
+
+  @include vp-1024 {
+    margin: 0;
+  }
 }
 
 .form__list {
@@ -59,10 +100,28 @@
     'name phone'
     'textarea textarea';
   margin: 0 0 25px;
+
+  @include vp-1024 {
+    grid-template-columns: 320px 320px;
+    margin: 0 0 35px;
+  }
+
+  @include vp-768 {
+    display: block;
+    margin: 0 0 30px;
+  }
 }
 
 .callback__item {
   margin: 0;
+
+  @include vp-768 {
+    margin: 0 0 20px 0;
+
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+  }
 }
 
 .callback__item input,
@@ -147,6 +206,10 @@
   &:active {
     background-color: $color-navy;
   }
+
+  @include vp-768 {
+    margin: 0 0 25px 0;
+  }
 }
 
 /* callback__confirmation */
@@ -154,4 +217,8 @@
 .callback__confirmation {
   display: flex;
   align-items: end;
+
+  @include vp-768 {
+    display: block;
+  }
 }

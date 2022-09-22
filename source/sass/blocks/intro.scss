@@ -15,6 +15,12 @@
     margin-bottom: 80px;
   }
 
+  @include vp-768 {
+    min-height: 560px;
+    margin-bottom: 50px;
+  }
+
+
   // filter: $intro-filter-bcg;
 
   // @include retina {
@@ -53,6 +59,10 @@
   @include vp-1024 {
     margin: 0;
   }
+
+  @include vp-768 {
+    padding-top: 80px;
+  }
 }
 
 .intro__block h1 {
@@ -69,6 +79,11 @@
     line-height: 75px;
     margin: 0 0 20px;
   }
+
+  @include vp-768 {
+    font-size: 36px;
+    line-height: 42px;
+  }
 }
 
 .intro__block p {
@@ -80,6 +95,11 @@
 
   @include vp-1024 {
     margin: 0 0 50px;
+  }
+
+  @include vp-768 {
+    font-size: 14px;
+    line-height: 22px;
   }
 }
 
@@ -117,5 +137,12 @@
 
   @include vp-1024 {
     margin-left: 45px;
+  }
+
+  @include vp-768 {
+    width: 100%;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
   }
 }

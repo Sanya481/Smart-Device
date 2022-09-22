@@ -12,6 +12,10 @@
 
 .footer__social.social {
   margin-left: 11px;
+
+  @include vp-1024 {
+    margin: 0;
+  }
 }
 
 .social__link {
@@ -29,6 +33,7 @@
   transition: fill $trans-default;
 
   @include effects-off {
+
     &:hover,
     &:focus {
       fill: $deep-sky-blue;
