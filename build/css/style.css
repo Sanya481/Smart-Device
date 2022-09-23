@@ -1501,7 +1501,7 @@ main {
 }
 
 .nav__wrapper.is-open .nav__rows,
-.nav__wrapper.is-open .contact__list {
+.contact__wrapper.is-open .contact__list {
   margin-bottom: 14px;
 }
 
@@ -1536,6 +1536,20 @@ main {
 .nav__item a:active,
 .contact__item a:active {
   color: #0d7aee;
+}
+
+/* Реализация шапки без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .second-row */
+
+.second-row.no-js h3::before {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+.second-row.no-js .nav__rows,
+.second-row.no-js .contact__list {
+  max-height: none;
+  margin-bottom: 14px;
 }
 
 .social {
@@ -2307,7 +2321,8 @@ main {
     border-bottom: 1px solid rgba(248, 253, 255, 0.7);
   }
 
-  .nav__wrapper {
+  .nav__wrapper,
+  .contact__wrapper {
     max-width: 280px;
     padding: 0 5px;
     margin: 0 auto;

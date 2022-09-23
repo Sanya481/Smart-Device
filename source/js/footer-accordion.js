@@ -5,15 +5,23 @@ const accordionContainer = footer.querySelector('[data-accordion-container]');
 // Все аккордионы
 const accordions = footer.querySelectorAll('[data-accordion-block]');
 
+// Проверка работоспособности элементов при отключенном JavaScript
+const checkWorkJs = () => {
+  if (accordionContainer.classList.contains('no-js')) {
+    accordionContainer.classList.remove('no-js');
+  }
+};
+
+checkWorkJs();
 
 // Функция закрытия других аккордеонов при открытии одного
-const closeAllAccordions = () => {
+function closeAllAccordions() {
   accordions.forEach((accordion) => {
     accordion.classList.remove('is-open');
     accordion.querySelector('[data-accordion-title]').classList.remove('is-open');
     accordion.querySelector('[data-accordion-items]').style.maxHeight = '0px';
   });
-};
+}
 
 /* Функция открытия аккордиона при клике */
 const onOpenNavList = (evt) => {
@@ -38,7 +46,6 @@ const onOpenNavList = (evt) => {
     }
   }
 };
-
 
 // Вешаем слушатель на весь блок с аккордионами и отлавливваем клик через делегирование
 accordionContainer.addEventListener('click', onOpenNavList);

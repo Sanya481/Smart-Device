@@ -107,7 +107,8 @@
   }
 }
 
-.nav__wrapper {
+.nav__wrapper,
+.contact__wrapper {
   @include vp-768 {
     max-width: 280px;
     padding: 0 5px;
@@ -195,7 +196,7 @@
 
 // Добавление отступа при открытии
 .nav__wrapper.is-open .nav__rows,
-.nav__wrapper.is-open .contact__list {
+.contact__wrapper.is-open .contact__list {
   margin-bottom: 14px;
 }
 
@@ -228,7 +229,6 @@
   transition: color $trans-default;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       color: $color-deep-sky-blue;
@@ -247,4 +247,16 @@
     font-size: 14px;
     line-height: 19px;
   }
+}
+
+/* Реализация шапки без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .second-row */
+
+.second-row.no-js h3::before {
+  transform: rotate(0deg);
+}
+
+.second-row.no-js .nav__rows,
+.second-row.no-js .contact__list {
+  max-height: none;
+  margin-bottom: 14px;
 }
