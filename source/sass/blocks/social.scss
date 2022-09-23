@@ -14,7 +14,13 @@
   margin-left: 11px;
 
   @include vp-1024 {
-    margin: 0;
+    margin: -7px -5px 0 0;
+  }
+}
+
+.social__item--pinterest {
+  @include vp-1024 {
+    order: -1;
   }
 }
 
@@ -33,7 +39,6 @@
   transition: fill $trans-default;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       fill: $deep-sky-blue;

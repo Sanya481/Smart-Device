@@ -85,10 +85,22 @@
 }
 
 .header__logo .logo__text {
-  display: none;
+  @include vp-768 {
+    display: none;
+  }
 }
 
 /* Callback-contact */
+
+.header__contact {
+  @include vp-1024 {
+    margin-right: 20px;
+  }
+
+  @include vp-768 {
+    margin: 0;
+  }
+}
 
 .callback-contact__list {
   list-style: none;
@@ -115,7 +127,6 @@
   align-items: center;
 
   @include effects-off {
-
     &:hover span,
     &:focus span {
       color: $color-deep-sky-blue;
@@ -129,7 +140,6 @@
   @include vp-1024 {
     padding: 10px;
   }
-
 }
 
 .callback-contact__link svg {
@@ -149,51 +159,6 @@
     display: none;
   }
 }
-
-// .callback-contact__link {
-//   position: relative;
-//   color: $alice-blue;
-//   padding: 3px 0 3px 35px;
-//   line-height: 18px;
-
-//   &--mail {
-//     padding: 3px 0 3px 43px;
-//   }
-
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     width: 20px;
-//     height: 20px;
-//     left: 0;
-//     top: 50%;
-//     transform: translateY(-50%);
-//   }
-
-//   &--mail::before {
-//     background-image: url("../img/svg/email.svg");
-//     background-repeat: no-repeat;
-//     background-position: 0 0;
-//     left: 8px;
-//   }
-
-//   &--phone::before {
-//     background-image: url("../img/svg/phone-call.svg");
-//     background-repeat: no-repeat;
-//     background-position: 0 0;
-//   }
-
-//   @include effects-off {
-//     &:hover,
-//     &:focus {
-//       color: $color-deep-sky-blue;
-//     }
-
-//     &:active {
-//       color: $color-dodger-blue;
-//     }
-//   }
-// }
 
 /* Header__button */
 
@@ -216,7 +181,6 @@
   margin: -7px 60px 0 0;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       background-color: $color-deep-sky-blue;

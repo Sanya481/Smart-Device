@@ -7,11 +7,11 @@
   padding: 170px 5px 248px;
 
   @include vp-1024 {
-    padding: 50px 5px 125px 5px;
+    padding: 44px 5px 126px;
   }
 
   @include vp-768 {
-    padding: 50px 5px 90px 5px;
+    padding: 47px 5px 85px;
   }
 }
 
@@ -27,7 +27,6 @@
     display: block;
     background-image: none;
   }
-
 }
 
 /* callback__block */
@@ -42,7 +41,7 @@
   }
 }
 
-.callback__block>p {
+.callback__block > p {
   font-family: $ff-placeholder-second;
   font-weight: 400;
   font-size: 36px;
@@ -50,13 +49,13 @@
   margin: 0 0 12px 5px;
 
   @include vp-1024 {
-    margin: 0 0 10px 0;
+    margin: 0 0 7px;
   }
 
   @include vp-768 {
     font-size: 30px;
     line-height: 42px;
-    margin: 0 0 20px;
+    margin: 0 0 7px;
   }
 }
 
@@ -73,7 +72,7 @@
   @include vp-768 {
     font-size: 14px;
     line-height: 19px;
-    margin: 0 0 40px;
+    margin: 0 0 33px;
   }
 }
 
@@ -89,7 +88,6 @@
 
 .form__list {
   list-style: none;
-  margin: 0;
   padding: 0;
 
   display: grid;
@@ -97,18 +95,18 @@
   column-gap: 30px;
   row-gap: 20px;
   grid-template-areas:
-    'name phone'
-    'textarea textarea';
+    "name phone"
+    "textarea textarea";
   margin: 0 0 25px;
 
   @include vp-1024 {
     grid-template-columns: 320px 320px;
-    margin: 0 0 35px;
+    margin: 0 0 28px;
   }
 
   @include vp-768 {
     display: block;
-    margin: 0 0 30px;
+    margin: 0 0 25px;
   }
 }
 
@@ -126,16 +124,12 @@
 
 .callback__item input,
 .callback__item textarea {
-  width: 100%;
-}
-
-.callback__item input,
-.callback__item textarea {
   font-family: "PT Mono", "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 22px;
+  width: 100%;
   color: $color-default-white;
   background: $color-black-opacity-1;
   border-radius: 3px;
@@ -156,6 +150,15 @@
 .callback__item textarea {
   max-height: 155px;
   padding: 22px 15px 15px 15px;
+
+  @include vp-1024 {
+    padding: 28px 15px 15px;
+  }
+
+  @include vp-768 {
+    padding: 20px 15px 15px;
+    max-height: 177px;
+  }
 }
 
 .callback__item--name {
@@ -178,7 +181,6 @@
   letter-spacing: 0.05em;
   text-align: center;
   text-transform: uppercase;
-  background-color: transparent;
   color: $alice-blue;
   border-radius: 3px;
   cursor: pointer;
@@ -192,7 +194,6 @@
   transition: background-color $trans-default;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       background-color: $color-blue;
@@ -207,8 +208,14 @@
     background-color: $color-navy;
   }
 
+  @include vp-1024 {
+    padding: 10px 32px;
+    margin-right: 85px;
+  }
+
   @include vp-768 {
-    margin: 0 0 25px 0;
+    margin: 0 0 22px;
+    width: 100%;
   }
 }
 
@@ -220,5 +227,11 @@
 
   @include vp-768 {
     display: block;
+  }
+}
+
+.callback__approval {
+  @include vp-768 {
+    margin-left: 5px;
   }
 }

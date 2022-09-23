@@ -1,14 +1,12 @@
-.advantages {}
-
 .advantages__container {
   margin: 0 auto 120px;
 
   @include vp-1024 {
-    margin: 0 auto 80px;
+    margin: 0 auto 75px;
   }
 
   @include vp-768 {
-    margin: 0 auto 50px;
+    margin: 0 auto 45px;
   }
 }
 
@@ -21,7 +19,6 @@
 
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  // grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 30px;
 
   @include vp-768 {
@@ -51,6 +48,10 @@
     transition: width $trans-800;
   }
 
+  @include vp-1024 {
+    min-height: 360px;
+  }
+
   @include vp-768 {
     min-height: 340px;
     padding: 30px 30px 35px 30px;
@@ -59,6 +60,12 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
+}
+
+.advantages__item--small {
+  @include vp-768 {
+    min-height: 325px;
   }
 }
 
@@ -71,6 +78,10 @@
   margin: 0;
   margin-bottom: 13px;
   transition: color $trans-800;
+
+  @include vp-1024 {
+    margin: 0 0 8px;
+  }
 
   @include vp-768 {
     font-size: 20px;
@@ -97,6 +108,10 @@
   height: 35px;
   order: -1;
   margin-bottom: 20px;
+
+  @include vp-1024 {
+    margin-bottom: 16px;
+  }
 
   @include vp-768 {
     width: 30px;

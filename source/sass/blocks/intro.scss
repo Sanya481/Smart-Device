@@ -10,16 +10,15 @@
   margin-bottom: 120px;
 
   @include vp-1024 {
-    min-height: 640px;
+    min-height: 556px;
     margin-top: -15px;
     margin-bottom: 80px;
   }
 
   @include vp-768 {
-    min-height: 560px;
+    min-height: 503px;
     margin-bottom: 50px;
   }
-
 
   // filter: $intro-filter-bcg;
 
@@ -46,10 +45,6 @@
   // }
 }
 
-// .intro__container {
-//   margin: 0 auto 120px;
-// }
-
 // /* ============ intro__block */
 
 .intro__block {
@@ -58,10 +53,11 @@
 
   @include vp-1024 {
     margin: 0;
+    padding-top: 95px;
   }
 
   @include vp-768 {
-    padding-top: 80px;
+    padding-top: 93px;
   }
 }
 
@@ -77,12 +73,13 @@
   @include vp-1024 {
     font-size: 64px;
     line-height: 75px;
-    margin: 0 0 20px;
+    margin: 0;
   }
 
   @include vp-768 {
     font-size: 36px;
     line-height: 42px;
+    margin-bottom: 8px;
   }
 }
 
@@ -94,12 +91,13 @@
   margin: 0 0 43px;
 
   @include vp-1024 {
-    margin: 0 0 50px;
+    margin: 0 0 58px;
   }
 
   @include vp-768 {
     font-size: 14px;
     line-height: 22px;
+    margin: 0 0 45px;
   }
 }
 
@@ -120,7 +118,6 @@
   transition: background-color $trans-default;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       background-color: $color-dark-slate-blue;
@@ -137,6 +134,7 @@
 
   @include vp-1024 {
     margin-left: 45px;
+    padding: 15px 27px;
   }
 
   @include vp-768 {
@@ -144,5 +142,20 @@
     font-size: 14px;
     line-height: 16px;
     margin: 0;
+    padding: 12px 27px;
+  }
+}
+
+.intro__block span:first-child {
+  @include vp-768 {
+    display: none;
+  }
+}
+
+.intro__block span:last-child {
+  display: none;
+
+  @include vp-768 {
+    display: block;
   }
 }

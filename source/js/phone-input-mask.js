@@ -94,4 +94,3 @@ phoneInputs.forEach((input) => {
   input.addEventListener('keydown', onPhoneKeyDown, false);
   input.addEventListener('paste', onPhonePaste, false);
 });
-

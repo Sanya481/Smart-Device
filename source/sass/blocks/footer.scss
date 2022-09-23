@@ -31,23 +31,12 @@
   }
 
   @include vp-768 {
-    margin: 0 0 15px 0;
+    margin: 0 0 22px -5px;
   }
 }
 
 .footer__logo .logo__text {
   margin-top: 5px;
-}
-
-@include effects-off {
-  // .footer__logo .logo__icon:hover,
-  // .footer__logo .logo__icon:focus {
-  //   fill: $color-aqua;
-  // }
-
-  // .footer__logo .logo__icon:active {
-  //   fill: $color-dodger-blue;
-  // }
 }
 
 /* ============= row */
@@ -97,6 +86,10 @@
     flex-shrink: 0;
     margin: 0;
   }
+
+  @include vp-768 {
+    padding-bottom: 4px;
+  }
 }
 
 .footer__contact {
@@ -117,12 +110,8 @@
 .nav__wrapper {
   @include vp-768 {
     max-width: 280px;
-    padding: 0px 5px;
+    padding: 0 5px;
     margin: 0 auto;
-
-
-    // border-top: 1px solid rgba(248, 253, 255, 0.7);
-    // border-bottom: 1px solid rgba(248, 253, 255, 0.7);
   }
 }
 
@@ -177,12 +166,6 @@
   @include vp-1024 {
     display: block;
   }
-
-  // @include vp-768 {
-  //   overflow: hidden;
-  //   max-height: 0;
-  //   transition: max-height $trans-600;
-  // }
 }
 
 .nav__list,
@@ -198,26 +181,22 @@
   @include vp-1024 {
     margin: 0;
   }
-
-  // @include vp-768 {
-  //   overflow: hidden;
-  //   max-height: 0;
-  //   transition: max-height $trans-600;
-  // }
 }
 
 // Стили для работоспособности аккордиона
 .nav__rows,
 .contact__list {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height $trans-600;
+  @include vp-768 {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height $trans-600;
+  }
 }
 
 // Добавление отступа при открытии
 .nav__wrapper.is-open .nav__rows,
 .nav__wrapper.is-open .contact__list {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .nav__list {
@@ -228,7 +207,7 @@
   margin-right: 26px;
 
   @include vp-1024 {
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
   }
 }
 
@@ -269,16 +248,3 @@
     line-height: 19px;
   }
 }
-
-// Анимация для плавного появления пунктов аккордиона
-// @keyframes fade {
-//   from {
-//     opacity: 0;
-//     transform: translateY(-10px);
-//   }
-
-//   to {
-//     opacity: 1;
-//     transform: translateY(0px);
-//   }
-// }

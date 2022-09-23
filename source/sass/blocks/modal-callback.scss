@@ -83,7 +83,7 @@
 
   &::before,
   &::after {
-    content: '';
+    content: " ";
     position: absolute;
     width: 20px;
     height: 2px;

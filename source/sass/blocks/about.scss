@@ -1,7 +1,7 @@
 .about__container {
   display: flex;
 
-  margin: 0 auto 100px;
+  margin: 0 auto 120px;
 
   @include vp-1024 {
     margin: 0 auto 80px;
@@ -14,8 +14,14 @@
   flex-shrink: 0;
   margin-right: 100px;
 
+  background-image: url("../img/decorative/year-2022.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  width: 150px;
+
   @include vp-1024 {
-    margin-right: 29px;
+    margin-right: 24px;
+    background-position: -3px 5px;
   }
 
   @include vp-768 {
@@ -23,20 +29,9 @@
   }
 }
 
-.about__picture img {
-  width: 150px;
-  height: 320px;
-  // object-fit: cover;
-}
-
 /* ============ about__info */
 
 .about__info {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-self: center;
-  // padding-right: 30px;
   color: $color-black-pearl;
 }
 
@@ -58,9 +53,40 @@
   margin: 0;
   margin-bottom: 20px;
 
+  @include vp-1024 {
+    margin-bottom: 17px;
+  }
+
   @include vp-768 {
     font-size: 14px;
     line-height: 19px;
+    margin-bottom: 16px;
+  }
+}
+
+// Показ/скрытие дополнительной информации (абзаца)
+
+.about__info span {
+  display: block;
+
+  @include vp-1024 {
+    display: block;
+  }
+
+  @include vp-768 {
+    display: none;
+  }
+}
+
+.about__more-info span {
+  display: none;
+
+  @include vp-1024 {
+    display: none;
+  }
+
+  @include vp-768 {
+    display: block;
   }
 }
 
@@ -112,5 +138,9 @@
 
   @include vp-1024 {
     margin-top: 0;
+  }
+
+  @include vp-768 {
+    padding: 8px 39px;
   }
 }
