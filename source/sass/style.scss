@@ -20,6 +20,9 @@
 // ---------------------------------
 
 @import "blocks/header.scss";
+@import "blocks/header-button.scss";
+@import "blocks/callback-contact.scss";
+@import "blocks/logo.scss";
 
 // Intro
 // ---------------------------------
@@ -40,18 +43,27 @@
 // ---------------------------------
 
 @import "blocks/catalog.scss";
+@import "blocks/product.scss";
 
 // Callback
 // ---------------------------------
 
 @import "blocks/callback.scss";
 @import "blocks/approval.scss";
+@import "blocks/callback-modal-form.scss";
+@import "blocks/callback-modal-confirmation.scss";
+@import "blocks/callback-modal-approval.scss";
+@import "blocks/callback-modal-btn-close.scss";
 
 // Footer
 // ---------------------------------
 
 @import "blocks/footer.scss";
+@import "blocks/footer-logo.scss";
+@import "blocks/footer-nav-contact.scss";
 @import "blocks/social.scss";
+@import "blocks/first-row.scss";
+@import "blocks/second-row.scss";
 
 // Modal-callback
 // ---------------------------------

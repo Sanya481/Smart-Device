@@ -1,0 +1,10 @@
+.callback-modal__confirmation {
+  display: flex;
+  flex-direction: column;
+}
+
+.callback-modal__confirmation .callback__button {
+  width: 100%;
+  margin-right: 0;
+  margin-bottom: 20px;
+}

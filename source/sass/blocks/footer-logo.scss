@@ -1,0 +1,16 @@
+.footer__logo {
+  min-width: 215px;
+  margin-bottom: 30px;
+
+  @include vp-1024 {
+    margin: 0;
+  }
+
+  @include vp-768 {
+    margin: 0 0 22px -5px;
+  }
+}
+
+.footer__logo .logo__text {
+  margin-top: 5px;
+}

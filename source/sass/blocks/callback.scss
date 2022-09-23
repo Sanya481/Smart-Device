@@ -197,6 +197,7 @@
   flex-shrink: 0;
   margin-right: 50px;
   transition: background-color $trans-default;
+  order: -1;
 
   @include effects-off {
     &:hover,
@@ -231,7 +232,7 @@
   align-items: end;
 
   @include vp-768 {
-    display: block;
+    flex-direction: column;
   }
 }
 
