@@ -74,15 +74,17 @@
   height: 650px;
   color: $color-default-white;
 
+  background-color: $color-prussian-blue;
   background-repeat: no-repeat;
   background-position: 0 0;
+  background-size: cover;
 
   &::before {
     position: absolute;
     content: "";
     width: 100%;
     height: 100%;
-    background: rgb(4, 24, 39);
+    background: $color-catalog-item-shadow;
     opacity: 0.5;
     transition: opacity $trans-default;
   }
@@ -101,14 +103,26 @@
 // Фоновое изображение для каждой карточки в каталоге
 .product--1 a {
   background-image: url("../img/catalog/card-1.jpg");
+
+  @include retina {
+    background-image: url("../img/catalog/card-1@2x.jpg");
+  }
 }
 
 .product--2 a {
   background-image: url("../img/catalog/card-2.jpg");
+
+  @include retina {
+    background-image: url("../img/catalog/card-2@2x.jpg");
+  }
 }
 
 .product--3 a {
   background-image: url("../img/catalog/card-3.jpg");
+
+  @include retina {
+    background-image: url("../img/catalog/card-3@2x.jpg");
+  }
 }
 
 .product h3 {
@@ -150,19 +164,10 @@
   right: 0;
   transition: width $trans-600;
 
-  &::after {
-    position: absolute;
-    content: "";
-    background-image: url("../img/decorative/arrow.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    height: 10px;
-    width: 7px;
-    left: 50%;
-    right: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-  }
+  // Позиционирование стрелки
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @include vp-768 {
     width: 40px;
@@ -178,87 +183,3 @@
 .product a:hover .product__icon {
   width: 100%;
 }
-
-
-// .callback-email {
-//   top: auto;
-//   bottom: 180px;
-//   width: 760px;
-//   padding: 63px 100px 84px 100px;
-// }
-
-// .callback-item {
-//   width: 360px;
-//   margin-top: 0;
-// }
-
-// .callback-item label {
-//   display: block;
-//   margin-bottom: 9px;
-// }
-
-// .callback-form {
-//   display: grid;
-//   grid-template-columns: 400px 360px;
-//   grid-template-areas:
-//   "name email"
-//   "textarea textarea";
-// }
-
-// .callback-item__name {
-//   grid-area: name;
-//   margin-bottom: 34px;
-// }
-
-// .callback-item__email {
-//   grid-area: email;
-// }
-
-// .callback-item__textarea {
-//   grid-area: textarea;
-//   margin-bottom: 47px;
-//   width: 760px;
-// }
-
-// .callback-item__textarea textarea {
-//   width: 727px;
-//   padding: 16px;
-//   height: 82px;
-//   border: 2px solid var(--basic-extra-light-grey);
-// }
-
-// .textarea-title {
-//   margin: 0;
-//   margin-bottom: 9px;
-// }
-
-// .callback-form input[type="text"],
-// .callback-form input[type="email"] {
-//   font-size: 16px;
-//   font-weight: 400;
-//   line-height: 18px;
-//   color: var(--basic-grey);
-//   border: 2px solid var(--basic-extra-light-grey);
-//   width: 360px;
-//   padding: 10px 20px;
-//   box-sizing: border-box;
-// }
-
-// .callback h2 {
-//   font-size: 45px;
-//   line-height: 52px;
-//   margin: 0;
-//   margin-bottom: 37px;
-// }
-
-// .callback-item input:hover {
-//   border: 2px solid var(--basic-extra-light-dark);
-// }
-
-// .callback-item input:focus {
-//   border: 2px solid var(--basic-black);
-// }
-
-// .callback-item input:invalid {
-//   border: 2px solid var(--basic-red);
-// }

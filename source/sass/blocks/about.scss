@@ -17,7 +17,13 @@
   background-image: url("../img/decorative/year-2022.png");
   background-repeat: no-repeat;
   background-position: 0 0;
+  background-size: 150px 320px;
   width: 150px;
+  min-height: 320px;
+
+  @include retina {
+    background-image: url("../img/decorative/year-2022@2x.png");
+  }
 
   @include vp-1024 {
     margin-right: 24px;
@@ -92,11 +98,9 @@
 
 // Показ/скрытие дополнительной информации
 .about__more-info {
-  display: none;
-}
-
-.about__more-info.more {
-  display: block;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $trans-600;
 }
 
 .about__info button {
@@ -142,4 +146,13 @@
   @include vp-768 {
     padding: 8px 39px;
   }
+}
+
+/* Реализация дополнительной информации без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .about__more-info */
+.about__info.no-js .about__more-info {
+  max-height: none;
+}
+
+.about__info.no-js button {
+  display: none;
 }

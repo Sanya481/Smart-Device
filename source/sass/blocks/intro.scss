@@ -9,6 +9,10 @@
   margin-top: 103px;
   margin-bottom: 120px;
 
+  @include retina {
+    background-image: url("../img/background/intro-background@2x.png");
+  }
+
   @include vp-1024 {
     min-height: 556px;
     margin-top: -15px;
@@ -19,30 +23,6 @@
     min-height: 503px;
     margin-bottom: 50px;
   }
-
-  // filter: $intro-filter-bcg;
-
-  // @include retina {
-  //   background-image: url("../img/background/intro-background@2x.jpg");
-  // }
-
-  // @include tablet-version-range {
-  //   background-image: url("../img/background/intro-background-tablet.jpg");
-  //   filter: none;
-
-  //   @include retina {
-  //     background-image: url("../img/background/intro-background-tablet@2x.jpg");
-  //   }
-  // }
-
-  // @include mobile-version-range {
-  //   background-image: url("../img/background/intro-background-mobile.jpg");
-  //   filter: none;
-
-  //   @include retina {
-  //     background-image: url("../img/background/intro-background-mobile@2x.jpg");
-  //   }
-  // }
 }
 
 // /* ============ intro__block */

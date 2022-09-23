@@ -978,7 +978,9 @@ main {
   background-image: url("../img/decorative/year-2022.png");
   background-repeat: no-repeat;
   background-position: 0 0;
+  background-size: 150px 320px;
   width: 150px;
+  min-height: 320px;
 }
 
 /* ============ about__info */
@@ -1010,11 +1012,11 @@ main {
 }
 
 .about__more-info {
-  display: none;
-}
-
-.about__more-info.more {
-  display: block;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.6s ease;
+  -o-transition: max-height 0.6s ease;
+  transition: max-height 0.6s ease;
 }
 
 .about__info button {
@@ -1040,6 +1042,16 @@ main {
 .about__info button:active {
   background-color: #1600ff;
   color: #f2f5f6;
+}
+
+/* Реализация дополнительной информации без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .about__more-info */
+
+.about__info.no-js .about__more-info {
+  max-height: none;
+}
+
+.about__info.no-js button {
+  display: none;
 }
 
 .catalog {
@@ -1089,8 +1101,10 @@ main {
   width: 350px;
   height: 650px;
   color: #ffffff;
+  background-color: #002a5e;
   background-repeat: no-repeat;
   background-position: 0 0;
+  background-size: cover;
 }
 
 .product a::before {
@@ -1144,22 +1158,15 @@ main {
   -webkit-transition: width 0.6s ease;
   -o-transition: width 0.6s ease;
   transition: width 0.6s ease;
-}
-
-.product__icon::after {
-  position: absolute;
-  content: "";
-  background-image: url("../img/decorative/arrow.png");
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  height: 10px;
-  width: 7px;
-  left: 50%;
-  right: 50%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
 /* Эффект при наведении на карточку товара */
@@ -1191,6 +1198,7 @@ main {
   background-image: url("../img/decorative/paper-airplane-3d.png");
   background-repeat: no-repeat;
   background-position: left center;
+  background-size: 510px 285px;
 }
 
 /* callback__block */
@@ -1538,7 +1546,7 @@ main {
   color: #0d7aee;
 }
 
-/* Реализация шапки без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .second-row */
+/* Реализация аккордиона без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .second-row */
 
 .second-row.no-js h3::before {
   -webkit-transform: rotate(0deg);
@@ -2377,5 +2385,31 @@ main {
   .contact__item a {
     font-size: 14px;
     line-height: 19px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 2dppx) {
+  .intro {
+    background-image: url("../img/background/intro-background@2x.png");
+  }
+
+  .about__picture {
+    background-image: url("../img/decorative/year-2022@2x.png");
+  }
+
+  .product--1 a {
+    background-image: url("../img/catalog/card-1@2x.jpg");
+  }
+
+  .product--2 a {
+    background-image: url("../img/catalog/card-2@2x.jpg");
+  }
+
+  .product--3 a {
+    background-image: url("../img/catalog/card-3@2x.jpg");
+  }
+
+  .callback__wrapper {
+    background-image: url("../img/decorative/paper-airplane-3d@2x.png");
   }
 }
