@@ -10,7 +10,6 @@ const callbackModalBtnClose = callbackModal.querySelector('#callback-modal__btn-
 // Поле для ввода имени в модальном окне или просто первое поле ввода данных
 const firstInputOnModal = callbackModal.querySelector('input');
 
-
 /* Функция проверяет, что нажали кнопку Escape */
 const isEscapeKey = (evt) => evt.key === 'Escape';
 
@@ -69,4 +68,6 @@ function onModalCallbackEsc(evt) {
   }
 }
 
-orderСallButton.addEventListener('click', onModalCallbackOpen);
+if (orderСallButton) {
+  orderСallButton.addEventListener('click', onModalCallbackOpen);
+}

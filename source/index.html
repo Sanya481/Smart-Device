@@ -19,14 +19,11 @@
 
       <div class="header__logo logo">
         <a class="logo__image">
-          <svg class="logo__icon" width="100%" height="100%">
-            <use xlink:href="img/sprite/sprite.svg#logo"></use>
-          </svg>
+          <picture>
+            <source media="(min-width: 320px) and (max-width: 769px)" srcset="img/svg/logo-mobile.svg">
+            <img src="img/svg/logo.svg" width="215" height="55" alt="Логотип сайта">
+          </picture>
         </a>
-        <div class="logo__text">
-          <p>Smart Device</p>
-          <span>умные технологии</span>
-        </div>
       </div>
 
       <div class="header__contact callback-contact">
@@ -82,42 +79,43 @@
         <ul class="advantages__list">
           <li class="advantages__item">
             <h3>Оперативные сроки</h3>
-            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить и&nbsp;доставлять
+            <p>Усовершенствованная логистическая система позволяет нам просчитывать стоимость, производить
+              и&nbsp;доставлять
               заказы плат и&nbsp;комплектующих в&nbsp;самые короткие сроки</p>
-            <a>
+            <span>
               <svg width="100%" height="100%">
                 <use xlink:href="img/sprite/sprite.svg#stopwatch"></use>
               </svg>
-            </a>
+            </span>
           </li>
           <li class="advantages__item">
             <h3>Крупные поставщики</h3>
             <p>Нашими поставщиками являются такие крупные мировые компании как: OSRAM, CREE, HOLGLITRONIC, REFOND.
               Сотрудничество с такими компаниями обеспечивает хорошее качество нашей продукции.</p>
-            <a>
+            <span>
               <svg width="100%" height="100%">
                 <use xlink:href="img/sprite/sprite.svg#hired"></use>
               </svg>
-            </a>
+            </span>
           </li>
           <li class="advantages__item advantages__item--small">
             <h3>Полная конфиденциальность</h3>
             <p>По желанию клиента мы&nbsp;обеспечиваем полную конфиденциальность.</p>
-            <a>
+            <span>
               <svg width="100%" height="100%">
                 <use xlink:href="img/sprite/sprite.svg#detective"></use>
               </svg>
-            </a>
+            </span>
           </li>
           <li class="advantages__item advantages__item--small">
             <h3>Персонализация стоимости</h3>
             <p>Мы подбираем определенную фабрику, поставщиков, вид доставки, чтобы установить ту цену, которая Вас
               устраивает.</p>
-            <a>
+            <span>
               <svg width="100%" height="100%">
                 <use xlink:href="img/sprite/sprite.svg#tag"></use>
               </svg>
-            </a>
+            </span>
           </li>
         </ul>
       </div>
@@ -129,7 +127,8 @@
         </div>
         <div class="about__info no-js" id="about__info">
           <h2>О компании</h2>
-          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до 10 дней.</p>
+          <p>Мы поставляем электронные комплектующие, производим печатные платы и предоставляем мировые технологии
+            с&nbsp;1997 года. Выполняем срочные заказы и&nbsp;пилотные образцы до 10 дней.</p>
           <p>Наши поставщики - мировые производители электронных компонентов: OSRAM, CREE, HOLGLITRONIC, REFOND.
             <span>Печатные платы и комплектующие Service Devices применяются на предприятиях
               Российских Железных Дорог (РЖД),
@@ -166,31 +165,31 @@
           <li class="catalog__item product product--1">
             <a href="#">
               <h3>Производство печатных плат</h3>
-              <div class="product__icon">
+              <span class="product__icon">
                 <svg width="5" height="10">
-                  <use xlink:href="img/sprite/sprite.svg#arrow">
+                  <use xlink:href="img/sprite/sprite.svg#arrow"></use>
                 </svg>
-              </div>
+              </span>
             </a>
           </li>
           <li class="catalog__item product product--2">
             <a href="#">
               <h3>Монтаж печатных плат</h3>
-              <div class="product__icon">
+              <span class="product__icon">
                 <svg width="5" height="10">
-                  <use xlink:href="img/sprite/sprite.svg#arrow">
+                  <use xlink:href="img/sprite/sprite.svg#arrow"></use>
                 </svg>
-              </div>
+              </span>
             </a>
           </li>
           <li class="catalog__item product product--3">
             <a href="#">
               <h3>Комплектующие для светотехники</h3>
-              <div class="product__icon">
+              <span class="product__icon">
                 <svg width="5" height="10">
-                  <use xlink:href="img/sprite/sprite.svg#arrow">
+                  <use xlink:href="img/sprite/sprite.svg#arrow"></use>
                 </svg>
-              </div>
+              </span>
             </a>
           </li>
         </ul>
@@ -227,14 +226,16 @@
               </ul>
 
               <div class="callback__confirmation">
-                <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
 
                 <div class="callback__approval approval">
                   <input class="visually-hidden" type="checkbox" id="user-data" name="user-email" required>
                   <label for="user-data">Я согласен на обработку персональных
                     данных</label>
                 </div>
+
+                <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
               </div>
+
             </form>
           </div> <!-- callback__block -->
 
@@ -252,14 +253,8 @@
       <div class="first-row">
         <div class="footer__logo logo">
           <a class="logo__image">
-            <svg class="logo__icon" width="100%" height="100%">
-              <use xlink:href="img/sprite/sprite.svg#logo"></use>
-            </svg>
+            <img src="img/svg/logo.svg" width="215" height="55" alt="Логотип сайта">
           </a>
-          <div class="logo__text">
-            <p>Smart Device</p>
-            <span>умные технологии</span>
-          </div>
         </div>
 
         <ul class="footer__social social">
@@ -395,13 +390,13 @@
         </ul>
 
         <div class="callback-modal__confirmation approval">
-          <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
-
           <div class="callback-modal__approval">
             <input class="visually-hidden" type="checkbox" id="user-personal-data" name="user-email" required>
             <label for="user-personal-data">Я согласен на обработку персональных
               данных</label>
           </div>
+
+          <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
         </div>
 
         <button type="button" class="callback-modal__btn-close" id="callback-modal__btn-close">

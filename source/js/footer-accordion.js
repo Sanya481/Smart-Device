@@ -48,4 +48,6 @@ const onOpenNavList = (evt) => {
 };
 
 // Вешаем слушатель на весь блок с аккордионами и отлавливваем клик через делегирование
-accordionContainer.addEventListener('click', onOpenNavList);
+if (accordionContainer) {
+  accordionContainer.addEventListener('click', onOpenNavList);
+}

@@ -1,0 +1,37 @@
+.header__button {
+  font-family: $ff-placeholder-second;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: $alice-blue;
+  border-radius: 3px;
+  cursor: pointer;
+
+  transition: background-color $trans-default;
+  border: 1px solid $alice-blue;
+  padding: 11px 16px;
+  margin: -7px 60px 0 0;
+
+  @include effects-off {
+    &:hover,
+    &:focus {
+      background-color: $color-deep-sky-blue;
+    }
+
+    &:active {
+      background-color: $color-blue;
+    }
+  }
+
+  &:active {
+    background-color: $color-blue;
+  }
+
+  @include vp-1024 {
+    display: none;
+  }
+}

@@ -1,0 +1,18 @@
+.first-row {
+  @include vp-1024 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  @include vp-768 {
+    max-width: 280px;
+    padding: 0 5px 0 5px;
+    margin: 0 auto;
+
+
+    flex-direction: column;
+    margin-bottom: 25px;
+  }
+}

@@ -1,0 +1,14 @@
+.second-row {
+  display: flex;
+  margin-top: 6px;
+
+  @include vp-1024 {
+    justify-content: space-between;
+    column-gap: 130px;
+    margin: 0;
+  }
+
+  @include vp-768 {
+    display: block;
+  }
+}
