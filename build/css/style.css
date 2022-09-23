@@ -1445,8 +1445,8 @@ main {
   max-width: 345px;
 }
 
-.nav h3,
-.contact h3 {
+.nav__title h3,
+.contact__title h3 {
   font-family: "Roboto Condensed", "Arial", sans-serif;
   font-size: 15px;
   line-height: 16px;
@@ -1455,6 +1455,13 @@ main {
   text-transform: uppercase;
   margin: 0;
   margin-bottom: 20px;
+}
+
+.nav__title.is-open h3::before,
+.contact__title.is-open h3::before {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
 }
 
 .nav__rows {
@@ -1472,6 +1479,20 @@ main {
 
 .contact__list {
   margin-right: 30px;
+}
+
+.nav__rows,
+.contact__list {
+  overflow: hidden;
+  max-height: 0;
+  -webkit-transition: max-height 0.6s ease;
+  -o-transition: max-height 0.6s ease;
+  transition: max-height 0.6s ease;
+}
+
+.nav__wrapper.is-open .nav__rows,
+.nav__wrapper.is-open .contact__list {
+  margin-bottom: 20px;
 }
 
 .nav__list {
@@ -2096,7 +2117,9 @@ main {
   }
 
   .footer__container {
-    padding: 35px 5px;
+    max-width: none;
+    padding: 35px 0 30px 0;
+    margin: 0;
   }
 
   .footer__logo {
@@ -2104,6 +2127,9 @@ main {
   }
 
   .first-row {
+    max-width: 280px;
+    padding: 0 5px 0 5px;
+    margin: 0 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -2115,9 +2141,54 @@ main {
     display: block;
   }
 
-  .footer__nav {
-    max-width: 100%;
-    margin: 0 0 20px 0;
+  .footer__nav,
+  .footer__contact {
+    margin: -1px 0 0 0;
+    max-width: none;
+    border-top: 1px solid rgba(248, 253, 255, 0.7);
+    border-bottom: 1px solid rgba(248, 253, 255, 0.7);
+  }
+
+  .nav__wrapper {
+    max-width: 280px;
+    padding: 0px 5px;
+    margin: 0 auto;
+  }
+
+  .nav__title h3,
+  .contact__title h3 {
+    position: relative;
+    cursor: pointer;
+    margin: 0;
+    padding: 20px 0;
+  }
+
+  .nav__title h3::before,
+  .nav__title h3::after,
+  .contact__title h3::before,
+  .contact__title h3::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 1px;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #f9fbfd;
+  }
+
+  .nav__title h3::before,
+  .contact__title h3::before {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: -webkit-transform 0.6s ease;
+    transition: -webkit-transform 0.6s ease;
+    -o-transition: transform 0.6s ease;
+    transition: transform 0.6s ease;
+    transition: transform 0.6s ease, -webkit-transform 0.6s ease;
   }
 
   .nav__item a,

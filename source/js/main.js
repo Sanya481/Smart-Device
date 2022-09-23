@@ -3,6 +3,7 @@ import {initModals} from './modules/modals/init-modals';
 import './more-information.js';
 import './modal-callback.js';
 import './phone-input-mask.js';
+import './footer-accordion.js';
 
 // ---------------------------------
 

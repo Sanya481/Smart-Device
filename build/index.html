@@ -249,7 +249,7 @@
 
   </main>
 
-  <footer class="footer">
+  <footer class="footer" id="footer">
     <h2 class="visually-hidden">Подвал сайта с социальными сетями, навигацией по сайту и контактами</h2>
     <div class="footer__container container">
 
@@ -301,57 +301,69 @@
 
       </div>
 
-      <div class="second-row">
+      <div class="second-row" data-accordion-container>
 
         <nav class="footer__nav nav">
-          <h3>Разделы сайта</h3>
+          <div class="nav__wrapper" data-accordion-block>
 
-          <div class="nav__rows">
-            <ul class="nav__list nav__list--first">
-              <li class="nav__item">
-                <a href="#">О&nbsp;Компаниии</a>
-              </li>
-              <li class="nav__item">
-                <a href="#">Продукты</a>
-              </li>
-              <li class="nav__item">
-                <a href="#">Производство печатных плат</a>
-              </li>
-              <li class="nav__item">
-                <a href="#">Монтаж печатных плат</a>
-              </li>
-            </ul>
-            <ul class="nav__list nav__list--second">
-              <li class="nav__item">
-                <a href="#">Комплектующие</a>
-              </li>
-              <li class="nav__item">
-                <a href="#">Доставка</a>
-              </li>
-              <li class="nav__item">
-                <a href="#">Контакты</a>
-              </li>
-            </ul>
+            <div class="nav__title" data-accordion-title>
+              <h3>Разделы сайта</h3>
+            </div>
+
+            <div class="nav__rows" data-accordion-items>
+              <ul class="nav__list nav__list--first">
+                <li class="nav__item">
+                  <a href="#">О&nbsp;Компаниии</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#">Продукты</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#">Производство печатных плат</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#">Монтаж печатных плат</a>
+                </li>
+              </ul>
+              <ul class="nav__list nav__list--second">
+                <li class="nav__item">
+                  <a href="#">Комплектующие</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#">Доставка</a>
+                </li>
+                <li class="nav__item">
+                  <a href="#">Контакты</a>
+                </li>
+              </ul>
+            </div>
+
           </div>
-
         </nav>
 
         <div class="footer__contact contact">
-          <h3>Наш офис</h3>
-          <ul class="contact__list">
-            <li class="contact__item">
-              <a href="https://yandex.ru/maps/-/CCUV6HALDD">г.&nbsp;Мытищи, Олимпийский проспект, д.10</a>
-            </li>
-            <li class="contact__item">
-              <a href="tel:+74955894050">+7&nbsp;(495)&nbsp;589-40-50</a>
-            </li>
-            <li class="contact__item">
-              <a href="tel:+79253895829">+7&nbsp;(925)&nbsp;389-58-29</a>
-            </li>
-            <li class="contact__item">
-              <a href="tel:+79253647813">+7&nbsp;(925)&nbsp;364-78-13</a>
-            </li>
-          </ul>
+          <div class="nav__wrapper" data-accordion-block>
+
+            <div class="contact__title" data-accordion-title>
+              <h3>Наш офис</h3>
+            </div>
+
+            <ul class="contact__list" data-accordion-items>
+              <li class="contact__item">
+                <a href="https://yandex.ru/maps/-/CCUV6HALDD">г.&nbsp;Мытищи, Олимпийский проспект, д.10</a>
+              </li>
+              <li class="contact__item">
+                <a href="tel:+74955894050">+7&nbsp;(495)&nbsp;589-40-50</a>
+              </li>
+              <li class="contact__item">
+                <a href="tel:+79253895829">+7&nbsp;(925)&nbsp;389-58-29</a>
+              </li>
+              <li class="contact__item">
+                <a href="tel:+79253647813">+7&nbsp;(925)&nbsp;364-78-13</a>
+              </li>
+            </ul>
+
+          </div>
         </div>
 
       </div>
