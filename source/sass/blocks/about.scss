@@ -1,97 +1,158 @@
 .about__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  grid-column-gap: 40px;
-  grid-row-gap: 40px;
-  align-items: start;
+  display: flex;
 
-  @include tablet-version-range {
-    grid-column-gap: 30px;
-    grid-row-gap: 30px;
-    padding: 100px 45px 90px;
+  margin: 0 auto 120px;
+
+  @include vp-1024 {
+    margin: 0 auto 80px;
+  }
+}
+
+/* ============ about__picture */
+
+.about__picture {
+  flex-shrink: 0;
+  margin-right: 100px;
+
+  background-image: url("../img/decorative/year-2022.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 150px 320px;
+  width: 150px;
+  min-height: 320px;
+
+  @include retina {
+    background-image: url("../img/decorative/year-2022@2x.png");
   }
 
-  @include mobile-version-range {
-    display: block;
-    padding: 58px 15px 65px 15px;
+  @include vp-1024 {
+    margin-right: 24px;
+    background-position: -3px 5px;
+  }
+
+  @include vp-768 {
+    display: none;
   }
 }
 
 /* ============ about__info */
 
 .about__info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  padding-right: 30px;
-
-  @include tablet-version-range {
-    padding-right: 0;
-  }
-
-  @include mobile-version-range {
-    margin-bottom: 33px;
-    padding-right: 0;
-  }
+  color: $color-black-pearl;
 }
 
-.about__info h3 {
-  font-size: 28px;
-  font-weight: 600;
-  line-height: 42px;
-  margin: 0;
-  margin-bottom: 24px;
+.about__info h2 {
+  font-family: $ff-placeholder-second;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  margin: 0 0 13px;
 
-  @include tablet-version-range {
-    font-size: 26px;
-    line-height: 36px;
-    max-width: 220px;
-    margin-top: -9px;
-    margin-bottom: 16px;
-  }
-
-  @include mobile-version-range {
-    font-size: 24px;
-    line-height: 34px;
-    max-width: 210px;
-    margin: 0 0 15px;
+  @include vp-768 {
+    font-size: 28px;
+    line-height: 40px;
   }
 }
 
 .about__info p {
+  line-height: 22px;
   margin: 0;
-}
+  margin-bottom: 20px;
 
-/* ============ about__picture */
-
-.about__picture {
-  max-width: 560px;
-  // max-height: 301px;
-
-  @include tablet-version-range {
-    margin: 0 auto;
-    max-width: 324px;
-    // max-height: 264px;
+  @include vp-1024 {
+    margin-bottom: 17px;
   }
 
-  @include mobile-version-range {
-    margin: 0 auto;
-    // max-height: 186px;
+  @include vp-768 {
+    font-size: 14px;
+    line-height: 19px;
+    margin-bottom: 16px;
   }
 }
 
-.about__picture img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: $white-to-right-top;
+// Показ/скрытие дополнительной информации (абзаца)
 
-  @include tablet-version-range {
-    min-height: 264px;
+.about__info span {
+  display: block;
+
+  @include vp-1024 {
+    display: block;
   }
 
-  @include mobile-version-range {
-    min-height: 186px;
+  @include vp-768 {
+    display: none;
   }
+}
+
+.about__more-info span {
+  display: none;
+
+  @include vp-1024 {
+    display: none;
+  }
+
+  @include vp-768 {
+    display: block;
+  }
+}
+
+// Показ/скрытие дополнительной информации
+.about__more-info {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height $trans-600;
+}
+
+.about__info button {
+  font-family: $ff-placeholder-second;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: transparent;
+  border-radius: 3px;
+  color: $color-deep-sky-blue;
+  cursor: pointer;
+
+  border: 1px solid $color-deep-sky-blue;
+  padding: 14px 50px;
+  transition: background-color $trans-default, color $trans-default;
+  margin-top: 19px;
+
+  @include effects-off {
+    &:hover,
+    &:focus {
+      background-color: $color-deep-sky-blue;
+      color: $alice-blue;
+    }
+
+    &:active {
+      background-color: $color-blue;
+      color: $alice-blue;
+    }
+  }
+
+  &:active {
+    background-color: $color-blue;
+    color: $alice-blue;
+  }
+
+  @include vp-1024 {
+    margin-top: 0;
+  }
+
+  @include vp-768 {
+    padding: 8px 39px;
+  }
+}
+
+/* Реализация дополнительной информации без JS. Стилизация с помощью добавления класса "no-js" тегу div с классом  .about__more-info */
+.about__info.no-js .about__more-info {
+  max-height: none;
+}
+
+.about__info.no-js button {
+  display: none;
 }

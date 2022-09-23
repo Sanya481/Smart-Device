@@ -1,115 +1,242 @@
 .callback {
-  max-width: 403px;
-  background-color: $color-tangaroa;
-  color: $color-alice-blue;
-  padding: 45px 50px 50px 50px;
-  box-shadow: 0 4px 45px $color-tangaroa-opacity-2;
-
-  @include vp-320 {
-    width: 290px;
-    padding: 40px 30px;
-  }
+  color: $color-default-white;
+  background-color: $color-deep-sky-blue-2;
 }
 
-.callback__form p {
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 27px;
-  margin: 0;
-  margin-bottom: 27px;
+.callback__container {
+  padding: 170px 5px 248px;
 
-  @include vp-320 {
-    line-height: 25px;
-    text-align: center;
-    margin: 0 0 28px;
-    margin-top: -4px;
+  @include vp-1024 {
+    padding: 44px 5px 126px;
   }
-}
-
-.callback__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 14px;
 
   @include vp-768 {
-    margin: 0 0 24px;
-  }
-
-  @include vp-320 {
-    margin-bottom: 15px;
+    padding: 47px 5px 85px;
   }
 }
 
-.callback__form button {
-  font-family: $ff-placeholder;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 21px;
-  width: 100%;
-  background-color: $color-alice-blue;
-  border: none;
-  margin: 0;
-  padding: 11px 40px 10px;
-  cursor: pointer;
-  transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  user-select: none;
+.callback__wrapper {
+  display: flex;
+  justify-content: end;
 
-  @include effects-off {
-    &:hover,
-    &:focus {
-      box-shadow: 0 0 40px 40px $color-turquoise-blue inset;
-    }
+  background-image: url("../img/decorative/paper-airplane-3d.png");
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 510px 285px;
 
-    &:disabled {
-      cursor: auto;
-      background-color: $color-alice-blue;
-    }
+  @include retina {
+    background-image: url("../img/decorative/paper-airplane-3d@2x.png");
   }
 
-  &:active {
-    background-color: $color-dodger-blue;
-  }
-
-  &:disabled {
-    cursor: auto;
-    background-color: $color-alice-blue;
+  @include vp-1024 {
+    display: block;
+    background-image: none;
   }
 }
 
-/* ============ callback__item */
+/* callback__block */
 
-.callback__item {
-  margin-bottom: 20px;
-  user-select: none;
+.callback__block {
+  max-width: 585px;
+  margin: -5px 12px 0 0;
 
-  &:last-child {
+  @include vp-1024 {
+    max-width: 100%;
     margin: 0;
   }
 }
 
-.callback__item input {
-  font-family: $ff-placeholder;
-  font-size: 14px;
-  line-height: 21px;
+.callback__block > p {
+  font-family: $ff-placeholder-second;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 51px;
+  margin: 0 0 12px 5px;
+
+  @include vp-1024 {
+    margin: 0 0 7px;
+  }
+
+  @include vp-768 {
+    font-size: 30px;
+    line-height: 42px;
+    margin: 0 0 7px;
+  }
+}
+
+.callback__block span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 22px;
+  margin: 0 0 35px 9px;
+
+  @include vp-1024 {
+    margin: 0 0 25px 0;
+  }
+
+  @include vp-768 {
+    font-size: 14px;
+    line-height: 19px;
+    margin: 0 0 33px;
+  }
+}
+
+/* callback__form */
+
+.callback__form {
+  margin-left: 9px;
+
+  @include vp-1024 {
+    margin: 0;
+  }
+}
+
+.form__list {
+  list-style: none;
+  padding: 0;
+
+  display: grid;
+  grid-template-columns: 275px 275px;
+  column-gap: 30px;
+  row-gap: 20px;
+  grid-template-areas:
+    "name phone"
+    "textarea textarea";
+  margin: 0 0 25px;
+
+  @include vp-1024 {
+    grid-template-columns: 320px 320px;
+    margin: 0 0 28px;
+  }
+
+  @include vp-768 {
+    display: block;
+    margin: 0 0 25px;
+  }
+}
+
+.callback__item {
+  margin: 0;
+
+  @include vp-768 {
+    margin: 0 0 20px 0;
+
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.callback__item input,
+.callback__item textarea {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
   width: 100%;
-  color: $color-default-black;
-  padding: 11px 50px 11px 16px;
+  color: $color-default-white;
+  background: $color-black-opacity-1;
+  border-radius: 3px;
   border: none;
-  background-color: $color-alice-blue;
+  padding: 15px;
+}
+
+.callback__item input::placeholder,
+.callback__item textarea::placeholder {
+  font-family: "PT Mono", "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: $color-default-white;
+}
+
+.callback__item textarea {
+  max-height: 155px;
+  padding: 22px 15px 15px 15px;
+
+  @include vp-1024 {
+    padding: 28px 15px 15px;
+  }
+
+  @include vp-768 {
+    padding: 20px 15px 15px;
+    max-height: 177px;
+  }
+}
+
+.callback__item--name {
+  grid-area: name;
+}
+
+.callback__item--phone {
+  grid-area: phone;
+}
+
+.callback__item--textarea {
+  grid-area: textarea;
+}
+
+.callback__button {
+  font-family: $ff-placeholder-second;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  color: $alice-blue;
+  border-radius: 3px;
+  cursor: pointer;
+
+  width: 265px;
+  padding: 13px 32px;
+  background-color: $color-black-pearl-2;
+  border: none;
+  flex-shrink: 0;
+  margin-right: 50px;
+  transition: background-color $trans-default;
 
   @include effects-off {
     &:hover,
     &:focus {
-      outline: 2px solid $color-blue;
+      background-color: $color-blue;
+    }
+
+    &:active {
+      background-color: $color-navy;
     }
   }
 
   &:active {
-    outline: 2px solid $color-blue;
+    background-color: $color-navy;
+  }
+
+  @include vp-1024 {
+    padding: 10px 32px;
+    margin-right: 85px;
+  }
+
+  @include vp-768 {
+    margin: 0 0 22px;
+    width: 100%;
   }
 }
 
-.callback__item input::placeholder {
-  color: $color-tangaroa-opacity;
+/* callback__confirmation */
+
+.callback__confirmation {
+  display: flex;
+  align-items: end;
+
+  @include vp-768 {
+    display: block;
+  }
+}
+
+.callback__approval {
+  @include vp-768 {
+    margin-left: 5px;
+  }
 }

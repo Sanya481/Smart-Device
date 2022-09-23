@@ -3,20 +3,37 @@
 
 // Default
 
-$color-default-black:               #000000;
+$alice-blue:                        #f2f5f6;
 $color-default-white:               #ffffff;
+$color-deep-sky-blue:               #00b2ff;
+$color-deep-sky-blue-2:             #00b3ff;
+$color-dodger-blue:                 #3b93ff;
+$color-dark-slate-blue:             #382f97;
+$color-blue:                        #1600ff;
+$color-black-pearl:                 #041827;
+$color-black-pearl-2:               #041427;
+$color-whisper:                     #ebebeb;
+$color-silver:                      #c4c4c4;
+$color-black-opacity-1:             rgba(4, 20, 39, 0.15);
+$color-navy:                        #0a0071;
+$color-electric-indigo:             #7b0eff;
+$color-transparent-opacity-2:       rgba(255, 255, 255, 0.7);
+$color-alice-blue:                  #f8fdff;
+$body-shadow:                       rgba(3, 16, 27, 0.7);
+$color-prussian-blue:               #002a5e;
+$color-catalog-item-shadow:         rgb(4, 24, 39);
+
+$color-default-black:               #000000;
 $color-transparent:                 rgba(255, 255, 255, 0);
 $color-tangaroa:                    #011c40;
 $color-tangaroa-opacity:            rgba(1, 28, 64, 0.7);
 $color-tangaroa-opacity-2:          rgba(1, 28, 64, 0.15);
 $color-quartz:                      #d8d8d9;
-$color-black-opacity-1:             rgba(0, 0, 0, 0.25);
 $color-perano:                      #9ab3ff;
 $deep-sky-blue:                     #00acee;
 $deep-dodger-blue:                  #2e80fd;
 $color-aqua:                        #00e7ff;
 $color-dodger-blue:                 #37a1ff;
-$color-blue:                        #1b0dee;
 
 // Background
 // ----------------------------------
@@ -33,7 +50,7 @@ $color-turquoise-blue:              #75dfff;
 
 // Gradient
 
-$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+$black-to-bottom:                   linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
 $white-to-right-top:                linear-gradient(22deg, rgba(255, 255, 255, 1) 0%, rgba(175, 237, 255, 1) 68%, rgba(4, 5, 79, 1) 100%);
 $blue-to-bottom:                    linear-gradient(0deg, rgb(239, 250, 254) 0%, rgb(175, 237, 255) 48%, rgb(0, 99, 189) 100%);
 $intro-filter-bcg:                  drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
@@ -48,7 +65,9 @@ $fz-default:                        16px;
 // https://www.artlebedev.ru/kovodstvo/sections/159/#13
 $ff-rouble:                         "Rouble", "Arial", sans-serif;
 
-$ff-placeholder:                    "Montserrat", "Arial", sans-serif;
+$ff-placeholder:                    "PT Mono", "Arial", sans-serif;
+$ff-placeholder-second:             "Roboto Condensed", "Arial", sans-serif;
+$ff-placeholder-third:              "Roboto", "Arial", sans-serif;
 
 // Animation
 // ---------------------------------

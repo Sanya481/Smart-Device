@@ -16,55 +16,47 @@
 // Blocks
 // ---------------------------------
 
-@import "blocks/btn";
-
 // Header
 // ---------------------------------
 
 @import "blocks/header.scss";
-@import "blocks/burger.scss";
-@import "blocks/logo.scss";
-@import "blocks/nav.scss";
 
 // Intro
 // ---------------------------------
 
 @import "blocks/intro.scss";
 
-// About
-// ---------------------------------
-
-@import "blocks/about.scss";
-
 // Аdvantages
 // ---------------------------------
 
 @import "blocks/advantages.scss";
 
-// Directions
+// About
 // ---------------------------------
 
-@import "blocks/directions.scss";
-@import "blocks/card.scss";
-@import "blocks/card-back.scss";
+@import "blocks/about.scss";
 
-// Booking
+// Catalog
 // ---------------------------------
 
-@import "blocks/booking.scss";
+@import "blocks/catalog.scss";
+
+// Callback
+// ---------------------------------
+
 @import "blocks/callback.scss";
 @import "blocks/approval.scss";
-
-// Contact
-// ---------------------------------
-
-@import "blocks/contact.scss";
 
 // Footer
 // ---------------------------------
 
 @import "blocks/footer.scss";
 @import "blocks/social.scss";
+
+// Modal-callback
+// ---------------------------------
+
+@import "blocks/modal-callback.scss";
 
 // ---------------------------------
 
