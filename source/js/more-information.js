@@ -31,4 +31,8 @@ const onOpenNavList = (evt) => {
   }
 };
 
-aboutButton.addEventListener('click', onOpenNavList);
+// Проверяем, есть ли элемент на странице
+if (aboutButton) {
+  aboutButton.addEventListener('click', onOpenNavList);
+}
+

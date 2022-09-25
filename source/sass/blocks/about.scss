@@ -1,7 +1,7 @@
 .about__container {
   display: flex;
 
-  margin: 0 auto 120px;
+  margin: 0 auto 100px;
 
   @include vp-1024 {
     margin: 0 auto 80px;
@@ -126,6 +126,7 @@
     &:focus {
       background-color: $color-deep-sky-blue;
       color: $alice-blue;
+      animation: pulsate $trans-1000;
     }
 
     &:active {
@@ -145,6 +146,15 @@
 
   @include vp-768 {
     padding: 8px 39px;
+  }
+}
+
+// Анимация пульсации при наведении на кнопку
+@keyframes pulsate {
+  0% {
+    box-shadow:
+      0 0 25px $color-turquoise-blue,
+      0 0 50px $color-purple-heart;
   }
 }
 

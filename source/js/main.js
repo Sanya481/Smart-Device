@@ -4,6 +4,7 @@ import './more-information.js';
 import './modal-callback.js';
 import './phone-input-mask.js';
 import './footer-accordion.js';
+import {breakpointChecker} from './intro-callback-btn-hover.js';
 
 // ---------------------------------
 
@@ -12,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
   // Utils
   // ---------------------------------
 
+  breakpointChecker();
   iosVhFix();
 
   // Modules

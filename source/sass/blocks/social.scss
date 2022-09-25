@@ -39,6 +39,16 @@
   transition: fill $trans-default;
 
   @include effects-off {
+    animation: float $trans-5000 infinite;
+
+    &--vkontakte {
+      animation-delay: 1s;
+    }
+
+    &--pinterest {
+      animation-delay: 2s;
+    }
+
     &:hover,
     &:focus {
       fill: $deep-sky-blue;
@@ -51,5 +61,20 @@
 
   &:active {
     fill: $deep-dodger-blue;
+  }
+}
+
+// Анимация плавания иконок соц-сетей
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0);
   }
 }

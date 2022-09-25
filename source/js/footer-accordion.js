@@ -12,7 +12,9 @@ const checkWorkJs = () => {
   }
 };
 
-checkWorkJs();
+if (accordionContainer) {
+  checkWorkJs();
+}
 
 // Функция закрытия других аккордеонов при открытии одного
 function closeAllAccordions() {

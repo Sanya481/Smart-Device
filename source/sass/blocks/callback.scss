@@ -1,6 +1,14 @@
 .callback {
   color: $color-default-white;
   background-color: $color-deep-sky-blue-2;
+
+  background-image: url("../img/background/triangle-desktop.png");
+  background-position: 0 -85px;
+  background-repeat: no-repeat;
+
+  @include vp-1024 {
+    background-image: none;
+  }
 }
 
 .callback__container {
@@ -21,7 +29,7 @@
 
   background-image: url("../img/decorative/paper-airplane-3d.png");
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: 0 76px;
   background-size: 510px 285px;
 
   @include retina {
@@ -38,7 +46,7 @@
 
 .callback__block {
   max-width: 585px;
-  margin: -5px 12px 0 0;
+  margin: -5px 14px 0 0;
 
   @include vp-1024 {
     max-width: 100%;
@@ -46,7 +54,7 @@
   }
 }
 
-.callback__block > p {
+.callback__block>p {
   font-family: $ff-placeholder-second;
   font-weight: 400;
   font-size: 36px;
@@ -196,13 +204,15 @@
   border: none;
   flex-shrink: 0;
   margin-right: 50px;
-  transition: background-color $trans-default;
+  transition: background-color $trans-default, border-radius $trans-1000;
   order: -1;
 
   @include effects-off {
+
     &:hover,
     &:focus {
       background-color: $color-blue;
+      border-radius: 200px 0px 200px 0px;
     }
 
     &:active {
@@ -238,6 +248,6 @@
 
 .callback__approval {
   @include vp-768 {
-    margin-left: 5px;
+    margin-right: 15px;
   }
 }

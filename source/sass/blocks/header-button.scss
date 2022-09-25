@@ -11,7 +11,9 @@
   border-radius: 3px;
   cursor: pointer;
 
-  transition: background-color $trans-default;
+  flex-shrink: 0;
+
+  transition: background-color $trans-600, border-radius $trans-600;
   border: 1px solid $alice-blue;
   padding: 11px 16px;
   margin: -7px 60px 0 0;
@@ -20,6 +22,7 @@
     &:hover,
     &:focus {
       background-color: $color-deep-sky-blue;
+      border-radius: 50px;
     }
 
     &:active {

@@ -95,12 +95,41 @@
   background-color: $color-deep-sky-blue;
   border-radius: 3px;
   padding: 18px 27px;
-  transition: background-color $trans-default;
+  transition: background-color $trans-default, border-radius $trans-default;
+
+  // Свойства для эффекта при наведения
+  appearance: none;
+  position: relative;
+  overflow: hidden;
+  transition: border-radius $trans-600;
 
   @include effects-off {
-    &:hover,
+    &::before {
+      // Размер цветного пятна при наведении
+      --size: 0;
+
+      content: "";
+      position: absolute;
+      left: var(--x);
+      top: var(--y);
+      width: var(--size);
+      height: var(--size);
+      background: radial-gradient(circle closest-side, $color-torch-red, transparent);
+      transform: translate(-50%, -50%);
+      transition: width $trans-default, height $trans-default;
+    }
+
+    &:hover {
+      border-radius: 50px;
+    }
+
+    &:hover::before {
+      --size: 800px;
+    }
+
     &:focus {
       background-color: $color-dark-slate-blue;
+      border-radius: 50px;
     }
 
     &:active {
@@ -127,6 +156,11 @@
 }
 
 .intro__block span:first-child {
+  // Свойства для эффекта при наведения
+  pointer-events: none;
+  position: relative;
+  z-index: 5;
+
   @include vp-768 {
     display: none;
   }
