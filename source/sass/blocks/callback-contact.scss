@@ -1,6 +1,8 @@
 .header__contact {
+  margin-left: -3px;
+
   @include vp-1024 {
-    margin-right: 20px;
+    margin: -8px 20px 0 0;
   }
 
   @include vp-768 {
@@ -14,17 +16,21 @@
 
   margin: -8px 0 0 0;
 
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 120px;
+  display: grid;
+  grid-template-columns: repeat(2, 225px);
+  gap: 30px;
 
   @include vp-1024 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
     max-width: 220px;
     gap: 20px;
   }
 
   @include vp-768 {
-    margin: 0 10px 0 0;
+    margin: -2px 10px 0 0;
   }
 }
 
@@ -32,7 +38,15 @@
   display: flex;
   align-items: center;
 
+  // Отменяем выделение
+  user-select: none;
+
   @include effects-off {
+    &:hover svg,
+    &:focus svg {
+      animation: shake 1s forwards;
+    }
+
     &:hover span,
     &:focus span {
       color: $color-deep-sky-blue;
@@ -50,6 +64,7 @@
 
 .callback-contact__link svg {
   margin-right: 15px;
+  flex-shrink: 0;
 
   @include vp-1024 {
     margin: 0;
@@ -63,5 +78,24 @@
 
   @include vp-1024 {
     display: none;
+  }
+}
+
+// Анимация тряски svg иконок
+@keyframes shake {
+  10% {
+    transform: rotate(15deg);
+  }
+
+  20% {
+    transform: rotate(-15deg);
+  }
+
+  30% {
+    transform: rotate(15deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
   }
 }

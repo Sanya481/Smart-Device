@@ -7,8 +7,9 @@
   line-height: 16px;
   max-width: 250px;
   cursor: pointer;
-  transition: color $trans-600, opacity $trans-default;
+  transition: color $trans-default, opacity $trans-default;
   opacity: 0.8;
+  user-select: none;
 
   &::before {
     content: "";
@@ -21,6 +22,10 @@
     border: 1px solid $color-default-white;
     border-radius: 2px;
     background-color: transparent;
+
+    @include vp-768 {
+      top: 44%;
+    }
   }
 
   &:active {
@@ -40,6 +45,10 @@
   height: 8px;
   top: 52%;
   transform: translateY(-50%);
+
+  @include vp-768 {
+    top: 46%;
+  }
 }
 
 @include effects-off {

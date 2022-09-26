@@ -7,7 +7,7 @@
   padding: 0 5px 140px;
 
   @include vp-1024 {
-    padding: 0 5px 75px;
+    padding: 0 5px 73px;
   }
 
   @include vp-768 {
@@ -23,6 +23,7 @@
   margin: 0;
   margin-bottom: 53px;
   padding-top: 66px;
+  max-width: 900px;
 
   @include vp-1024 {
     margin-bottom: 39px;

@@ -1,9 +1,7 @@
-// Секция с нужными нам элементами для удобства и быстроты поиска
-const footer = document.querySelector('#footer');
 // Блок с аккордионами
-const accordionContainer = footer.querySelector('[data-accordion-container]');
+const accordionContainer = document.querySelector('[data-accordion-container]');
 // Все аккордионы
-const accordions = footer.querySelectorAll('[data-accordion-block]');
+const accordions = document.querySelectorAll('[data-accordion-block]');
 
 // Проверка работоспособности элементов при отключенном JavaScript
 const checkWorkJs = () => {
@@ -12,7 +10,9 @@ const checkWorkJs = () => {
   }
 };
 
-checkWorkJs();
+if (accordionContainer) {
+  checkWorkJs();
+}
 
 // Функция закрытия других аккордеонов при открытии одного
 function closeAllAccordions() {

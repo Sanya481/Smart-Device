@@ -10,16 +10,21 @@
   color: $alice-blue;
   border-radius: 3px;
   cursor: pointer;
+  user-select: none;
 
-  transition: background-color $trans-default;
+  flex-shrink: 0;
+  width: 160px;
+
+  transition: background-color $trans-600, border-radius $trans-600;
   border: 1px solid $alice-blue;
-  padding: 11px 16px;
+  padding: 11px 5px;
   margin: -7px 60px 0 0;
 
   @include effects-off {
     &:hover,
     &:focus {
       background-color: $color-deep-sky-blue;
+      border-radius: 50px;
     }
 
     &:active {
