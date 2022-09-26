@@ -1,24 +1,29 @@
 .callback-modal {
   display: none;
+  background-image: none;
+}
 
+.callback-modal__wrapper {
   /* Делаем по центру модальное окно  */
-  position: fixed;
+  position: absolute;
+  top: 146px;
   left: 0;
   right: 0;
   bottom: auto;
-  top: 146px;
   margin: auto;
 
-  width: 500px;
+  background-color: #00B3FF;
+  max-width: 500px;
+  min-height: 610px;
   z-index: 10;
   padding: 40px;
   border-radius: 3px;
+  animation: bounce $trans-600;
 }
 
 /* Реализация открытия модального окна */
 .callback-modal.show {
   display: block;
-  animation: bounce 0.6s;
 }
 
 .callback-modal .callback-modal__block {
@@ -28,6 +33,16 @@
 .callback-modal__block span {
   max-width: 380px;
   margin-bottom: 40px;
+}
+
+// Затемнение фона при открытии модального окна
+.callback.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $body-shadow;
+  overflow: auto;
+  z-index: 5;
 }
 
 /* Modal-login Animations */

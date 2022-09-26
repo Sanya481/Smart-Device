@@ -1,9 +1,8 @@
 .header__contact {
-  margin-left: -20px;
-  // max-width: 550px;
+  margin-left: -3px;
 
   @include vp-1024 {
-    margin-right: 20px;
+    margin: -8px 20px 0 0;
   }
 
   @include vp-768 {
@@ -38,6 +37,9 @@
 .callback-contact__link {
   display: flex;
   align-items: center;
+
+  // Отменяем выделение
+  user-select: none;
 
   @include effects-off {
 

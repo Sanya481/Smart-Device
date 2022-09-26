@@ -3,75 +3,122 @@ const pageBody = document.body;
 const header = pageBody.querySelector('#header');
 // Кнопка открытия модального окна
 const orderСallButton = header.querySelector('#header__button');
+// Секция с модальным окном для обратной связи
+const callbackModalSection = pageBody.querySelector('#callback-modal-section');
 // Модальное окно с формой для обратной связи
 const callbackModal = pageBody.querySelector('#callback-modal');
+// Форма обратной связи
+const callbackMmodalForm = pageBody.querySelector('#callback-modal-form');
 
-if (callbackModal) {
-  // Кнопка закрытия модального окна
-  const callbackModalBtnClose = callbackModal.querySelector('#callback-modal__btn-close');
-  // Поле для ввода имени в модальном окне или просто первое поле ввода данных
-  const firstInputOnModal = callbackModal.querySelector('input');
 
-  /* Функция проверяет, что нажали кнопку Escape */
-  const isEscapeKey = (evt) => evt.key === 'Escape';
+// if (callbackModal) {
+// Кнопка закрытия модального окна
+const callbackModalBtnClose = callbackModalSection.querySelector('#callback-modal__btn-close');
+// Поле для ввода имени в модальном окне
+const userNameInputOnModal = callbackModalSection.querySelector('[data-input-username]');
+// Поле для ввода телефона в модальном окне
+const userPhoneInputOnModal = callbackModalSection.querySelector('[data-input-phone]');
+// Поле для ввода вопроса в модальном окне
+const questionTextareaOnModal = callbackModalSection.querySelector('[data-textarea-question]');
 
-  // Функция открытия модального окна, добавление обработчиков по закрытию и автофокус в поле ввода
-  const onModalCallbackOpen = (evt) => {
-    evt.preventDefault();
-    evt.stopPropagation();
-    pageBody.classList.add('scroll-lock');
-    pageBody.classList.add('shadow');
-    header.classList.add('hiding');
-    callbackModal.classList.add('show');
-    firstInputOnModal.focus();
 
-    // Добавили обработчик на закрытие по нажатию на крестик
-    callbackModalBtnClose.addEventListener('click', onModaCallbackClose);
-    // Добавили обработчик на закрытие по нажатию на клавишу Escape
-    document.addEventListener('keydown', onModalCallbackEsc);
-    // Добавили обработчик на закрытие по клику вне модального окна
-    document.addEventListener('click', onClickOverlay);
-  };
+// Проверяем есть ли поддержка хранилища
+let isStorageSupport = true;
 
-  // Закрытие модального окна и удаление обработчиков
-  function closeModalCallback() {
-    pageBody.classList.remove('scroll-lock');
-    pageBody.classList.remove('shadow');
-    header.classList.remove('hiding');
-    callbackModal.classList.remove('show');
+let userNameStorage = '';
+let userPhoneStorage = '';
 
-    // Удалили обработчик на закрытие по крестику
-    callbackModalBtnClose.removeEventListener('click', onModaCallbackClose);
-    // Удалили обработчик на закрытие по нажатию на клавишу Escape
-    document.removeEventListener('key', onModalCallbackEsc);
-    // Удалили обработчик на закрытие по клику вне модального окна
-    document.removeEventListener('click', onClickOverlay);
+try {
+  userNameStorage = localStorage.getItem('userNameInputOnModal');
+  userPhoneStorage = localStorage.getItem('phoneInputOnModal');
+} catch (err) {
+  isStorageSupport = false;
+}
+
+
+/* Функция проверяет, что нажали кнопку Escape */
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+// Функция открытия модального окна, добавление обработчиков по закрытию и автофокус в поле ввода
+const onModalCallbackOpen = (evt) => {
+  evt.preventDefault();
+  evt.stopPropagation();
+
+  pageBody.classList.add('scroll-lock');
+  header.classList.add('hiding');
+  callbackModalSection.classList.add('show');
+  userNameInputOnModal.focus();
+
+  if (userNameStorage) {
+    userNameInputOnModal.value = userNameStorage;
+    userPhoneInputOnModal.value = userPhoneStorage;
+    questionTextareaOnModal.focus();
+  } else {
+    userNameInputOnModal.focus();
   }
 
-  /* Функция закрытия модального окна при клике вне области */
-  function onClickOverlay(evt) {
-    const elementsСlickArea = !evt.composedPath().includes(callbackModal);
-    if (elementsСlickArea) {
-      // скрываем элемент т.к. клик был за его пределами
-      closeModalCallback();
-    }
-  }
+  // Добавили обработчик на закрытие по нажатию на крестик
+  callbackModalBtnClose.addEventListener('click', onModaCallbackClose);
+  // Добавили обработчик на закрытие по нажатию на клавишу Escape
+  document.addEventListener('keydown', onModalCallbackEsc);
+  // Добавили обработчик на закрытие по клику вне модального окна
+  document.addEventListener('click', onClickOverlay);
+  // Добавили обработчик проверерки заполненности полей ввода для имени и телефона
+  callbackMmodalForm.addEventListener('submit', checkFillInputField);
+};
 
-  /* Функция закрытия модального окна по нажатию на крестик */
-  function onModaCallbackClose() {
+// Закрытие модального окна и удаление обработчиков
+function closeModalCallback() {
+  pageBody.classList.remove('scroll-lock');
+  header.classList.remove('hiding');
+  callbackModalSection.classList.remove('show');
+
+  // Удалили обработчик на закрытие по крестику
+  callbackModalBtnClose.removeEventListener('click', onModaCallbackClose);
+  // Удалили обработчик на закрытие по нажатию на клавишу Escape
+  document.removeEventListener('key', onModalCallbackEsc);
+  // Удалили обработчик на закрытие по клику вне модального окна
+  document.removeEventListener('click', onClickOverlay);
+  // Удалили обработчик проверерки заполненности полей ввода для имени и телефона
+  callbackMmodalForm.removeEventListener('submit', checkFillInputField);
+}
+
+/* Функция закрытия модального окна при клике вне области */
+function onClickOverlay(evt) {
+  const elementsСlickArea = !evt.composedPath().includes(callbackModal);
+  if (elementsСlickArea) {
+    // скрываем элемент т.к. клик был за его пределами
     closeModalCallback();
   }
+}
 
-  /* Функция закрытия модального окна по нажатию на Escape */
-  function onModalCallbackEsc(evt) {
-    if (isEscapeKey(evt)) {
-      evt.preventDefault();
-      closeModalCallback();
-    }
-  }
+/* Функция закрытия модального окна по нажатию на крестик */
+function onModaCallbackClose() {
+  closeModalCallback();
+}
 
-  if (orderСallButton) {
-    orderСallButton.addEventListener('click', onModalCallbackOpen);
+/* Функция закрытия модального окна по нажатию на Escape */
+function onModalCallbackEsc(evt) {
+  if (isEscapeKey(evt)) {
+    evt.preventDefault();
+    closeModalCallback();
   }
 }
+
+// Провереряем заполненны ли поля ввода для имени и телефона
+function checkFillInputField(evt) {
+  if (!userNameInputOnModal || !userPhoneInputOnModal) {
+    evt.preventDefault();
+  } else {
+    if (isStorageSupport) {
+      localStorage.setItem('userNameInputOnModal', userNameInputOnModal.value);
+      localStorage.setItem('phoneInputOnModal', userPhoneInputOnModal.value);
+    }
+  }
+}
+
+if (orderСallButton) {
+  orderСallButton.addEventListener('click', onModalCallbackOpen);
+}
+// }
 

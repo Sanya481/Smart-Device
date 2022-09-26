@@ -84,6 +84,7 @@
 
 .nav__rows {
   display: flex;
+  flex-wrap: wrap;
 
   @include vp-1024 {
     display: block;
@@ -148,6 +149,7 @@
   color: $color-transparent-opacity-2;
   padding: 5px 0;
   transition: color $trans-default, text-shadow $trans-default;
+  user-select: none;
 
   // Свойства для эффекта при наведении
   // position: relative;

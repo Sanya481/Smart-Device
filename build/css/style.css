@@ -446,7 +446,7 @@ html {
 
 body {
   width: 100%;
-  background-color: #f9fbfd;
+  background-color: #f8fdff;
 }
 
 a {
@@ -649,6 +649,7 @@ main {
   width: 100%;
   height: 100%;
   background: rgba(3, 16, 27, 0.7);
+  z-index: 10;
 }
 
 .container {
@@ -698,13 +699,18 @@ main {
   color: #f2f5f6;
   border-radius: 3px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -ms-flex-negative: 0;
   flex-shrink: 0;
+  width: 160px;
   -webkit-transition: background-color 0.6s ease, border-radius 0.6s ease;
   -o-transition: background-color 0.6s ease, border-radius 0.6s ease;
   transition: background-color 0.6s ease, border-radius 0.6s ease;
   border: 1px solid #f2f5f6;
-  padding: 11px 16px;
+  padding: 11px 5px;
   margin: -7px 60px 0 0;
 }
 
@@ -713,7 +719,7 @@ main {
 }
 
 .header__contact {
-  margin-left: -20px;
+  margin-left: -3px;
 }
 
 .callback-contact__list {
@@ -734,6 +740,10 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .callback-contact__link svg {
@@ -848,7 +858,7 @@ main {
 }
 
 .intro__block {
-  padding-top: 202px;
+  padding: 202px 0 280px 0;
   margin-left: 126px;
 }
 
@@ -878,6 +888,7 @@ main {
   font-size: 18px;
   line-height: 21px;
   text-align: center;
+  max-width: 420px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: #f2f5f6;
@@ -887,6 +898,10 @@ main {
   -webkit-transition: background-color 0.3s ease, border-radius 0.3s ease;
   -o-transition: background-color 0.3s ease, border-radius 0.3s ease;
   transition: background-color 0.3s ease, border-radius 0.3s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1051,6 +1066,7 @@ main {
   font-weight: 400;
   font-size: 36px;
   line-height: 51px;
+  max-width: 450px;
   margin: 0 0 13px;
 }
 
@@ -1088,12 +1104,17 @@ main {
   border-radius: 3px;
   color: #00b2ff;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   border: 1px solid #00b2ff;
   padding: 14px 50px;
   -webkit-transition: background-color 0.3s ease, color 0.3s ease;
   -o-transition: background-color 0.3s ease, color 0.3s ease;
   transition: background-color 0.3s ease, color 0.3s ease;
   margin-top: 19px;
+  max-width: 180px;
 }
 
 .about__info button:active {
@@ -1142,6 +1163,7 @@ main {
   margin: 0;
   margin-bottom: 53px;
   padding-top: 66px;
+  max-width: 900px;
 }
 
 .catalog__container h2 > span:last-child {
@@ -1338,7 +1360,7 @@ main {
   font-size: 16px;
   line-height: 22px;
   width: 100%;
-  color: #ffffff;
+  color: #041827;
   background: rgba(4, 20, 39, 0.15);
   border-radius: 3px;
   border: none;
@@ -1430,6 +1452,10 @@ main {
   color: #f2f5f6;
   border-radius: 3px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   width: 265px;
   padding: 13px 32px;
   background-color: #041427;
@@ -1473,6 +1499,10 @@ main {
   -o-transition: color 0.3s ease, opacity 0.3s ease;
   transition: color 0.3s ease, opacity 0.3s ease;
   opacity: 0.8;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .approval label::before {
@@ -1641,6 +1671,8 @@ main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .nav__list,
@@ -1685,6 +1717,10 @@ main {
   -webkit-transition: color 0.3s ease, text-shadow 0.3s ease;
   -o-transition: color 0.3s ease, text-shadow 0.3s ease;
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .nav__item a:active,
@@ -1730,12 +1766,16 @@ main {
   width: 40px;
   height: 40px;
   padding: 5px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .social__icon {
   width: 100%;
   height: 100%;
-  fill: #f9fbfd;
+  fill: #f8fdff;
   -webkit-transition: fill 0.3s ease;
   -o-transition: fill 0.3s ease;
   transition: fill 0.3s ease;
@@ -1788,25 +1828,31 @@ main {
 
 .callback-modal {
   display: none;
+  background-image: none;
+}
+
+.callback-modal__wrapper {
   /* Делаем по центру модальное окно  */
-  position: fixed;
+  position: absolute;
+  top: 146px;
   left: 0;
   right: 0;
   bottom: auto;
-  top: 146px;
   margin: auto;
-  width: 500px;
+  background-color: #00B3FF;
+  max-width: 500px;
+  min-height: 610px;
   z-index: 10;
   padding: 40px;
   border-radius: 3px;
+  -webkit-animation: bounce 0.6s ease;
+  animation: bounce 0.6s ease;
 }
 
 /* Реализация открытия модального окна */
 
 .callback-modal.show {
   display: block;
-  -webkit-animation: bounce 0.6s;
-  animation: bounce 0.6s;
 }
 
 .callback-modal .callback-modal__block {
@@ -1816,6 +1862,15 @@ main {
 .callback-modal__block span {
   max-width: 380px;
   margin-bottom: 40px;
+}
+
+.callback.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 16, 27, 0.7);
+  overflow: auto;
+  z-index: 5;
 }
 
 /* Modal-login Animations */
@@ -2060,7 +2115,7 @@ main {
   }
 
   .header__contact {
-    margin-right: 20px;
+    margin: -8px 20px 0 0;
   }
 
   .callback-contact__list {
@@ -2097,7 +2152,7 @@ main {
 
   .intro__block {
     margin: 0;
-    padding-top: 95px;
+    padding: 95px 0 206px;
   }
 
   .intro__block h1 {
@@ -2157,7 +2212,7 @@ main {
   }
 
   .catalog__container {
-    padding: 0 5px 75px;
+    padding: 0 5px 73px;
   }
 
   .catalog__container h2 {
@@ -2322,7 +2377,7 @@ main {
   }
 
   .intro__block {
-    padding-top: 93px;
+    padding: 93px 0 189px;
   }
 
   .intro__block h1 {
@@ -2375,6 +2430,14 @@ main {
     min-height: 325px;
   }
 
+  .advantages__item--small h3 {
+    margin-bottom: 13px;
+  }
+
+  .advantages__item--small span {
+    margin-bottom: 18px;
+  }
+
   .advantages__item h3 {
     font-size: 20px;
     line-height: 28px;
@@ -2415,6 +2478,7 @@ main {
 
   .about__info button {
     padding: 8px 39px;
+    max-width: 160px;
   }
 
   .catalog__container {
@@ -2561,7 +2625,7 @@ main {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    background-color: #f9fbfd;
+    background-color: #f8fdff;
   }
 
   .nav__title h3::before,

@@ -9,6 +9,7 @@
   cursor: pointer;
   transition: color $trans-default, opacity $trans-default;
   opacity: 0.8;
+  user-select: none;
 
   &::before {
     content: "";

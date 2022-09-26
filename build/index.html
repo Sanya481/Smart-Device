@@ -137,7 +137,7 @@
           </p>
           <div class="about__more-info" id="about__more-info">
             <p>
-              <span>Печатные платы и комплектующие Service Devices применяются на предприятиях
+              <span>Печатные платы и комплектующие Service Devices применяются на&nbsp;предприятиях
                 Российских Железных Дорог (РЖД),
                 РоссАвтоПрома (ВАЗ, АвтоГАЗ), МинАтома, СпецМедТехники. Среди наших клиентов крупнейшие Производители
                 светотехники России.
@@ -145,10 +145,13 @@
             </p>
             <p>Smart Device - это команда профессионалов. Через нас прошло более 1
               000 000
-              клиентов, 70% из которых продолжают сотрудничество по сей день. На данный момент насчитывается более 14
-              офисов по всей стране и 20 городов присутствия.
-              Мы стремимся к постоянному развитию и повышению уровня качества продукции, производимой внутри компании.
-              Использование инновационных технологий помогает экономить деньги и время наших клиентов.</p>
+              клиентов, 70% из&nbsp;которых продолжают сотрудничество по сей день. На&nbsp;данный момент насчитывается
+              более 14
+              офисов по всей стране и&nbsp;20 городов присутствия.
+              Мы&nbsp;стремимся к&nbsp;постоянному развитию и повышению уровня качества продукции, производимой внутри
+              компании.
+              Использование инновационных технологий помогает экономить деньги
+              и&nbsp;время наших клиентов.</p>
           </div>
           <button type="button" id="about__button">Подробнее</button>
         </div>
@@ -259,7 +262,7 @@
 
         <ul class="footer__social social">
           <li class="social__item">
-            <a href="#" class="social__link">
+            <a href="#" class="social__link" target="_blank">
               <span class="visually-hidden">Мы в Одноклассниках</span>
 
               <svg class="social__icon" width="100%" height="100%">
@@ -269,7 +272,7 @@
             </a>
           </li>
           <li class="social__item">
-            <a href="#" class="social__link">
+            <a href="#" class="social__link" target="_blank">
               <span class="visually-hidden">Мы в Вконтакте</span>
 
               <svg class="social__icon social__icon--vkontakte" width="100%" height="100%">
@@ -279,7 +282,7 @@
             </a>
           </li>
           <li class="social__item social__item--pinterest">
-            <a href="#" class="social__link">
+            <a href="#" class="social__link" target="_blank">
               <span class="visually-hidden">Мы в Пинтерест</span>
 
               <svg class="social__icon social__icon--pinterest" width="100%" height="100%">
@@ -364,45 +367,49 @@
 
   <!-- Модальное окно с формой обратной связи -->
 
-  <section class="callback callback-modal" id="callback-modal">
+  <section class="callback callback-modal overlay" id="callback-modal-section">
     <h2 class="visually-hidden">Модальное окно с формой для обратной связи</h2>
-    <div class="callback__block callback-modal__block">
-      <p>Закажите звонок</p>
-      <span>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</span>
-      <form class="callback-modal__form form" action="https://echo.htmlacademy.ru" method="post">
+    <div class="callback-modal__wrapper" id="callback-modal">
 
-        <ul class="form__list">
-          <li class="callback__item callback__item--name">
-            <label>
-              <input type="text" name="user-name" placeholder="Имя" required>
-            </label>
-          </li>
-          <li class="callback__item callback__item--phone">
-            <label>
-              <input type="tel" data-tel-input name="user-phone" placeholder="Телефон" maxlength="18" required>
-            </label>
-          </li>
-          <li class="callback__item callback__item--textarea">
-            <label>
-              <textarea name="user-question" cols="30" rows="10" placeholder="Ваш вопрос"></textarea>
-            </label>
-          </li>
-        </ul>
+      <div class="callback__block callback-modal__block">
+        <p>Закажите звонок</p>
+        <span>Оставьте контакты, мы проконсультируем вас бесплатно в удобное время</span>
+        <form class="callback-modal__form form" action="https://echo.htmlacademy.ru" method="post">
 
-        <div class="callback-modal__confirmation approval">
-          <div class="callback-modal__approval">
-            <input class="visually-hidden" type="checkbox" id="user-personal-data" name="user-email" required>
-            <label for="user-personal-data">Я согласен на обработку персональных
-              данных</label>
+          <ul class="form__list" id="callback-modal-form">
+            <li class="callback__item callback__item--name">
+              <label>
+                <input type="text" name="user-name" placeholder="Имя" data-input-username required>
+              </label>
+            </li>
+            <li class="callback__item callback__item--phone">
+              <label>
+                <input type="tel" data-tel-input name="user-phone" placeholder="Телефон" maxlength="18" data-input-phone required>
+              </label>
+            </li>
+            <li class="callback__item callback__item--textarea">
+              <label>
+                <textarea name="user-question" cols="30" rows="10" placeholder="Ваш вопрос" data-textarea-question></textarea>
+              </label>
+            </li>
+          </ul>
+
+          <div class="callback-modal__confirmation approval">
+            <div class="callback-modal__approval">
+              <input class="visually-hidden" type="checkbox" id="user-personal-data" name="user-email" required>
+              <label for="user-personal-data">Я согласен на обработку персональных
+                данных</label>
+            </div>
+
+            <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
           </div>
 
-          <button class="callback__button" type="submit" value="Отправить">Задать вопрос</button>
-        </div>
+          <button type="button" class="callback-modal__btn-close" id="callback-modal__btn-close">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+        </form>
+      </div>
 
-        <button type="button" class="callback-modal__btn-close" id="callback-modal__btn-close">
-          <span class="visually-hidden">Закрыть</span>
-        </button>
-      </form>
     </div>
   </section>
 
