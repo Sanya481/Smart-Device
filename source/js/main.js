@@ -5,6 +5,7 @@ import './modal-callback.js';
 import {checkInputPhoneField} from './phone-input-mask.js';
 import './footer-accordion.js';
 import {breakpointChecker} from './intro-callback-btn-hover.js';
+// import './trap-focus.js';
 
 // ---------------------------------
 

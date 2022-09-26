@@ -2,7 +2,6 @@
 
 const inputPhoneField = document.querySelector('[data-input-phone]');
 
-
 const checkInputPhoneField = () => {
   if (inputPhoneField) {
     [].forEach.call(document.querySelectorAll('[data-input-phone]'), function (input) {

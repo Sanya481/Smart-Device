@@ -1,3 +1,5 @@
+import { trapFocus } from './trap-focus.js';
+
 const pageBody = document.body;
 // Секция в которой находится нужный нам элемент для удобства поиска
 const header = document.querySelector('#header');
@@ -65,6 +67,8 @@ if (callbackModal) {
     document.addEventListener('click', onClickOverlay);
     // Добавили обработчик проверерки заполненности полей ввода для имени и телефона
     callbackMmodalForm.addEventListener('submit', checkFillInputField);
+
+    callbackModal.addEventListener('keydown', trapFocus);
   };
 
   // Закрытие модального окна и удаление обработчиков
@@ -81,6 +85,8 @@ if (callbackModal) {
     document.removeEventListener('click', onClickOverlay);
     // Удалили обработчик проверерки заполненности полей ввода для имени и телефона
     callbackMmodalForm.removeEventListener('submit', checkFillInputField);
+
+    callbackModal.removeEventListener('keydown', trapFocus);
   }
 
   /* Функция закрытия модального окна при клике вне области */
