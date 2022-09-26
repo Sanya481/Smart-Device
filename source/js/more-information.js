@@ -1,11 +1,9 @@
-// Секция в которой находится нужный нам элемент для удобства поиска
-const about = document.querySelector('#about');
 // Кнопка - больше информации
-const aboutButton = about.querySelector('#about__button');
+const aboutButton = document.querySelector('#about__button');
 // Блок с информацией
-const aboutInfo = about.querySelector('#about__info');
+const aboutInfo = document.querySelector('#about__info');
 // Элемент с дополнительной информацией
-const aboutMoreInfo = about.querySelector('#about__more-info');
+const aboutMoreInfo = document.querySelector('#about__more-info');
 
 // Проверка работоспособности элементов при отключенном JavaScript
 const checkWorkJs = () => {
@@ -35,4 +33,3 @@ const onOpenNavList = (evt) => {
 if (aboutButton) {
   aboutButton.addEventListener('click', onOpenNavList);
 }
-

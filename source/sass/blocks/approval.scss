@@ -34,7 +34,7 @@
   }
 }
 
-.approval input:checked+label::after {
+.approval input:checked + label::after {
   content: "";
   position: absolute;
   background-image: url("../img/svg/check-mark-callback.svg");
@@ -52,13 +52,13 @@
 }
 
 @include effects-off {
-  .approval input:hover+label,
-  .approval input:focus+label {
+  .approval input:hover + label,
+  .approval input:focus + label {
     color: $color-blue;
     opacity: 1;
   }
 
-  .approval input:active+label {
+  .approval input:active + label {
     color: $color-electric-indigo;
     opacity: 1;
   }

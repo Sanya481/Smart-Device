@@ -54,7 +54,7 @@
   }
 }
 
-.callback__block>p {
+.callback__block > p {
   font-family: $ff-placeholder-second;
   font-weight: 400;
   font-size: 36px;
@@ -209,11 +209,10 @@
   order: -1;
 
   @include effects-off {
-
     &:hover,
     &:focus {
       background-color: $color-blue;
-      border-radius: 200px 0px 200px 0px;
+      border-radius: 200px 0 200px 0;
     }
 
     &:active {

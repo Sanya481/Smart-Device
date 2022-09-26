@@ -110,7 +110,6 @@
 /* Эффект при наведении на карточку товара */
 
 @include effects-off {
-
   .product__link:hover,
   .product__link:focus {
     box-shadow: -8px -8px 35px 2px rgb(199, 139, 255),

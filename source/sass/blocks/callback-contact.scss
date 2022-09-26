@@ -42,7 +42,6 @@
   user-select: none;
 
   @include effects-off {
-
     &:hover svg,
     &:focus svg {
       animation: shake 1s forwards;
