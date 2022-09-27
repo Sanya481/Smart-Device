@@ -12,33 +12,55 @@
 }
 
 .callback__container {
-  padding: 170px 5px 248px;
+  padding: 170px 20px 248px;
 
   @include vp-1024 {
     padding: 44px 5px 126px;
   }
 
   @include vp-768 {
-    padding: 47px 5px 85px;
+    padding: 47px 25px 85px;
   }
 }
 
 .callback__wrapper {
-  display: flex;
-  justify-content: end;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
 
+
+  // display: flex;
+  // justify-content: end;
+
+  // background-image: url("../img/decorative/paper-airplane-3d.png");
+  // background-repeat: no-repeat;
+  // background-position: 0 76px;
+  // background-size: 510px 285px;
+
+  // @include retina {
+  //   background-image: url("../img/decorative/paper-airplane-3d@2x.png");
+  // }
+
+  @include vp-1024 {
+    display: block;
+    // background-image: none;
+  }
+}
+
+// callback__image
+.callback__image {
+  max-width: 510px;
   background-image: url("../img/decorative/paper-airplane-3d.png");
   background-repeat: no-repeat;
   background-position: 0 76px;
-  background-size: 510px 285px;
+  background-size: 100%;
 
   @include retina {
     background-image: url("../img/decorative/paper-airplane-3d@2x.png");
   }
 
   @include vp-1024 {
-    display: block;
-    background-image: none;
+    display: none;
   }
 }
 

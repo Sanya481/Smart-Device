@@ -30,6 +30,7 @@
   }
 
   @include vp-768 {
+    max-width: 160px;
     margin: -2px 10px 0 0;
   }
 }
