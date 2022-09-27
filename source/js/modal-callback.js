@@ -84,6 +84,8 @@ if (callbackModal) {
     callbackMmodalForm.removeEventListener('submit', checkFillInputField);
     // Удалили обработчик на ловушку фокуса
     callbackModal.removeEventListener('keydown', trapFocus);
+
+    orderСallButton.focus();
   }
 
   /* Функция закрытия модального окна при клике вне области */

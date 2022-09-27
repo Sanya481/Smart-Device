@@ -4,14 +4,14 @@
 }
 
 .catalog__container {
-  padding: 0 5px 140px;
+  padding: 0 20px 140px;
 
   @include vp-1024 {
     padding: 0 5px 73px;
   }
 
   @include vp-768 {
-    padding: 0 5px 86px 5px;
+    padding: 0 25px 86px 25px;
   }
 }
 
@@ -39,13 +39,13 @@
   }
 }
 
-.catalog__container h2>span:first-child {
+.catalog__container h2 > span:first-child {
   @include vp-768 {
     display: none;
   }
 }
 
-.catalog__container h2>span:last-child {
+.catalog__container h2 > span:last-child {
   display: none;
 
   @include vp-768 {
@@ -68,16 +68,17 @@
   row-gap: 30px;
 
   @include vp-768 {
-    gap: 0;
+    gap: 30px;
   }
 }
 
-.catalog__item {
-  @include vp-768 {
-    margin-bottom: 30px;
+// На моей мобилке почему то gap не работает у карточек!
+// .catalog__item {
+//   @include vp-768 {
+//     margin-bottom: 30px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
+//     &:last-child {
+//       margin-bottom: 0;
+//     }
+//   }
+// }

@@ -2,9 +2,9 @@
 <html class="page" lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preload" href="fonts/PTMono-Regular.woff" as="font" type="font/woff" crossorigin>
   <link rel="preload" href="fonts/PTMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <meta name="description" content="производство и монтаж, поставка комплектующих, блоков и модулей">
@@ -202,8 +202,10 @@
     <section class="callback" id="callback">
       <h2 class="visually-hidden">Секция с формой для обратной связи</h2>
       <div class="callback__container container">
-        <!-- Секция для позиционирования блока с формой и для фонового изображения -->
+        <!-- Блок для позиционирования блока с формой и фонового изображения -->
         <div class="callback__wrapper">
+          <!-- Блок для размещения фонового изображения -->
+          <div class="callback__image"></div>
 
           <div class="callback__block">
             <p>Остались вопросы? Задайте их нам!</p>
@@ -218,7 +220,8 @@
                 </li>
                 <li class="callback__item callback__item--phone">
                   <label>
-                    <input type="tel" name="user-phone" placeholder="Телефон" maxlength="18" data-phone-pattern required>
+                    <input type="tel" name="user-phone" placeholder="Телефон" maxlength="18" data-phone-pattern
+                      required>
                   </label>
                 </li>
                 <li class="callback__item callback__item--textarea">
@@ -389,7 +392,8 @@
             </li>
             <li class="callback__item callback__item--textarea">
               <label>
-                <textarea name="user-question" cols="30" rows="10" placeholder="Ваш вопрос" data-textarea-question></textarea>
+                <textarea name="user-question" cols="30" rows="10" placeholder="Ваш вопрос"
+                  data-textarea-question></textarea>
               </label>
             </li>
           </ul>

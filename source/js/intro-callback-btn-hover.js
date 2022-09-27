@@ -3,7 +3,7 @@ const breakpoint = window.matchMedia('(min-width:1024px)');
 const introCallbackBtn = document.querySelector('[data-intro-callback-btn]');
 
 // Функция отлавливает положение курсора в ссылке
-const breakpointChecker = () => {
+const checkMouseMove = () => {
   if (breakpoint.matches || introCallbackBtn) {
     introCallbackBtn.onmousemove = (evt) => {
 
@@ -16,4 +16,4 @@ const breakpointChecker = () => {
   }
 };
 
-export {breakpointChecker};
+export {checkMouseMove};

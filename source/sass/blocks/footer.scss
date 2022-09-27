@@ -6,7 +6,7 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
-  padding: 50px 5px 55px;
+  padding: 50px 20px 55px;
 
   @include vp-1024 {
     display: block;

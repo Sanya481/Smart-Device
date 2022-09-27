@@ -654,9 +654,9 @@ main {
 
 .container {
   width: 100%;
-  max-width: 1230px;
+  max-width: 1260px;
   margin: 0 auto;
-  padding: 0 5px;
+  padding: 0 20px;
 }
 
 .header {
@@ -685,6 +685,7 @@ main {
   -ms-flex-align: center;
   align-items: center;
   margin-top: 30px;
+  padding-bottom: 40px;
 }
 
 .header__button {
@@ -850,15 +851,18 @@ main {
   background-image: url("../img/background/intro-background.png");
   background-color: #011c40;
   background-repeat: no-repeat;
-  background-position: 0 -100px;
+  background-position: 0 0;
   background-size: cover;
   min-height: 777px;
-  margin-top: 103px;
-  margin-bottom: 120px;
+  margin-top: 208px;
+  margin-bottom: -84px;
+  -webkit-transform: translateY(-204px);
+  -ms-transform: translateY(-204px);
+  transform: translateY(-204px);
 }
 
 .intro__block {
-  padding: 202px 0 280px 0;
+  padding: 299px 0 280px 0;
   margin-left: 126px;
 }
 
@@ -869,7 +873,7 @@ main {
   line-height: 94px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  margin: 0 0 31px;
+  margin: 0 0 33px;
 }
 
 .intro__block p {
@@ -1149,7 +1153,7 @@ main {
 }
 
 .catalog__container {
-  padding: 0 5px 140px;
+  padding: 0 20px 140px;
 }
 
 .catalog__container h2 {
@@ -1285,20 +1289,25 @@ main {
 }
 
 .callback__container {
-  padding: 170px 5px 248px;
+  padding: 170px 20px 248px;
 }
 
 .callback__wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: end;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+
+.callback__image {
+  max-width: 510px;
   background-image: url("../img/decorative/paper-airplane-3d.png");
   background-repeat: no-repeat;
   background-position: 0 76px;
-  background-size: 510px 285px;
+  background-size: 100%;
 }
 
 /* callback__block */
@@ -1549,7 +1558,7 @@ main {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 50px 5px 55px;
+  padding: 50px 20px 55px;
 }
 
 .footer__logo {
@@ -1786,12 +1795,12 @@ main {
 .callback-modal__block p {
   font-size: 30px;
   line-height: 42px;
-  margin: 0 0 3px 0px;
+  margin: 0 0 3px 0;
 }
 
 .callback-modal__block span {
   max-width: 380px;
-  margin: 0 0 36px 0px;
+  margin: 0 0 36px 0;
 }
 
 .callback-modal__form .form__list {
@@ -2108,14 +2117,14 @@ main {
   }
 
   .header {
-    position: relative;
+    position: static;
     min-height: 100px;
     width: auto;
-    z-index: auto;
   }
 
   .header__container {
     margin-top: 20px;
+    padding-bottom: 30px;
   }
 
   .header__button {
@@ -2156,6 +2165,10 @@ main {
     min-height: 556px;
     margin-top: -15px;
     margin-bottom: 80px;
+    background-image: url("../img/background/intro-background-tablet.png");
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
   }
 
   .intro__block {
@@ -2234,6 +2247,18 @@ main {
     background-size: cover;
   }
 
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-tablet.jpg");
+  }
+
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2-tablet.jpg");
+  }
+
+  .product__link--3 {
+    background-image: url("../img/catalog/card-3-tablet.jpg");
+  }
+
   .product__link h3 {
     max-width: 150px;
     top: 36px;
@@ -2250,7 +2275,10 @@ main {
 
   .callback__wrapper {
     display: block;
-    background-image: none;
+  }
+
+  .callback__image {
+    display: none;
   }
 
   .callback__block {
@@ -2347,10 +2375,28 @@ main {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
+  .intro {
+    background-image: url("../img/background/intro-background-tablet@2x.png");
+  }
+
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-tablet@2x.jpg");
+  }
+
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2-tablet@2x.jpg");
+  }
+
+  .product__link--3 {
+    background-image: url("../img/catalog/card-3-tablet@2x.jpg");
+  }
+}
+
+@media (max-width: 769px) {
   .container {
-    max-width: 280px;
-    padding: 0 5px;
+    max-width: 100%;
+    padding: 0 25px;
   }
 
   .header {
@@ -2366,6 +2412,7 @@ main {
   }
 
   .callback-contact__list {
+    max-width: 160px;
     margin: -2px 10px 0 0;
   }
 
@@ -2382,6 +2429,7 @@ main {
   .intro {
     min-height: 503px;
     margin-bottom: 50px;
+    background-image: url("../img/background/intro-background-mobile.png");
   }
 
   .intro__block {
@@ -2490,7 +2538,7 @@ main {
   }
 
   .catalog__container {
-    padding: 0 5px 86px 5px;
+    padding: 0 25px 86px 25px;
   }
 
   .catalog__container h2 {
@@ -2510,19 +2558,23 @@ main {
   }
 
   .catalog__list {
-    gap: 0;
-  }
-
-  .catalog__item {
-    margin-bottom: 30px;
-  }
-
-  .catalog__item:last-child {
-    margin-bottom: 0;
+    gap: 30px;
   }
 
   .product__link {
     width: 270px;
+  }
+
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-mobile.jpg");
+  }
+
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2-mobile.jpg");
+  }
+
+  .product__link--3 {
+    background-image: url("../img/catalog/card-3-mobile.jpg");
   }
 
   .product__link h3 {
@@ -2538,7 +2590,7 @@ main {
   }
 
   .callback__container {
-    padding: 47px 5px 85px;
+    padding: 47px 25px 85px;
   }
 
   .callback__block > p {
@@ -2619,8 +2671,8 @@ main {
 
   .nav__wrapper,
   .contact__wrapper {
-    max-width: 280px;
-    padding: 0 5px;
+    max-width: 100%;
+    padding: 0 25px;
     margin: 0 auto;
   }
 
@@ -2676,8 +2728,8 @@ main {
   }
 
   .first-row {
-    max-width: 280px;
-    padding: 0 5px 0 5px;
+    max-width: 100%;
+    padding: 0 25px;
     margin: 0 auto;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -2688,6 +2740,24 @@ main {
 
   .second-row {
     display: block;
+  }
+}
+
+@media (max-width: 769px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 769px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 769px) and (min-resolution: 2dppx) {
+  .intro {
+    background-image: url("../img/background/intro-background-mobile@2x.png");
+  }
+
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-mobile@2x.jpg");
+  }
+
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2-mobile@2x.jpg");
+  }
+
+  .product__link--3 {
+    background-image: url("../img/catalog/card-3-mobile@2x.jpg");
   }
 }
 
@@ -2712,7 +2782,7 @@ main {
     background-image: url("../img/catalog/card-3@2x.jpg");
   }
 
-  .callback__wrapper {
+  .callback__image {
     background-image: url("../img/decorative/paper-airplane-3d@2x.png");
   }
 }
