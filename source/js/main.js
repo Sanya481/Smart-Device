@@ -2,10 +2,9 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initModals} from './modules/modals/init-modals';
 import './more-information.js';
 import './modal-callback.js';
-import {checkInputPhoneField} from './phone-input-mask.js';
+import './phone-input-mask.js';
 import './footer-accordion.js';
 import {breakpointChecker} from './intro-callback-btn-hover.js';
-// import './trap-focus.js';
 
 // ---------------------------------
 
@@ -15,7 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
   // ---------------------------------
 
   breakpointChecker();
-  checkInputPhoneField();
   iosVhFix();
 
   // Modules

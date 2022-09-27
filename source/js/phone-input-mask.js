@@ -1,43 +1,33 @@
-// https://web-revenue.ru/verstka/maska-vvoda-telefona-v-input-na-js
+// https://webkaa.ru/javascript/maska-nomera-telefona-js
 
-const inputPhoneField = document.querySelector('[data-input-phone]');
-
-const checkInputPhoneField = () => {
-  if (inputPhoneField) {
-    [].forEach.call(document.querySelectorAll('[data-input-phone]'), function (input) {
-      let keyCode;
-      function mask(event) {
-        event.keyCode && (keyCode = event.keyCode);
-        let pos = this.selectionStart;
-        if (pos < 3) event.preventDefault();
-        let matrix = '+7 (___) ___ ____',
-          i = 0,
-          def = matrix.replace(/\D/g, ''),
-          val = this.value.replace(/\D/g, ''),
-          newValue = matrix.replace(/[_\d]/g, function (a) {
-            return i < val.length ? val.charAt(i++) || def.charAt(i) : a;
-          });
-        i = newValue.indexOf('_');
-        if (i !== -1) {
-          i < 5 && (i = 3);
-          newValue = newValue.slice(0, i);
-        }
-        let reg = matrix.substr(0, this.value.length).replace(/_+/g,
-          function (a) {
-            return '\\d{1,' + a.length + '}'
-          }).replace(/[+()]/g, '\\$&');
-        reg = new RegExp('^' + reg + '$');
-        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = newValue;
-        if (event.type === 'blur' && this.value.length < 5) this.value = '';
+document.addEventListener('DOMContentLoaded', function () {
+  const eventCalllback = function (evt) {
+    const el = evt.target;
+    const clearVal = el.dataset.phoneClear;
+    const pattern = el.dataset.phonePattern;
+    const matrixDef = '+7(___) ___-__-__';
+    const matrix = pattern ? pattern : matrixDef;
+    const def = matrix.replace(/\D/g, '');
+    let i = 0;
+    let val = evt.target.value.replace(/\D/g, '');
+    if (clearVal !== 'false' && evt.type === 'blur') {
+      if (val.length < matrix.match(/([\_\d])/g).length) {
+        evt.target.value = '';
+        return;
       }
-
-      input.addEventListener('input', mask, false);
-      input.addEventListener('focus', mask, false);
-      input.addEventListener('blur', mask, false);
-      input.addEventListener('keydown', mask, false);
-
+    }
+    if (def.length >= val.length) {
+      val = def;
+    }
+    evt.target.value = matrix.replace(/./g, function (a) {
+      return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? '' : a;
     });
   };
-};
 
-export {checkInputPhoneField};
+  const phoneInputs = document.querySelectorAll('[data-phone-pattern]');
+  for (let elem of phoneInputs) {
+    for (let ev of ['input', 'blur', 'focus']) {
+      elem.addEventListener(ev, eventCalllback);
+    }
+  }
+});

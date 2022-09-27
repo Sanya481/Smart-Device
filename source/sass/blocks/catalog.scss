@@ -39,13 +39,13 @@
   }
 }
 
-.catalog__container h2 > span:first-child {
+.catalog__container h2>span:first-child {
   @include vp-768 {
     display: none;
   }
 }
 
-.catalog__container h2 > span:last-child {
+.catalog__container h2>span:last-child {
   display: none;
 
   @include vp-768 {
@@ -66,4 +66,18 @@
   flex-wrap: wrap;
   column-gap: 85px;
   row-gap: 30px;
+
+  @include vp-768 {
+    gap: 0;
+  }
+}
+
+.catalog__item {
+  @include vp-768 {
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

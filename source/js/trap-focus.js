@@ -1,3 +1,5 @@
+// https://hidde.blog/using-javascript-to-trap-focus-in-an-element/
+
 // Модальное окно с формой для обратной связи
 const callbackModal = document.querySelector('#callback-modal');
 

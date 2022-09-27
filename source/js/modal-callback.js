@@ -1,4 +1,4 @@
-import { trapFocus } from './trap-focus.js';
+import {trapFocus} from './trap-focus.js';
 
 const pageBody = document.body;
 // Секция в которой находится нужный нам элемент для удобства поиска
@@ -12,7 +12,6 @@ const callbackModal = document.querySelector('#callback-modal');
 // Форма обратной связи
 const callbackMmodalForm = document.querySelector('#callback-modal-form');
 
-
 if (callbackModal) {
   // Кнопка закрытия модального окна
   const callbackModalBtnClose = document.querySelector('#callback-modal__btn-close');
@@ -22,7 +21,6 @@ if (callbackModal) {
   const userPhoneInputOnModal = document.querySelector('[data-input-phone]');
   // Поле для ввода вопроса в модальном окне
   const questionTextareaOnModal = document.querySelector('[data-textarea-question]');
-
 
   // Проверяем есть ли поддержка хранилища
   let isStorageSupport = true;
@@ -36,7 +34,6 @@ if (callbackModal) {
   } catch (err) {
     isStorageSupport = false;
   }
-
 
   /* Функция проверяет, что нажали кнопку Escape */
   const isEscapeKey = (evt) => evt.key === 'Escape';
@@ -67,7 +64,7 @@ if (callbackModal) {
     document.addEventListener('click', onClickOverlay);
     // Добавили обработчик проверерки заполненности полей ввода для имени и телефона
     callbackMmodalForm.addEventListener('submit', checkFillInputField);
-
+    // Добавили обработчик на ловушку фокуса
     callbackModal.addEventListener('keydown', trapFocus);
   };
 
@@ -80,12 +77,12 @@ if (callbackModal) {
     // Удалили обработчик на закрытие по крестику
     callbackModalBtnClose.removeEventListener('click', onModaCallbackClose);
     // Удалили обработчик на закрытие по нажатию на клавишу Escape
-    document.removeEventListener('key', onModalCallbackEsc);
+    document.removeEventListener('keydown', onModalCallbackEsc);
     // Удалили обработчик на закрытие по клику вне модального окна
     document.removeEventListener('click', onClickOverlay);
     // Удалили обработчик проверерки заполненности полей ввода для имени и телефона
     callbackMmodalForm.removeEventListener('submit', checkFillInputField);
-
+    // Удалили обработчик на ловушку фокуса
     callbackModal.removeEventListener('keydown', trapFocus);
   }
 

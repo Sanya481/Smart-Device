@@ -6,8 +6,8 @@
 .callback-modal__wrapper {
   /* Делаем по центру модальное окно  */
   position: absolute;
-  top: 146px;
-  left: 0;
+  top: 144px;
+  left: -16px;
   right: 0;
   bottom: auto;
   margin: auto;
@@ -30,16 +30,22 @@
   margin: 0;
 }
 
+.callback-modal__block p {
+  font-size: 30px;
+  line-height: 42px;
+  margin: 0 0 3px 0px;
+}
+
 .callback-modal__block span {
   max-width: 380px;
-  margin-bottom: 40px;
+  margin: 0 0 36px 0px;
 }
 
 // callback-modal__form
 
 .callback-modal__form .form__list {
   display: block;
-  margin: 0 0 25px;
+  margin: 0 0 16px;
 }
 
 .callback-modal__form .callback__item {
@@ -59,11 +65,16 @@
 
 .callback-modal__confirmation .callback__button {
   width: 100%;
+  padding: 11px 32px;
   margin-right: 0;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
 }
 
 // callback-modal__approval
+
+.callback-modal__approval {
+  margin-left: 9px;
+}
 
 .callback-modal__approval label {
   max-width: 395px;
@@ -90,7 +101,7 @@
   &::after {
     content: " ";
     position: absolute;
-    width: 20px;
+    width: 23px;
     height: 2px;
     background-color: $color-default-white;
     top: 20px;

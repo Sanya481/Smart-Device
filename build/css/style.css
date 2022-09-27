@@ -850,7 +850,7 @@ main {
   background-image: url("../img/background/intro-background.png");
   background-color: #011c40;
   background-repeat: no-repeat;
-  background-position: 0 0;
+  background-position: 0 -100px;
   background-size: cover;
   min-height: 777px;
   margin-top: 103px;
@@ -1758,8 +1758,8 @@ main {
 .callback-modal__wrapper {
   /* Делаем по центру модальное окно  */
   position: absolute;
-  top: 146px;
-  left: 0;
+  top: 144px;
+  left: -16px;
   right: 0;
   bottom: auto;
   margin: auto;
@@ -1783,14 +1783,20 @@ main {
   margin: 0;
 }
 
+.callback-modal__block p {
+  font-size: 30px;
+  line-height: 42px;
+  margin: 0 0 3px 0px;
+}
+
 .callback-modal__block span {
   max-width: 380px;
-  margin-bottom: 40px;
+  margin: 0 0 36px 0px;
 }
 
 .callback-modal__form .form__list {
   display: block;
-  margin: 0 0 25px;
+  margin: 0 0 16px;
 }
 
 .callback-modal__form .callback__item {
@@ -1813,8 +1819,13 @@ main {
 
 .callback-modal__confirmation .callback__button {
   width: 100%;
+  padding: 11px 32px;
   margin-right: 0;
-  margin-bottom: 20px;
+  margin-bottom: 13px;
+}
+
+.callback-modal__approval {
+  margin-left: 9px;
 }
 
 .callback-modal__approval label {
@@ -1842,7 +1853,7 @@ main {
 .callback-modal__btn-close::after {
   content: " ";
   position: absolute;
-  width: 20px;
+  width: 23px;
   height: 2px;
   background-color: #ffffff;
   top: 20px;
@@ -2496,6 +2507,18 @@ main {
 
   .catalog__container h2 > span:last-child {
     display: block;
+  }
+
+  .catalog__list {
+    gap: 0;
+  }
+
+  .catalog__item {
+    margin-bottom: 30px;
+  }
+
+  .catalog__item:last-child {
+    margin-bottom: 0;
   }
 
   .product__link {
