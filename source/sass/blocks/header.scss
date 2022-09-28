@@ -2,18 +2,22 @@
   position: fixed;
   width: 100%;
   color: $alice-blue;
-  min-height: 120px;
   background: $black-to-bottom;
   z-index: 10;
 
+  padding: 30px 0 40px 0;
+
   @include vp-1024 {
     position: static;
-    min-height: 100px;
     width: auto;
+
+    padding: 20px 0 30px 0;
+    margin-bottom: -229px;
   }
 
   @include vp-768 {
-    min-height: 70px;
+    padding-top: 10px;
+    margin-bottom: -232px;
   }
 }
 
@@ -25,15 +29,4 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 30px;
-  padding-bottom: 40px;
-
-  @include vp-1024 {
-    margin-top: 20px;
-    padding-bottom: 30px;
-  }
-
-  @include vp-768 {
-    margin-top: 10px;
-  }
 }
