@@ -1222,10 +1222,6 @@ main {
   background-image: url("../img/catalog/card-1.jpg");
 }
 
-.product__link--2 {
-  background-image: url("../img/catalog/card-2.jpg");
-}
-
 .product__link--3 {
   background-image: url("../img/catalog/card-3.jpg");
 }
@@ -2019,6 +2015,10 @@ main {
     color: #f2f5f6;
   }
 
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2.jpg");
+  }
+
   .product__link:hover,
   .product__link:focus {
     -webkit-box-shadow: -8px -8px 35px 2px #c78bff, 8px 8px 35px 2px #76d8ff;
@@ -2107,6 +2107,24 @@ main {
 
   .social__icon:active {
     fill: #2e80fd;
+  }
+}
+
+@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2@2x.jpg");
+  }
+}
+
+@media (max-width: 1024px) {
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-tablet.jpg");
+  }
+}
+
+@media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1024px) and (min-resolution: 2dppx) {
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-tablet@2x.jpg");
   }
 }
 
@@ -2247,10 +2265,6 @@ main {
     background-size: cover;
   }
 
-  .product__link--1 {
-    background-image: url("../img/catalog/card-1-tablet.jpg");
-  }
-
   .product__link--2 {
     background-image: url("../img/catalog/card-2-tablet.jpg");
   }
@@ -2378,10 +2392,6 @@ main {
 @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
   .intro {
     background-image: url("../img/background/intro-background-tablet@2x.png");
-  }
-
-  .product__link--1 {
-    background-image: url("../img/catalog/card-1-tablet@2x.jpg");
   }
 
   .product__link--2 {
@@ -2772,10 +2782,6 @@ main {
 
   .product__link--1 {
     background-image: url("../img/catalog/card-1@2x.jpg");
-  }
-
-  .product__link--2 {
-    background-image: url("../img/catalog/card-2@2x.jpg");
   }
 
   .product__link--3 {
