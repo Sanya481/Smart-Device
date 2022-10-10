@@ -391,7 +391,7 @@ template {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
+  src: local("PT Mono"), url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -399,7 +399,7 @@ template {
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+  src: local("Roboto"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -407,7 +407,7 @@ template {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+  src: local("Roboto Condensed"), url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -415,7 +415,7 @@ template {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+  src: local("Roboto Condensed"), url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
 }
 
 *,
