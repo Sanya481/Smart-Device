@@ -20,7 +20,7 @@
 }
 
 @mixin vp-768 {
-  @media (max-width: $vp-767) {
+  @media (max-width: $vp-768) {
     @content;
   }
 }

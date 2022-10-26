@@ -663,11 +663,11 @@ main {
   position: fixed;
   width: 100%;
   color: #f2f5f6;
-  min-height: 120px;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(84.9%, #041827), to(rgba(4, 24, 39, 0)));
   background: -o-linear-gradient(top, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
   background: linear-gradient(180deg, #041827 84.9%, rgba(4, 24, 39, 0) 100%);
   z-index: 10;
+  padding: 30px 0 40px 0;
 }
 
 .header.hiding {
@@ -684,8 +684,6 @@ main {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 30px;
-  padding-bottom: 40px;
 }
 
 .header__button {
@@ -2186,13 +2184,9 @@ main {
 
   .header {
     position: static;
-    min-height: 100px;
     width: auto;
-  }
-
-  .header__container {
-    margin-top: 20px;
-    padding-bottom: 30px;
+    padding: 20px 0 30px 0;
+    margin-bottom: -229px;
   }
 
   .header__button {
@@ -2231,7 +2225,6 @@ main {
 
   .intro {
     min-height: 556px;
-    margin-top: -15px;
     margin-bottom: 80px;
     background-image: url("../img/background/intro-background-tablet.png");
     -webkit-transform: translateY(0);
@@ -2467,11 +2460,8 @@ main {
   }
 
   .header {
-    min-height: 70px;
-  }
-
-  .header__container {
-    margin-top: 10px;
+    padding-top: 10px;
+    margin-bottom: -232px;
   }
 
   .header__contact {
