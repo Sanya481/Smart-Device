@@ -55,18 +55,39 @@
 }
 
 .intro__block h1 {
-  font-family: $ff-placeholder-second;
   font-weight: 700;
   font-size: 80px;
   line-height: 94px;
-  letter-spacing: 0.07em;
   text-transform: uppercase;
   margin: 0 0 33px;
+
+  // font-family: $ff-placeholder-second; /* Заменяем на моноширинный(monospace) */
+  // letter-spacing: 0.07em; /* Расст-ние между букв мешает правильному псевдо-набору */
+
+  // Свойства для эффекта псевдо-набора текста
+  white-space: nowrap;
+  /* Запрещаем перенос для корректности псевдо-набора */
+  overflow: hidden;
+  /* Скрываем буквы при  псевдо-наборе */
+  border-right: 4px solid orange;
+  /* Псевдо-курсор набора текста */
+  font-family: monospace;
+  /* Работает только при таком семействе шрифтов, где ширина букв одинаковая */
+  width: 14ch;
+  /* Ширина равняется кол-ву символов */
+  animation: flashing-border 0.75s step-end infinite, printed-text 3s steps(14);
 
   @include vp-1024 {
     font-size: 64px;
     line-height: 75px;
     margin: 0;
+
+    letter-spacing: 0.07em;
+    white-space: normal;
+    border-right: none;
+    font-family: $ff-placeholder-second;
+    width: auto;
+    animation: none;
   }
 
   @include vp-768 {
@@ -185,5 +206,26 @@
 
   @include vp-768 {
     display: block;
+  }
+}
+
+// Анимация набора текста
+@keyframes flashing-border {
+  0% {
+    border-color: orange;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: orange;
+  }
+}
+
+@keyframes printed-text {
+  from {
+    width: 0;
   }
 }

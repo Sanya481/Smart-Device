@@ -32,36 +32,98 @@
   }
 }
 
-// Фоновое изображение для каждой карточки в каталоге
+// Что-то непонятная ситуация творится с изображениями для ретина экранов!!!
+
+// // Фоновое изображение для каждой карточки в каталоге
+// .product__link--1 {
+//   background-image: url("../img/catalog/card-1.jpg");
+
+//   @include retina {
+//     background-image: url("../img/catalog/card-1@2x.jpg");
+//   }
+
+//   @include vp-1024 {
+//     background-image: url("../img/catalog/card-1-tablet.jpg");
+
+//     @include retina {
+//       background-image: url("../img/catalog/card-1-tablet@2x.jpg");
+//     }
+//   }
+
+//   @include vp-768 {
+//     background-image: url("../img/catalog/card-1-mobile.jpg");
+
+//     @include retina {
+//       background-image: url("../img/catalog/card-1-mobile@2x.jpg");
+//     }
+//   }
+// }
+
 .product__link--1 {
-  background-image: url("../img/catalog/card-1.jpg");
-
-  @include retina {
-    background-image: url("../img/catalog/card-1@2x.jpg");
-  }
-
-  @include vp-1024 {
-    background-image: url("../img/catalog/card-1-tablet.jpg");
-
-    @include retina {
-      background-image: url("../img/catalog/card-1-tablet@2x.jpg");
-    }
-  }
-
-  @include vp-768 {
+  @media (max-width: 769px) {
     background-image: url("../img/catalog/card-1-mobile.jpg");
-
-    @include retina {
-      background-image: url("../img/catalog/card-1-mobile@2x.jpg");
-    }
   }
 }
 
-.product__link--2 {
-  background-image: url("../img/catalog/card-2.jpg");
+.product__link--1 {
+  @media (max-width: 769px) and (min-resolution: 2dppx) {
+    background-image: url("../img/catalog/card-1-mobile@2x.jpg");
+  }
+}
 
-  @include retina {
-    background-image: url("../img/catalog/card-2@2x.jpg");
+.product__link--1 {
+  @media (max-width: 1024px) {
+    background-image: url("../img/catalog/card-1-tablet.jpg");
+  }
+}
+
+.product__link--1 {
+  @media (max-width: 1024px) and (min-resolution: 2dppx) {
+    background-image: url("../img/catalog/card-1-tablet@2x.jpg");
+  }
+}
+
+.product__link--1 {
+  background-image: url("../img/catalog/card-1.jpg");
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/catalog/card-1@2x.jpg");
+  }
+}
+
+
+// .product__link--2 {
+//   background-image: url("../img/catalog/card-2.jpg");
+
+//   @include retina {
+//     background-image: url("../img/catalog/card-2@2x.jpg");
+//   }
+
+//   @include vp-1024 {
+//     background-image: url("../img/catalog/card-2-tablet.jpg");
+
+//     @include retina {
+//       background-image: url("../img/catalog/card-2-tablet@2x.jpg");
+//     }
+//   }
+
+//   @include vp-768 {
+//     background-image: url("../img/catalog/card-2-mobile.jpg");
+
+//     @include retina {
+//       background-image: url("../img/catalog/card-2-mobile@2x.jpg");
+//     }
+//   }
+// }
+
+
+.product__link--2 {
+  @include vp-768 {
+    background-image: url("../img/catalog/card-2-mobile.jpg");
+
+    @include retina {
+      background-image: url("../img/catalog/card-2-mobile@2x.jpg");
+    }
   }
 
   @include vp-1024 {
@@ -72,11 +134,11 @@
     }
   }
 
-  @include vp-768 {
-    background-image: url("../img/catalog/card-2-mobile.jpg");
+  @media (min-width: 1024px) {
+    background-image: url("../img/catalog/card-2.jpg");
 
     @include retina {
-      background-image: url("../img/catalog/card-2-mobile@2x.jpg");
+      background-image: url("../img/catalog/card-2@2x.jpg");
     }
   }
 }

@@ -391,7 +391,7 @@ template {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
+  src: local("PT Mono"), url("../fonts/PTMono-Regular.woff2") format("woff2"), url("../fonts/PTMono-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -399,7 +399,7 @@ template {
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+  src: local("Roboto"), url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
 }
 
 @font-face {
@@ -407,7 +407,7 @@ template {
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
+  src: local("Roboto Condensed"), url("../fonts/RobotoCondensed-Regular.woff2") format("woff2"), url("../fonts/RobotoCondensed-Regular.woff") format("woff");
 }
 
 @font-face {
@@ -415,7 +415,7 @@ template {
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: local("Montserrat"), url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
+  src: local("Roboto Condensed"), url("../fonts/RobotoCondensed-Bold.woff2") format("woff2"), url("../fonts/RobotoCondensed-Bold.woff") format("woff");
 }
 
 *,
@@ -865,13 +865,23 @@ main {
 }
 
 .intro__block h1 {
-  font-family: "Roboto Condensed", "Arial", sans-serif;
   font-weight: 700;
   font-size: 80px;
   line-height: 94px;
-  letter-spacing: 0.07em;
   text-transform: uppercase;
   margin: 0 0 33px;
+  white-space: nowrap;
+  /* Запрещаем перенос для корректности псевдо-набора */
+  overflow: hidden;
+  /* Скрываем буквы при  псевдо-наборе */
+  border-right: 4px solid orange;
+  /* Псевдо-курсор набора текста */
+  font-family: monospace;
+  /* Работает только при таком семействе шрифтов, где ширина букв одинаковая */
+  width: 14ch;
+  /* Ширина равняется кол-ву символов */
+  -webkit-animation: flashing-border 0.75s step-end infinite, printed-text 3s steps(14);
+  animation: flashing-border 0.75s step-end infinite, printed-text 3s steps(14);
 }
 
 .intro__block p {
@@ -923,6 +933,46 @@ main {
 
 .intro__block span:last-child {
   display: none;
+}
+
+@-webkit-keyframes flashing-border {
+  0% {
+    border-color: orange;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: orange;
+  }
+}
+
+@keyframes flashing-border {
+  0% {
+    border-color: orange;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: orange;
+  }
+}
+
+@-webkit-keyframes printed-text {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes printed-text {
+  from {
+    width: 0;
+  }
 }
 
 .advantages__container {
@@ -1218,10 +1268,6 @@ main {
 
 .product__link--1 {
   background-image: url("../img/catalog/card-1.jpg");
-}
-
-.product__link--2 {
-  background-image: url("../img/catalog/card-2.jpg");
 }
 
 .product__link--3 {
@@ -2017,6 +2063,10 @@ main {
     color: #f2f5f6;
   }
 
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2.jpg");
+  }
+
   .product__link:hover,
   .product__link:focus {
     -webkit-box-shadow: -8px -8px 35px 2px #c78bff, 8px 8px 35px 2px #76d8ff;
@@ -2108,6 +2158,24 @@ main {
   }
 }
 
+@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (min-width: 1024px) and (min-resolution: 2dppx) {
+  .product__link--2 {
+    background-image: url("../img/catalog/card-2@2x.jpg");
+  }
+}
+
+@media (max-width: 1024px) {
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-tablet.jpg");
+  }
+}
+
+@media (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1024px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1024px) and (min-resolution: 2dppx) {
+  .product__link--1 {
+    background-image: url("../img/catalog/card-1-tablet@2x.jpg");
+  }
+}
+
 @media (max-width: 1023px) {
   .container {
     max-width: 680px;
@@ -2173,6 +2241,13 @@ main {
     font-size: 64px;
     line-height: 75px;
     margin: 0;
+    letter-spacing: 0.07em;
+    white-space: normal;
+    border-right: none;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    width: auto;
+    -webkit-animation: none;
+    animation: none;
   }
 
   .intro__block p {
@@ -2238,10 +2313,6 @@ main {
     width: 670px;
     height: 250px;
     background-size: cover;
-  }
-
-  .product__link--1 {
-    background-image: url("../img/catalog/card-1-tablet.jpg");
   }
 
   .product__link--2 {
@@ -2371,10 +2442,6 @@ main {
 @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 1023px) and (-o-min-device-pixel-ratio: 2/1), (max-width: 1023px) and (min-resolution: 2dppx) {
   .intro {
     background-image: url("../img/background/intro-background-tablet@2x.png");
-  }
-
-  .product__link--1 {
-    background-image: url("../img/catalog/card-1-tablet@2x.jpg");
   }
 
   .product__link--2 {
@@ -2762,10 +2829,6 @@ main {
 
   .product__link--1 {
     background-image: url("../img/catalog/card-1@2x.jpg");
-  }
-
-  .product__link--2 {
-    background-image: url("../img/catalog/card-2@2x.jpg");
   }
 
   .product__link--3 {
